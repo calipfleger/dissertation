@@ -34,9 +34,12 @@ chapter-2-volc-enso:
     # Figures are written directly at the project root (not in a figures/ subdir).
     # The sync script uses maxdepth 1, which naturally skips node_modules/, .git/,
     # __pycache__/, and old_figures/.
-    - ~/Documents/Claude/Projects/volcano enso
+    #
+    # Moved 2026-04-19 from ~/Documents/Claude/Projects/volcano enso into the
+    # Cladue cowork mount so the sandbox sync can actually reach it.
+    - ~/Documents/Claude/Projects/Cladue/volcano enso
     # To also pull from the archive: uncomment
-    # - ~/Documents/Claude/Projects/volcano enso/old_figures
+    # - ~/Documents/Claude/Projects/Cladue/volcano enso/old_figures
 
 chapter-3-california-volc-enso:
   sources: []   # TODO — California-VOLC-ENSO analysis output dir
