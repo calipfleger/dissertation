@@ -16,17 +16,21 @@ bibliography: literature/bibliography.bib
 📅 **[View the living progress timeline →](presentations/chapter4-progress.html)** — auto-updated nightly with new figures + daily summary.
 :::
 
+::: {.callout-warning appearance="simple"}
+**This chapter is in early planning.** The scientific questions, geographic scope, and datasets are still being finalized in consultation with the dissertation committee. Content below is a scaffold; treat it as a placeholder until this warning is removed.
+:::
+
 ## Abstract
 
-_Scope TBD. Chapter 4 is the biogeochemistry / geo-fish chapter. Working title and scientific questions need to be finalized._
+*In preparation.* This chapter will examine how marine biogeochemical cycles — particularly dissolved oxygen, nutrient availability, and carbonate chemistry — vary geographically, and what that variation implies for the ecology of commercially and ecologically important fish populations. The analysis will integrate observational oceanographic data with population-ecology records to identify regions where biogeochemical stress may drive population-scale responses.
 
 ## Introduction
 
-_Placeholder — fill in with the research question, geographic scope, and relationship to the preceding paleoclimate chapters._
+*To be written.* Intended sections: motivation (why biogeochem × fish-ecology now), geographic scope (regional focus TBD), connection to the paleoclimate chapters (2–3) via shared ocean-circulation mechanisms, and research questions.
 
 ## Methods
 
-_To be written._
+*To be written.* Intended datasets: WOA / GLODAP for biogeochemistry, NOAA stock-assessment records for fish populations, regional model output for dynamical context.
 
 ## Results
 

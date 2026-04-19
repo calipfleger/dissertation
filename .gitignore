@@ -2,6 +2,7 @@
 _book/
 _site/
 .quarto/
+_freeze/              # Quarto's cache of executed code chunks (regenerated on render)
 *_files/
 *_cache/
 **/*.quarto_ipynb
