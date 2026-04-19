@@ -90,7 +90,7 @@ Step-by-step:
 - Pinned `requirements.txt` locking library versions (Python 3.11, VADER 3.3.2, transformers 4.x).
 - All random seeds fixed; figures at 300 DPI.
 - Preregistered analysis plan in `drafts/`.
-- Code lives at `~/Documents/Claude/Projects/Sentiment Analysis/` and will be pushed to GitHub (username TBD).
+- Code will be published alongside the dissertation at [`github.com/calipfleger/dissertation`](https://github.com/calipfleger/dissertation) once the sentiment-analysis project is ready for public release.
 
 ## 4. Results
 

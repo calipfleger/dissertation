@@ -141,7 +141,7 @@ The key remaining open question is whether the iCESM LME pseudo-coral network pr
 
 ## 6. Data and code availability
 
-- Analysis code: `~/Documents/Claude/Projects/volcano enso/` (to be published on GitHub; username TBD).
+- Analysis code: mirrored in this repo's adjacent [`volcano enso/`](https://github.com/calipfleger/dissertation/tree/main/) folder (private working copy lives in the author's local Cladue workspace). Git repo: [`calipfleger/dissertation`](https://github.com/calipfleger/dissertation).
 - Data: CESM-LME iCESM output, coral proxy site CSVs.
 - This chapter is reproducible via `quarto render chapter2.qmd` once Python chunks are populated from the analysis scripts.
 
