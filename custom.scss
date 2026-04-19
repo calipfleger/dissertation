@@ -1,0 +1,69 @@
+/*-- scss:defaults --*/
+// Custom Bren-inspired accent (UCSB navy + gold — tweak freely)
+$primary: #003660;   // UCSB navy
+$link-color: #003660;
+
+/*-- scss:rules --*/
+
+/* Visible "under review" watermark for auto-generated content.
+   Apply via a div wrapper:
+     ::: {.under-review}
+     ⚠ Preliminary — auto-generated YYYY-MM-DD. Not yet human-verified.
+     :::
+*/
+.under-review {
+  border-left: 4px solid #e0a800;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(224, 168, 0, 0.05),
+    rgba(224, 168, 0, 0.05) 10px,
+    rgba(224, 168, 0, 0.10) 10px,
+    rgba(224, 168, 0, 0.10) 20px
+  );
+  padding: 0.6em 1em;
+  margin: 1em 0;
+  font-size: 0.95em;
+  color: #664d03;
+}
+
+.under-review::before {
+  content: "⚠ Under review — not yet verified";
+  display: block;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  letter-spacing: 0.05em;
+  color: #664d03;
+  margin-bottom: 0.3em;
+}
+
+/* Auto-inserted content marker — fires on any element with data-auto attribute */
+[data-auto] {
+  position: relative;
+}
+[data-auto]::after {
+  content: "AUTO";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #e0a800;
+  color: white;
+  font-size: 0.65em;
+  padding: 2px 6px;
+  border-radius: 0 0 0 4px;
+  letter-spacing: 0.1em;
+}
+
+/* Verified content — green checkmark, no watermark */
+.verified {
+  border-left: 4px solid #198754;
+  padding-left: 0.8em;
+}
+.verified::before {
+  content: "✅ Verified";
+  display: inline-block;
+  font-size: 0.75em;
+  color: #198754;
+  font-weight: bold;
+  margin-right: 0.5em;
+}

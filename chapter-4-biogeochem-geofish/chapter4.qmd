@@ -1,0 +1,40 @@
+---
+title: "Chapter 4: Biogeochemistry and Geographic Variation in Fish Populations"
+subtitle: "(working title)"
+author:
+  - name: Cali Pfleger
+    email: calipfleger@ucsb.edu
+date: last-modified
+bibliography: literature/bibliography.bib
+---
+
+::: {.callout-tip appearance="simple" icon=false}
+🎞 **[View this chapter as a slideshow →](presentations/chapter4-slides.html)**
+:::
+
+::: {.callout-note appearance="simple" icon=false}
+📅 **[View the living progress timeline →](presentations/chapter4-progress.html)** — auto-updated nightly with new figures + daily summary.
+:::
+
+## Abstract
+
+_Scope TBD. Chapter 4 is the biogeochemistry / geo-fish chapter. Working title and scientific questions need to be finalized._
+
+## Introduction
+
+_Placeholder — fill in with the research question, geographic scope, and relationship to the preceding paleoclimate chapters._
+
+## Methods
+
+_To be written._
+
+## Results
+
+## Discussion
+
+## Conclusions
+
+## References {.unnumbered}
+
+::: {#refs}
+:::

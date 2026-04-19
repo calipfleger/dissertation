@@ -1,0 +1,144 @@
+---
+title: "Chapter 1: Oxygen-Isotopic Expression of Forced Changes in the Pacific Walker Circulation"
+author:
+  - name: Cali Pfleger
+    email: calipfleger@ucsb.edu
+  - name: Samantha Stevenson
+  - name: Sloan Coats
+  - name: Bronwen Knockey
+  - name: Georgina Falster
+date: last-modified
+bibliography: literature/bibliography.bib
+---
+
+::: {.callout-tip appearance="simple" icon=false}
+🎞 **[View this chapter as a slideshow →](presentations/chapter1-slides.html)**
+:::
+
+::: {.callout-note appearance="simple" icon=false}
+📅 **[View the living progress timeline →](presentations/chapter1-progress.html)** — auto-updated nightly with new figures + daily summary.
+:::
+
+## Abstract
+
+The Pacific Walker Circulation (PWC) is a critical regulator of global precipitation patterns and is tightly coupled with the El Niño–Southern Oscillation (ENSO). Quantifying and mitigating anthropogenic climate change requires understanding the PWC's response to anthropogenic influence, but the net sensitivity of the PWC to anthropogenic greenhouse gas (GHG) and aerosol emissions remains uncertain due to observational limitations and the complexity of the dynamical mechanisms involved. This chapter uses the isotopic ratios of oxygen and hydrogen in water ($\delta^{18}\text{O}$ and $\delta\text{D}$) within single-forcing isotope-enabled members of the Community Earth System Model Last Millennium Ensemble (iCESM / CESM-LME) [@brady2019icesm] to extend the instrumental record through paleoclimate reconstructions and to constrain the dynamics of PWC variations over the post-industrial era (1850–2005 CE).
+
+**Key findings**
+
+- **Ozone-aerosol forcing strengthens the PWC** (La Niña–like pattern) as seen in vertical velocity, wind advection, sea-level pressure, precipitation, and $\delta^{18}\text{O}_p$.
+- **GHG forcing weakens the PWC** (El Niño–like pattern) via warmer SSTs and atmospheric temperatures reflected in precipitation and $\delta^{18}\text{O}_p$ signals; an overall increase in $\delta^{18}\text{O}_p$ results from increased atmospheric energy in a warmer climate.
+- **Combined full forcing response** closely matches the sum of GHG and OZA signals, demonstrating that anthropogenic emissions play a pivotal role in the PWC's response to external forcings.
+- **Isotopic "fingerprints"** distinguish between forcing scenarios in a way that SLP and SST alone cannot, bridging model output with paleoclimate $\delta^{18}\text{O}$ proxies.
+
+## 1. Introduction
+
+The PWC plays a pivotal role in shaping climate patterns across the tropical Pacific region, regulating global climate variability and teleconnecting to remote regions worldwide. Disagreements and uncertainties regarding the strength of the PWC in the historical period stem from limitations of instrumental records — changes in instrumentation, measurement practices, spatial resolution, temporal coverage, and sampling frequency [@sohn2013strengthening; @lheureux2013recent]. The short length of reliable instrumental records before the 1950s and inadequate spatial-temporal coverage introduce biases in proxy reconstructions and SST reconstructions [@deser2010sea].
+
+The anthropogenic weakening of the PWC is attributed to multiple interconnected mechanisms: warming of the tropical Pacific contributes to PWC weakening [@vecchi2006weakening; @deser2010sea; @tokinaga2012slowdown]. While earlier studies suggested long-term weakening of the PWC due to a muted hydrological response to greenhouse warming [@heldsoden2006robust; @vecchi2006weakening], recent satellite-based observations have indicated a *strengthening* of the PWC [@sohn2013strengthening]. Continuous observations during the satellite era indicate multi-decadal strengthening of Pacific trade winds and sea-level-pressure (SLP) intensification [@lheureux2013recent; @sohn2013strengthening]. The observed PWC strengthening contains both forced responses and internal variations, with relative contributions unknown [@wu2021strengthened].
+
+The PWC is expected to be highly sensitive to anthropogenic climate change, but this sensitivity is expressed through numerous mechanisms:
+
+- GHG-driven warming weakens convective mass fluxes and zonally anomalous tropical overturning circulations, including the Walker circulation.
+- Greater effective static stability over ascending regions.
+- Reduced ability of the colder eastern Pacific to balance increased radiative forcing through evaporative cooling compared to the warmer western Pacific.
+- Positive marine-boundary-layer cloud feedbacks in the eastern Pacific.
+- Enhanced extratropical warming and slowdown of the oceanic subtropical cells.
+
+It remains unclear precisely how important each of these processes is in governing the net PWC response to forcing. Climate models systematically fail to represent recent strengthening trends [@wills2021systematic]; Wu et al. [-@wu2021strengthened] estimate that internal variability contributes ~71% of the total magnitude of 36-year running trends, with external forcing making up the rest.
+
+This study introduces a novel approach using isotope-enabled single-forcing experiments to assess the PWC's response to forced trends by analyzing patterns in SLP, SST, and $\delta^{18}\text{O}_p$ over the post-industrial (1850–2005) era.
+
+## 2. Data and Methods
+
+### 2.1 The isotope-enabled Last Millennium Ensemble
+
+The dataset is the Community Earth System Model Last Millennium Ensemble (CESM-LME) and its isotope-enabled counterpart (iCESM) [@brady2019icesm]. Monthly output spans 850–2005 CE; this chapter focuses on the post-industrial period (1850–2005 CE).
+
+| Forcing | # members | iCESM subset |
+| --- | --- | --- |
+| Full forcing (Full) | 17 total | 4 iCESM |
+| Greenhouse Gas (GHG) | 7 total | 4 iCESM |
+| Ozone-Aerosol (OZA) | 8 total | 5 iCESM |
+
+Variables analyzed: surface temperature (TS), sea-level pressure (SLP), $\delta^{18}\text{O}_p$ (delta-18-O of precipitation), zonal/meridional wind. Focus is on GHG and OZA single-forcing experiments to isolate the influence of anthropogenic forcings.
+
+### 2.2 PWC index definition
+
+The PWC Index is defined as the SLP gradient along the equatorial Pacific [@vecchi2006weakening; @tokinaga2012slowdown]:
+
+$$\text{PWC}_{\text{SLP}} = \overline{\text{SLP}}_{\text{CEP}} - \overline{\text{SLP}}_{\text{WP}}$$
+
+with CEP = central–east Pacific (150°–90° W, 5° S–5° N) and WP = western Pacific / eastern Indian Ocean (90°–150° E, 5° S–5° N). To investigate whether the PWC is dominated by ENSO frequency, comparisons use the Niño 3.4 index (SST anomaly in 170°–120° W, 5° S–5° N) [@falster2021precipitation].
+
+### 2.3 The $\delta^{18}\text{O}_p$-based PWC index (new)
+
+The incorporation of $\delta^{18}\text{O}_p$ provides a moisture-transport perspective not captured by SLP or SST alone and bridges the gap between model simulations and paleoclimate $\delta^{18}\text{O}$ proxies [@dee2018vertical; @konecky2020iso2k]. A major strength of the isotope-enabled modeling approach is the ability to create isotopic patterns associated with different forcing scenarios, which can then be compared directly with modern observations and paleoclimate reconstructions.
+
+| PWC metric | Abbreviation | Index definition |
+| --- | --- | --- |
+| $\delta^{18}\text{O}$ of precipitation | $\delta^{18}\text{O}_p$ | _to be formalized_ |
+| Vertical velocity at 500 hPa | w500 | WP (120°–160° E, 5° S–5° N) − EP (120°–160° W, 5° S–5° N) |
+| Precipitation | PRECT | West (130°–150° E, 5° S–5° N) − East (180°–80° W, 5° S–5° N) |
+| Sea-level pressure | dSLP | WP (80°–160° E, 5° S–5° N) − EP (80°–160° W, 5° S–5° N) |
+| Sea-surface temperature | dSST | WP (80°–160° E, 5° S–5° N) − EP (80°–160° W, 5° S–5° N) |
+
+## 3. Results
+
+_Results are in progress. Current interpretive frame:_
+
+### 3.1 Full-forcing post-industrial response (Figure 1)
+
+In the full-forcing simulations, the PWC strengthens during the post-industrial era: increased trade winds, a heightened east–west SST gradient, elevated SLP in the eastern Pacific, and decreased SLP in the western Pacific. The $\delta^{18}\text{O}_p$ trend is +0.002464 ‰ yr⁻¹ over the western Pacific, isotopically enriched at a higher rate than the eastern Pacific.
+
+### 3.2 Forcing decomposition (Figure 2)
+
+Climatological anomalies calculated by removing the monthly climatology for each ensemble. GHG and OZA single-forcing responses differ markedly and, when combined, closely reproduce the full-forcing pattern.
+
+### 3.3 Pre-industrial anomalies (Figure 3)
+
+The effect of forcing on atmospheric circulation can be identified by subtracting the iCESM pre-industrial (PI) control mean state from the forced simulations (cf. Deser et al. 2020, Touma et al. 2021 approaches). The PI control shows the expected PWC pattern — ascent in the west, descent in the east. GHG-ensemble anomalies tend to oppose PI-control patterns in the same regions, consistent with weakening under GHG forcing.
+
+## 4. Discussion
+
+### 4.1 Thermodynamic vs. dynamical forcing response
+
+The **thermodynamic component** of the PWC responds to anthropogenic GHG-driven atmospheric warming: warmer eastern-Pacific SSTs influence the isotopic fingerprint $\delta^{18}\text{O}_p$. The GHG forcing ensemble shows sensitivity of moisture changes consistent with a weakening PWC, in agreement with earlier studies — GHG makes the PWC more effective at exciting moisture transport.
+
+The **dynamical component** of the PWC responds to anthropogenic aerosol and ozone emission cooling: rising motion with isotopically distinct signatures in the western Pacific, subsidence in the eastern Pacific, producing a strong La Niña–like isotopic fingerprint. When GHG and OZA linear trends of $\delta^{18}\text{O}_p$ are summed, the combined signal matches the full-forcing signal — ozone-aerosols create nucleation for precipitation while cooling the climate; GHG warming creates warmer SSTs, thus increasing the $\delta^{18}\text{O}$ ratio of precipitation as heavier isotopes are evaporated from the surface water.
+
+### 4.2 Amount effect vs. Rayleigh distillation
+
+A strengthening PWC would mean increased precipitation in the western Pacific and decreased precipitation across the central and eastern Pacific. If the *amount effect* drives changes in $\delta^{18}\text{O}_p$, wet regions should show higher $\delta^{18}\text{O}_p$. If Rayleigh distillation (moisture source) dominates, areas of convection should have enriched $\delta^{18}\text{O}_p$ closer to the moisture source. What is observed instead is a decrease in precipitation across both western and eastern Pacific accompanied by an isotopic enrichment — the relationship is *opposite* to what a simple amount effect predicts, implicating either temperature effects or dynamical changes.
+
+## 5. Conclusions
+
+The iCESM is the first publicly available fully coupled ocean-atmosphere isotope-enabled climate model, allowing a new isotope-tracing technique to analyze changes in moisture transport and reveal PWC oscillations over the last millennium. Anthropogenic emissions play a pivotal role in the PWC's response to external forcings: our findings reveal differences in the PWC's $\delta^{18}\text{O}$ and $\delta\text{D}$ response among forcings, marked by intensity changes and migration, underscoring the interplay between GHG warming, ozone-aerosol cooling, and water vapor in deciphering the PWC's behavior. With satellite observations of $\delta^{18}\text{O}_p$ changes, this research introduces novel metrics for gauging global warming's influence on the hydrological cycle and Walker circulation strength through time. Future work will extend model-proxy synthesis to proxy records in Iso2k [@konecky2020iso2k] — tree rings, corals, ice cores, sediments, speleothems.
+
+## 6. Supplementary Information
+
+### SI Table 1 — iCESM member count per time period
+
+| Time period | GHG | Full | OZA | PI CNTL |
+| --- | --- | --- | --- | --- |
+| Pre-industrial (850–1849) | 4 | 4 | 0 | 1 |
+| Post-industrial (1850–2005) | 4 | 4 | 4 | — |
+
+### Open items from the draft
+
+- Test dynamical hypotheses of @heldsoden2006robust using $\delta\text{D}$ and tropospheric static stability.
+- Longitudinal cross-section of $\delta\text{D}_{\text{vapor}}$ at 500–600 hPa (similar to @dee2018vertical Fig. 9b).
+- Vertical cross-section of atmospheric temperature and relative humidity over 5° S–5° N.
+- Iso2k record overlays on $\delta^{18}\text{O}_p$ trend maps [@konecky2020iso2k].
+- Regression on PC1 of $\delta^{18}\text{O}_p$ / $\delta^{18}\text{O}_{\text{soil}}$, compared to Iso2k effective-moisture PC1.
+
+<!--
+Source: the Drive doc "Ch1: iLME PWC PAPER" (`1ZQyr-ABGbVxYQVFHF_IU76YdsIScwSI2VMyJfw9WPD0`)
+mirrored to `drafts/from-drive/ch1-paper-draft.md`. Continue to edit the Drive doc for the
+live paper; this .qmd is the Quarto-rendered version with inline BibTeX citations resolved
+from `literature/bibliography.bib`.
+-->
+
+## References {.unnumbered}
+
+::: {#refs}
+:::

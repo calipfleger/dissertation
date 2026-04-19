@@ -1,0 +1,49 @@
+---
+title: "Chapter 4 — Progress Timeline"
+subtitle: "Ch 4 · living document of progress"
+author: Cali Pfleger
+date: last-modified
+bibliography: ../literature/bibliography.bib
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+    footer: "Ch 4 progress · auto-updated nightly · calipfleger@ucsb.edu"
+    fig-align: center
+    self-contained: false
+---
+
+## How this deck works {.smaller}
+
+This is a **living timeline** of progress on Chapter 1.
+
+- The nightly pipeline appends a date-stamped section after midnight every day.
+- Each daily section includes a short summary of what was worked on plus any new figures.
+- Newest entries appear at the **bottom** — navigate forward (→) through time, backward (←) for older.
+
+For the curated talk version, see [chapter4-slides.html](chapter1-slides.html).
+
+## Status legend
+
+- ✅ figure finalized for chapter
+- 🔄 figure under iteration
+- ⚠ result preliminary, do not cite
+
+. . .
+
+The "What we did" lines are pulled from the daily-summaries the nightly loop writes; figures are mirrored from `chapter-4-biogeochem-geofish/figures/`.
+
+# Timeline {.center}
+
+_New entries auto-appended below this divider every night._
+
+<!-- PROGRESS-INSERT-MARKER — phase 5 of the nightly pipeline appends new sections HERE -->
+
+---
+
+## References {.scrollable}
+
+::: {#refs}
+:::

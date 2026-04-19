@@ -1,0 +1,125 @@
+---
+title: "Oxygen-Isotopic Expression of Forced Changes in the Pacific Walker Circulation"
+subtitle: "Chapter 1 — dissertation talk"
+author:
+  - Cali Pfleger
+  - Samantha Stevenson
+  - Sloan Coats
+  - Bronwen Knockey
+  - Georgina Falster
+date: last-modified
+bibliography: ../literature/bibliography.bib
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+    footer: "Ch 1 · iLME PWC · calipfleger@ucsb.edu"
+    incremental: false
+    smaller: false
+    code-overflow: wrap
+---
+
+## Motivation
+
+The **Pacific Walker Circulation (PWC)** is a critical regulator of global precipitation.
+
+- Tightly coupled to ENSO.
+- Quantifying GHG vs. aerosol sensitivity matters for climate projection.
+- **Observational records are too short** to constrain its anthropogenic response directly.
+
+. . .
+
+**Idea:** use the isotope-enabled CESM Last Millennium Ensemble to read the forced response in $\delta^{18}\text{O}_p$ — a variable we can compare directly with paleoclimate proxies.
+
+## The debate
+
+Climate models disagree on whether the PWC has strengthened or weakened.
+
+::: {.columns}
+::: {.column width="50%"}
+**Model projections** (weakening):
+
+- Reduced convective mass flux under GHG warming [@vecchi2006weakening; @heldsoden2006robust].
+- Expected El Niño–like SST response.
+:::
+::: {.column width="50%"}
+**Recent observations** (strengthening):
+
+- Stronger trade winds since ~1980 [@lheureux2013recent; @sohn2013strengthening].
+- La Niña–like SST pattern [@tokinaga2012slowdown].
+:::
+:::
+
+. . .
+
+Models *systematically fail* to reproduce the observed strengthening [@wills2021systematic].
+
+## Research questions
+
+1. Can we resolve the forced PWC response by decomposing the iLME into **GHG-only** vs. **ozone-aerosol-only** single-forcing ensembles?
+2. Does **$\delta^{18}\text{O}_p$** provide information that SLP + SST alone do not?
+3. Which mechanism — thermodynamic warming or aerosol-driven dynamic cooling — dominates the observed isotopic signature?
+
+## Dataset: CESM-LME with isotopes
+
+Isotope-enabled Community Earth System Model Last Millennium Ensemble (iCESM / CESM-LME) [@brady2019icesm].
+
+| Forcing | Members | iCESM subset |
+|---|---|---|
+| Full forcing | 17 | 4 |
+| GHG only | 7 | 4 |
+| Ozone + aerosol | 8 | 5 |
+
+Focus: **post-industrial era 1850–2005 CE**. Variables: TS, SLP, U/V wind, $\delta^{18}\text{O}_p$.
+
+## PWC index — classical definition
+
+$$\text{PWC}_{\text{SLP}} = \overline{\text{SLP}}_{\text{CEP}} - \overline{\text{SLP}}_{\text{WP}}$$
+
+- **CEP** = central–east Pacific (150°–90° W, 5° S–5° N).
+- **WP** = western Pacific (90°–150° E, 5° S–5° N).
+
+Compared against the **Niño 3.4** index [@vecchi2006weakening; @tokinaga2012slowdown; @falster2021precipitation].
+
+## A new $\delta^{18}\text{O}_p$-based index
+
+Incorporating $\delta^{18}\text{O}_p$ gives a moisture-transport perspective SLP/SST can't see, and bridges modeling with paleoclimate proxies [@dee2018vertical; @konecky2020iso2k].
+
+## Figures {.scrollable}
+
+Figures from `chapter-1-ilme-pwc/figures/` appear here. Phase 5 of the nightly pipeline auto-adds new figures with captions. Chapter 1 has pre-written captions in `drafts/from-drive/ch1-paper-figure-captions.md`.
+
+<!--
+When figures exist, they show up like this:
+
+## SLP linear trend under full forcing
+
+![SLP linear trend 1850–2005 — full-forcing ensemble.](../figures/fig_slp_trend_full.png){.r-stretch}
+
+The nightly pipeline inserts these automatically.
+-->
+
+_Placeholder — no figures committed to the repo yet. Run your analysis scripts in `code/` to produce outputs under `figures/`, then the nightly pipeline populates slides here._
+
+## Key findings (preview)
+
+- **OZA forcing → strengthened PWC** (La Niña–like): seen in vertical velocity, SLP, precipitation, $\delta^{18}\text{O}_p$.
+- **GHG forcing → weakened PWC** (El Niño–like): warmer SSTs and enriched $\delta^{18}\text{O}_p$ globally.
+- **Combined** ≈ Full forcing.
+
+. . .
+
+**The isotopic fingerprint discriminates forcings in a way SLP and SST alone cannot.**
+
+## Open questions / Next steps
+
+- $\delta\text{D}$ cross-section tests of tropospheric static stability [@heldsoden2006robust].
+- Longitudinal $\delta\text{D}_{\text{vapor}}$ at 500–600 hPa [@dee2018vertical].
+- Regression on PC1 of $\delta^{18}\text{O}_p$ compared to Iso2k effective-moisture PC1 [@konecky2020iso2k].
+
+## References {.scrollable}
+
+::: {#refs}
+:::

@@ -1,0 +1,47 @@
+{
+  "n_members": 4,
+  "n_iso2k_sites": 89,
+  "start_year": 1950,
+  "end_year": 2005,
+  "eruptions": [
+    "El Chich\u00f3n (1982)",
+    "Pinatubo (1991)"
+  ],
+  "enso_amplitude_r_cesm_lme": null,
+  "sea_peak_month": null,
+  "sea_peak_celsius": null,
+  "ttest_n": 4,
+  "ttest_n_pairs": 8,
+  "ttest_p_threshold": 0.05,
+  "iso2k_window_years": 7,
+  "sea_sig_lag_min_months": null,
+  "sea_sig_lag_max_months": null,
+  "iso2k_sig_sites_chichon": null,
+  "iso2k_sig_sites_pinatubo": null,
+  "fig_sea_nino34": {
+    "peak_month_range": null,
+    "peak_celsius": null
+  },
+  "fig_enso_amplitude": {
+    "n_members_la_nina": null,
+    "n_members_el_nino": null,
+    "amplitude_la_nina_mean": null,
+    "amplitude_el_nino_mean": null
+  },
+  "fig_proxy_skill_map": {
+    "median_r": null,
+    "n_sites_p_sig": null
+  },
+  "_warnings": [
+    "missing: enso_amplitude_r_cesm_lme",
+    "missing: sea_peak_month",
+    "missing: sea_peak_celsius",
+    "missing: sea_sig_lag_min_months",
+    "missing: sea_sig_lag_max_months",
+    "missing: iso2k_sig_sites_chichon",
+    "missing: iso2k_sig_sites_pinatubo",
+    "missing: fig_sea_nino34",
+    "missing: fig_enso_amplitude",
+    "missing: fig_proxy_skill_map"
+  ]
+}

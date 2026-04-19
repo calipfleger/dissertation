@@ -1,0 +1,29 @@
+---
+title: "Preface"
+author: "Cali Pfleger"
+date: today
+---
+
+# Preface {.unnumbered}
+
+This dissertation investigates climate variability across three complementary lenses: modeled isotope-enabled simulations of the Pacific Walker Circulation, paleoclimate proxy reconstructions of volcanic effects on ENSO, California-region volcano–coral correlations, marine biogeochemistry and fish ecology, and a social-science study of climate-technology sentiment in news media.
+
+## Structure
+
+The dissertation is organized as five self-contained chapters, each with its own dataset, methods, and references. A synthesis of common themes appears in the concluding chapter.
+
+| Chapter | Working title |
+| --- | --- |
+| 1 | Oxygen-Isotopic Expression of Forced Changes in the Pacific Walker Circulation (iCESM) |
+| 2 | Volcanic Forcing of the El Niño–Southern Oscillation |
+| 3 | California–Volcano–ENSO: A Coral-Based Correlation Study |
+| 4 | Biogeochemistry and Geographic Variation in Fish Populations _(working title)_ |
+| 5 | Climate Technology Sentiment: GDELT + VADER Analysis of News Coverage |
+
+## Reproducibility
+
+This book is authored in [Quarto](https://quarto.org). Analysis code (Python) is embedded in chapter source files; re-rendering the book re-runs the analysis and refreshes all figures and numbers. Bibliographies per chapter live at `chapter-N-<topic>/literature/bibliography.bib` and are combined book-wide. The source lives at `~/Documents/Claude/Projects/Cladue/shared-brain/projects/dissertation/` on the author's Mac and is mirrored to Google Drive via Drive for Desktop.
+
+## Citation style
+
+Chicago author-date is the default. Individual chapters may switch to a journal-specific CSL in their YAML header if targeting a particular venue.

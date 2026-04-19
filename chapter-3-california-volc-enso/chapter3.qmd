@@ -1,0 +1,116 @@
+---
+title: "Chapter 3: Assessing the ENSO Response to Large Volcanic Eruptions Through Multi-Model Comparison with Observational Data"
+short-title: "Chapter 3: California–Volcano–ENSO"
+author:
+  - name: Cali Pfleger
+    email: calipfleger@ucsb.edu
+date: last-modified
+bibliography: literature/bibliography.bib
+---
+
+::: {.callout-tip appearance="simple" icon=false}
+🎞 **[View this chapter as a slideshow →](presentations/chapter3-slides.html)**
+:::
+
+::: {.callout-note appearance="simple" icon=false}
+📅 **[View the living progress timeline →](presentations/chapter3-progress.html)** — auto-updated nightly with new figures + daily summary.
+:::
+
+## Abstract
+
+This study investigates the impact of volcanic eruptions on ENSO dynamics and California's hydroclimate using CMIP6 models, observational data, and paleoclimate proxies. We analyze both global (e.g., Pinatubo 1991) and regional (e.g., Lassen 1915) eruptions to disentangle their effects on ENSO phase transitions and associated precipitation anomalies in California. A multi-model framework reveals that CMIP6 simulations systematically overestimate post-eruption El Niño–like responses compared to coral proxy records, highlighting biases in aerosol–cloud interactions and ocean feedbacks [@stevenson2022reappraisal]. We identify eruption latitude and pre-existing ENSO conditions as critical modulators of California's hydroclimate response, with implications for water resource management and hazard mitigation.
+
+### Research questions
+
+1. Do CMIP6 models reproduce observed post-eruption ENSO phase transitions (e.g., El Niño–like responses after Pinatubo 1991) [@ohba2013evaluation; @predybaylo2017impacts]?
+2. How do eruption characteristics (magnitude, latitude, season) interact with California's ENSO teleconnections?
+3. Can paleoclimate data assimilation reconcile proxy conflicts (tree rings vs. corals) in California-relevant ENSO responses [@stevenson2022reappraisal; @cook2010tree]?
+
+### Testable hypothesis
+
+**H₁: Eruption impacts on California precipitation are ENSO-phase dependent.**
+
+- *El Niño background* → amplified wet extremes.
+- *La Niña background* → drought intensification.
+
+## 1. Introduction
+
+The El Niño–Southern Oscillation (ENSO) is the dominant mode of interannual tropical Pacific climate variability, with teleconnections that propagate globally and shape regional hydroclimate. California is particularly sensitive: approximately 84% of its extreme precipitation events are ENSO-modulated [@dettinger2011atmospheric], and future warming is projected to amplify these extremes [@huang2023california].
+
+Large volcanic eruptions represent one of the most significant natural perturbations to the climate system. Sulfate aerosols injected into the stratosphere scatter incoming solar radiation and cool the surface [@robock2000volcanic; @timmreck2012modeling]; the 1991 Pinatubo eruption reduced global mean temperature by ~0.5 °C for nearly two years. Despite extensive documentation of the radiative forcing, the ENSO response to volcanic eruptions remains contested. Some coupled-model studies suggest a tendency toward El Niño–like conditions following major eruptions [@ohba2013evaluation; @predybaylo2017impacts], while paleoclimate reconstructions show no consistent signal [@stevenson2016volcano; @stevenson2022reappraisal]. Background climate state and eruption characteristics both modulate the response [@zanchettin2019background].
+
+This chapter focuses on California as a case study. Three high-threat volcanoes — Mount Shasta, Lassen Volcanic Center, and Long Valley Caldera — pose documented hazards [@ewert2018threat], while the state's strong ENSO teleconnections make it an ideal testbed to reconcile model-proxy discrepancies. A proxy conflict specifically motivates the chapter: Sierra Nevada tree rings suggest post-eruption El Niño tendencies [@adams2003volcanic; @cook2010tree], while Channel Islands corals show no consistent response [@stevenson2022reappraisal].
+
+## 2. Background and Significance
+
+### 2.1 Global climatic effects of volcanic eruptions
+
+Volcanic forcing affects climate through three pathways:
+
+1. **Radiative forcing and surface cooling** — magnitude depends on eruption size, latitude, and sulfur content [@robock2000volcanic].
+2. **Hydrological impacts** — aerosol forcing can weaken monsoon circulations and shift the ITCZ, driving regional droughts.
+3. **Stratospheric dynamics** — aerosol heating alters polar vortex strength with downstream tropospheric effects.
+
+### 2.2 Proposed mechanisms linking volcanism to ENSO
+
+- **Ocean Dynamical Thermostat (ODT).** Uniform radiative cooling triggers an asymmetric tropical Pacific SST response, favoring El Niño–like central-Pacific warming [@clement1996ocean; @mann2005volcanic].
+- **Wind–Evaporation–SST Feedback.** Faster land than ocean cooling weakens trade winds, potentially initiating El Niño conditions [@chiang2002tropical; @mcgregor2010wind].
+- **Stochastic variability.** Internal dynamics may dominate any deterministic volcanic signal [@stevenson2016volcano].
+
+### 2.3 California-specific knowledge gaps
+
+- No systematic published study of California-specific impacts.
+- CMIP6 models show divergent ENSO responses to volcanic forcing [@zanchettin2019background].
+- Paleoclimate proxies conflict on post-eruption ENSO behavior [@stevenson2022reappraisal vs. @adams2003volcanic].
+- Models with better ENSO skill predict more accurate drought reductions under climate change [@allen2018enso].
+
+## 3. Methodology
+
+### 3.1 Model selection
+
+CMIP6 models chosen for (a) high ENSO skill in the tropical Pacific and (b) resolved stratospheric aerosol coupling:
+
+- CESM2 [@danabasoglu2020cesm2]
+- GFDL-ESM4
+- MPI-ESM
+- UKESM1-0-LL
+- CESM2-WACCM (stratosphere–troposphere dynamics)
+
+### 3.2 Observational and proxy data
+
+- **Instrumental:** NOAA ERSSTv5 [@huang2017ersst]; ECMWF ERA5 [@hersbach2020era5]; NASA MERRA-2.
+- **Satellite:** MODIS AOD for post-eruption stratospheric aerosol loading; Landsat-8 NDVI for pre-eruptive CO₂ degassing signals.
+- **Paleoclimate proxies:** Channel Islands coral δ¹⁸O [@stevenson2022reappraisal]; Sierra Nevada tree rings [@cook2010tree]; ice-core volcanic signatures [@sigl2015timing].
+
+### 3.3 Analytical framework
+
+1. **Superposed Epoch Analysis (SEA)** — composite ENSO states (Niño 3.4 index) 0–3 years post-eruption across models and proxies.
+2. **Ocean Dynamical Thermostat diagnostics** — test asymmetric Pacific cooling in models against observations [@clement1996ocean].
+3. **Land–Ocean Temperature Gradient** — assess trade-wind response via ERA5 reanalysis [@chiang2002tropical].
+4. **Composite analysis** — stratify eruptions by magnitude (VEI ≥ 4), latitude, and pre-existing ENSO phase.
+
+## 4. Expected Outcomes and Applications
+
+- **Model evaluation** — identify which CMIP6 physics best replicate observed California responses (e.g., GFDL-ESM4's representation of atmospheric-river modulation post-Pinatubo).
+- **Policy applications:**
+  - *Water management* — integrate eruption-ENSO probability forecasts for reservoir operations (e.g., Shasta Lake).
+  - *Agriculture* — optimize planting schedules for post-eruption years.
+  - *Early warning* — combine satellite-based CO₂ greening with ENSO forecasts to improve drought preparedness.
+- **Mechanistic analysis** — identify key processes linking stratospheric aerosol loading → tropical Pacific SSTs → California hydroclimate.
+
+## 5. Open Items (from Drive draft)
+
+- Resolve proxy conflict with formal data-assimilation framework [@stevenson2022reappraisal].
+- Extend analysis to Sierra Nevada snowpack albedo effects (ashfall).
+- Quantify ENSO-phase-conditioned wind dispersal of Mount Shasta ashfall.
+
+<!--
+Source of truth for this chapter's research framing: the Drive doc "Ch3. Cal-Volc-ENSO Lit Review"
+(`1rOMqZcs1Gt8WjUwZKCUkIAQ_CHUTsUsOrXavKiOWVxQ`). The nightly pipeline refreshes a local mirror at
+`drafts/from-drive/ch3-lit-review.md` — this chapter pulls from that mirror plus session work.
+-->
+
+## References {.unnumbered}
+
+::: {#refs}
+:::

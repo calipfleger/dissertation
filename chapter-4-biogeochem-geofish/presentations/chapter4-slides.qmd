@@ -1,0 +1,44 @@
+---
+title: "Biogeochemistry and Geographic Variation in Fish Populations"
+subtitle: "Chapter 4 — dissertation talk (working)"
+author: Cali Pfleger
+date: last-modified
+bibliography: ../literature/bibliography.bib
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    chalkboard: true
+    footer: "Ch 4 · Biogeochem & Geo Fish · calipfleger@ucsb.edu"
+---
+
+## Chapter 4 — placeholder deck
+
+This slideshow is a skeleton. Fill in once:
+
+- Working title is finalized.
+- Research questions are locked.
+- Dataset / study region is confirmed.
+
+## Motivation (fill in)
+
+_One slide: why this chapter exists, and why it belongs next to the paleoclimate chapters._
+
+## Research questions (fill in)
+
+1. _TBD_
+2. _TBD_
+3. _TBD_
+
+## Methods (fill in)
+
+_Dataset, analytical approach, statistical framework._
+
+## Figures
+
+_Phase 5 of the nightly pipeline will populate figure slides once outputs land in `chapter-4-biogeochem-geofish/figures/`._
+
+## References
+
+::: {#refs}
+:::

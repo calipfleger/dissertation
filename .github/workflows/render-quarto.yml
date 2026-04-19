@@ -1,0 +1,101 @@
+name: Render Quarto book
+
+# Renders the dissertation book on every push to main, on every pull request,
+# and nightly at 06:00 UTC (a sanity render even if no commits hit). On main,
+# also publishes to Quarto Pub.
+#
+# Required GitHub repo secret: QUARTO_PUB_AUTH_TOKEN
+#   Get it from your Mac after first-time `quarto publish quarto-pub`:
+#     cat ~/.config/quarto/_publish.yml          # → token field
+#   then in the repo: Settings → Secrets and variables → Actions → New secret.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: "0 6 * * *"      # 06:00 UTC nightly (~22:00 PT / 23:00 PT depending on DST)
+  workflow_dispatch:         # manual trigger from the Actions tab
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: release
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python deps
+        run: |
+          python -m pip install --upgrade pip
+          # Core analysis stack used in chapter {python} chunks.
+          pip install jupyter matplotlib numpy pandas scipy xarray netCDF4 cartopy nltk vaderSentiment
+          # If a chapter has its own requirements.txt, install it too.
+          for f in chapter-*/code/requirements.txt; do
+            [ -f "$f" ] && pip install -r "$f"
+          done
+
+      - name: Install TeX (for PDF render)
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: true
+
+      - name: Build book + slideshows + wire them together
+        run: |
+          chmod +x build.sh
+          ./build.sh
+
+      - name: Upload _book/ as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dissertation-book
+          path: _book/
+          retention-days: 30
+
+  publish:
+    # Publish only when the change lands on main (not for PRs, not for nightly cron).
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: render
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: release
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install jupyter matplotlib numpy pandas scipy xarray netCDF4 cartopy nltk vaderSentiment
+          for f in chapter-*/code/requirements.txt; do
+            [ -f "$f" ] && pip install -r "$f"
+          done
+
+      - name: Publish to Quarto Pub
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: quarto-pub
+        env:
+          QUARTO_PUB_AUTH_TOKEN: ${{ secrets.QUARTO_PUB_AUTH_TOKEN }}

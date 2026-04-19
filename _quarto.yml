@@ -1,0 +1,87 @@
+# Quarto config — Dissertation (Cali Pfleger, UCSB Bren)
+# To render the whole dissertation as a book: `quarto render` from this folder.
+# To preview live:                               `quarto preview`.
+# To render a single chapter:                    `quarto render chapter-2-volc-enso/chapter2.qmd`.
+
+project:
+  type: book
+  output-dir: _book
+  # Note: the book render picks up chapter-*/presentations/*.qmd and renders
+  # them as book-chapter HTML (ignoring `format: revealjs` in the slideshow YAML).
+  # That's fine — build.sh's step 2 re-renders those files as standalone reveal.js
+  # and step 3 copies the reveal.js output over the book's HTML in _book/.
+  # Always run `./build.sh`, not `quarto render` alone, to get working slideshows.
+
+book:
+  title: "Oxygen-Isotopic and Multi-Proxy Perspectives on Climate Variability"
+  subtitle: "A dissertation in five chapters"
+  author: "Cali Pfleger"
+  date: today
+  date-format: long
+  chapters:
+    - index.qmd
+    - chapter-1-ilme-pwc/chapter1.qmd
+    - chapter-2-volc-enso/chapter2.qmd
+    - chapter-3-california-volc-enso/chapter3.qmd
+    - chapter-4-biogeochem-geofish/chapter4.qmd
+    - chapter-5-climate-tech-sentiment/chapter5.qmd
+  repo-url: https://github.com/calipfleger/dissertation
+
+# NOTE: each chapter now resolves its OWN bibliography from its YAML header
+# (`bibliography: literature/bibliography.bib`). There is no book-level merged
+# bibliography — each chapter renders its own References section at the end.
+
+# Default: Chicago author-date. Easy to swap for AMS (ametsoc.csl), Nature (nature.csl), or APA.
+# Download new .csl files from https://www.zotero.org/styles and drop them in this folder.
+csl: chicago-author-date.csl
+
+# Cross-reference labeling (Quarto's defaults are fine for most cases).
+crossref:
+  fig-title: "Figure"
+  tbl-title: "Table"
+  title-delim: ":"
+
+# Multiple output formats from the same source.
+format:
+  html:
+    theme:
+      - cosmo                       # Bootstrap theme, readable
+      - custom.scss                 # under-review watermark, verified-green callouts
+    toc: true
+    toc-depth: 3
+    toc-location: left
+    code-fold: true                 # Python/R code chunks collapse by default; click to expand
+    code-overflow: wrap
+    link-citations: true            # in-text (Smith 2021) becomes a jump-to-references link
+    reference-location: margin      # footnote-style margin refs on wide screens
+    citations-hover: true           # hover a citation → preview the full reference
+
+  pdf:
+    documentclass: scrreprt         # KOMA-script report class, committee-friendly
+    papersize: letter
+    geometry:
+      - margin=1in
+    fontsize: 11pt
+    linestretch: 1.3
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    keep-tex: true                  # keep the intermediate .tex for advisor diffs
+    cite-method: biblatex
+    fig-pos: "H"                    # figures stay where placed in the .qmd
+
+# Python execution defaults (Python chunks are the common case in this dissertation).
+execute:
+  echo: true                        # show the code in the rendered output by default
+  warning: false                    # suppress warnings in output
+  freeze: auto                      # don't re-run chunks unless .qmd or inputs changed
+
+# Author affiliation defaults — used in both html and pdf title blocks.
+author:
+  - name: Cali Pfleger
+    affiliations:
+      - name: Bren School of Environmental Science and Management
+        city: Santa Barbara
+        state: CA
+        country: United States
+    email: calipfleger@ucsb.edu

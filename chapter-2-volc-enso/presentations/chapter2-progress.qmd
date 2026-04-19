@@ -1,0 +1,126 @@
+---
+title: "Chapter 2 — Progress Timeline"
+subtitle: "Ch 2 · living document of progress"
+author: Cali Pfleger
+date: last-modified
+bibliography: ../literature/bibliography.bib
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+    footer: "Ch 2 progress · auto-updated nightly · calipfleger@ucsb.edu"
+    fig-align: center
+    self-contained: false
+---
+
+## How this deck works {.smaller}
+
+This is a **living timeline** of progress on Chapter 2.
+
+- The nightly pipeline appends a date-stamped section after midnight every day.
+- Each daily section includes a short summary of what was worked on plus any new figures.
+- Newest entries appear at the **bottom** — navigate forward (→) through time, backward (←) for older.
+
+For the curated talk version, see [chapter2-slides.html](chapter2-slides.html).
+
+## Status legend
+
+- ✅ figure finalized for chapter
+- 🔄 figure under iteration
+- ⚠ result preliminary, do not cite
+
+. . .
+
+The "What we did" lines are pulled from the daily-summaries the nightly loop writes; figures are mirrored from `chapter-2-volc-enso/figures/`.
+
+# Timeline {.center}
+
+_New entries auto-appended below this divider every night._
+
+<!-- PROGRESS-INSERT-MARKER — phase 5 of the nightly pipeline appends new sections HERE -->
+
+
+# 2026-04-18 {.center}
+
+## What we did
+
+- Synced 148 analysis figures from `~/Documents/Claude/Projects/volcano enso` into the dissertation repo via `sync_figures.sh`.
+- Wired two slideshows per chapter: curated `chapterN-slides.qmd` (hand-edited) and this living `chapterN-progress.qmd` (auto-appended nightly).
+- Built `build.sh` — one command that runs `sync_figures.sh`, renders the book + slideshows, and copies everything into `_book/` so the "View as slideshow →" links resolve on the published site.
+- Verified all 14 slideshow figure references in `chapter2-slides.qmd` resolve to files in `figures/`.
+- Verified all 7 citations in `chapter2.qmd` and `chapter2-slides.qmd` resolve to `bibliography.bib`.
+
+## New figures today (14)
+
+All 14 canonical Ch2 figures are now synced into `figures/` and mirrored here. Each slide below follows the same caption framing as the curated talk deck [@clement1996ocean; @liu2022land; @liu2024enso; @dogar2024nao; @jiang2023abrupt; @wang2023pdo; @bjerknes1969]. ⚠ all preliminary.
+
+## Fig 1 — Niño 3.4 index (iCESM LME)
+
+![The iCESM LME reproduces multi-year ENSO variability across Jan 1950–Dec 2005. Dashed lines mark El Chichón (Apr 1982) and Pinatubo (Jun 1991) eruption months. ⚠ preliminary.](../figures/nino34_timeseries.png){.r-stretch}
+
+## Fig 2 — Post-volcanic ENSO response (SEA composite)
+
+![Core result: composite Niño 3.4 shows El Niño–like warming peaking ~12–18 months post-eruption across both study eruptions [@clement1996ocean]. ⚠ preliminary.](../figures/sea_nino34.png){.r-stretch}
+
+## Fig 3 — Model vs. observed ONI
+
+![iCESM LME ensemble mean tracks the observed NOAA ONI DJF anomaly in sign and timing for El Chichón and Pinatubo. ⚠ preliminary.](../figures/sea_obs_comparison.png){.r-stretch}
+
+## Fig 4 — Spatial structure (Y0–Y3 composite)
+
+![SST (top) and δ¹⁸O_sw (bottom) composite mean for eruption years 0–3; panels: El Chichón | Pinatubo | multi-eruption composite. ⚠ preliminary.](../figures/composite_mean_map.png){.r-stretch}
+
+## Fig 5 — Monthly lag evolution
+
+![SST at +6, +12, +18, +24 months post-eruption; El Niño–like central/eastern Pacific warming builds through +12 and peaks near +18 months [@liu2022land]. ⚠ preliminary.](../figures/sea_lag_maps.png){.r-stretch}
+
+## Fig 6 — Annual SST Y0–Y3
+
+![Calendar-year composite SST anomaly Y0–Y3; stippling p < 0.05 (one-sample t-test, n = 4 members). ⚠ preliminary.](../figures/annual_sst_maps_y0y3.png){.r-stretch}
+
+## Fig 10 — ENSO correlation within eruption windows
+
+![Background: r(SST, Niño 3.4) within Y−3 to Y+7. Circles: observed iso2k Δδ¹⁸O (mean Y0–Y7); bold outlines p < 0.05. ⚠ preliminary.](../figures/corr_sst_nino34_windows.png){.r-stretch}
+
+## Fig 12 — Pre-eruption ENSO state per member
+
+![24 months pre-eruption Niño 3.4, coloured by initial ENSO state; grey band = 6-month classification window. Framing follows @dogar2024nao. ⚠ preliminary.](../figures/enso_precon.png){.r-stretch}
+
+## Fig 13 — Peak response vs. pre-conditioning
+
+![Members pre-conditioned in La Niña states produce larger post-volcanic El Niño anomalies, consistent with @dogar2024nao. ⚠ preliminary.](../figures/enso_amplitude.png){.r-stretch}
+
+## Fig 14 — Pre-conditioning SEA
+
+![SEA traces coloured by pre-eruption ENSO state (red = El Niño, grey = neutral, blue = La Niña). ⚠ preliminary.](../figures/sea_precon_colored.png){.r-stretch}
+
+## Fig 15 — Regional teleconnections
+
+![Multi-eruption composite SEA across 8 ENSO-linked ocean regions; the Equatorial Atlantic signal tests the Khodri et al. (2017) aerosol–monsoon pathway. ⚠ preliminary.](../figures/enso_regions_composite.png){.r-stretch}
+
+## Fig 18 — Model–proxy spatial comparison (Y0–Y3)
+
+![Background: model pseudo-coral δ¹⁸O field. Circles: observed iso2k δ¹⁸O at 89 tropical sites. Bold outlines p < 0.05 [@liu2024enso]. ⚠ preliminary.](../figures/pseudo_vs_obs_map_y0y3.png){.r-stretch}
+
+## Fig 22 — Model–proxy time series (composite)
+
+![Model ensemble mean ± 1σ vs. observed iso2k coral δ¹⁸O anomaly, Y0–Y7 post-eruption. ⚠ preliminary.](../figures/iso2k_comparison_composite.png){.r-stretch}
+
+## Fig 23 — Proxy skill map
+
+![Pearson r between model pseudo-coral and observed iso2k at each site. Bold outlines = model skill p < 0.05 AND observed p < 0.05. ⚠ preliminary.](../figures/proxy_skill_map_45.png){.r-stretch}
+
+## Open questions (tomorrow)
+
+- Variance partition (forced vs. internal) of ENSO amplitude over the last millennium [@jiang2023abrupt; @wang2023pdo].
+- Expand eruption set beyond El Chichón + Pinatubo.
+- Systematize pseudo-coral signal-to-noise testing against the Bjerknes framework [@bjerknes1969].
+
+---
+
+## References {.scrollable}
+
+::: {#refs}
+:::

@@ -1,0 +1,71 @@
+---
+title: "Volcano–ENSO–California: Reconciling Models with Coral & Tree-Ring Proxies"
+subtitle: "Chapter 3 — dissertation talk"
+author: Cali Pfleger
+date: last-modified
+bibliography: ../literature/bibliography.bib
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+    footer: "Ch 3 · California–VOLC–ENSO · calipfleger@ucsb.edu"
+---
+
+## Why California?
+
+- **84% of California's extreme precipitation** events are ENSO-modulated [@dettinger2011atmospheric].
+- Future warming amplifies the extremes [@huang2023california].
+- **Three high-threat volcanoes** in-state (Mount Shasta, Lassen, Long Valley Caldera) [@ewert2018threat].
+- Strong ENSO teleconnections + active volcanism → ideal testbed.
+
+## The proxy conflict
+
+- **Sierra Nevada tree rings** suggest post-eruption El Niño tendencies [@adams2003volcanic; @cook2010tree].
+- **Channel Islands corals** show no consistent ENSO response [@stevenson2022reappraisal].
+
+. . .
+
+CMIP6 models systematically overestimate the El Niño–like response vs. proxies — biases in aerosol-cloud interactions and ocean feedbacks [@stevenson2022reappraisal].
+
+## Research questions
+
+1. Do CMIP6 models reproduce observed post-eruption ENSO transitions (e.g., 1991 Pinatubo) [@ohba2013evaluation; @predybaylo2017impacts]?
+2. How do eruption magnitude, latitude, and season interact with California teleconnections?
+3. Can paleoclimate data assimilation reconcile tree-ring vs. coral proxy conflicts [@stevenson2022reappraisal]?
+
+## Hypothesis
+
+**H₁: California precipitation response is ENSO-phase-dependent.**
+
+- *El Niño background* → amplified wet extremes.
+- *La Niña background* → drought intensification.
+
+## Mechanisms on the table
+
+- **Ocean Dynamical Thermostat** [@clement1996ocean; @mann2005volcanic].
+- **Wind–Evaporation–SST Feedback** — faster land cooling weakens trade winds [@chiang2002tropical; @mcgregor2010wind].
+- **Stochastic dominance** — internal dynamics drown the signal [@stevenson2016volcano].
+
+## Methods
+
+- **Models:** CMIP6 with high ENSO skill — CESM2 [@danabasoglu2020cesm2], GFDL-ESM4, MPI-ESM, UKESM1-0-LL, CESM2-WACCM.
+- **Instrumental:** ERSSTv5 [@huang2017ersst], ERA5 [@hersbach2020era5], MERRA-2.
+- **Proxies:** Channel Islands coral $\delta^{18}\text{O}$ [@stevenson2022reappraisal], Sierra Nevada tree rings [@cook2010tree], ice-core volcanic signatures [@sigl2015timing].
+- **Analytics:** Superposed Epoch Analysis · ODT diagnostics · Land–Ocean Temperature Gradient · composite stratification by VEI ≥ 4 + ENSO phase.
+
+## Figures {.scrollable}
+
+_Phase 5 of the nightly pipeline pulls figures from `figures/` as you produce them._
+
+## Applications
+
+- **Water management:** integrate eruption-ENSO probability forecasts for reservoir operations (Shasta Lake).
+- **Agriculture:** post-eruption planting calendars.
+- **Early warning:** combine satellite CO₂ greening + ENSO forecasts.
+
+## References {.scrollable}
+
+::: {#refs}
+:::

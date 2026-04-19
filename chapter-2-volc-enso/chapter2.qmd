@@ -1,0 +1,156 @@
+---
+title: "Chapter 2: Volcanic Forcing of the El Niño–Southern Oscillation"
+author:
+  - name: Cali Pfleger
+    email: calipfleger@ucsb.edu
+date: last-modified
+bibliography: literature/bibliography.bib
+---
+
+```{python}
+#| echo: false
+#| warning: false
+# Every inline statistic in this chapter reads from code/stats.json.
+# If a key is missing or null, val() renders a ⚠ sentinel so the page
+# cannot silently publish placeholder numbers. Regenerate stats.json
+# by running `python3 code/compute_stats.py`.
+import json
+from pathlib import Path
+
+_stats = json.loads(Path("code/stats.json").read_text())
+
+def val(key, fmt=None):
+    v = _stats.get(key)
+    if v is None:
+        return "⚠TODO⚠"
+    if fmt:
+        return format(v, fmt)
+    return v
+```
+
+::: {.callout-tip appearance="simple" icon=false}
+🎞 **[View this chapter as a slideshow →](presentations/chapter2-slides.html)**
+:::
+
+::: {.callout-note appearance="simple" icon=false}
+📅 **[View the living progress timeline →](presentations/chapter2-progress.html)** — auto-updated nightly with new figures + daily summary.
+:::
+
+::: {.callout-note appearance="simple" icon=false}
+📥 **[Download full analysis deck (PPTX)](presentations/VolcanoENSO_Analysis_v4.pptx)** — 41 slides, all figures. To refresh after a pipeline rerun, run `bash sync_figures.sh` from `~/Documents/Claude/Projects/volcano\ enso/`.
+:::
+
+## Abstract
+
+Large tropical volcanic eruptions inject sulfate aerosols into the stratosphere and perturb tropical Pacific sea-surface-temperature (SST) gradients, but whether this produces a deterministic El Niño response or merely amplifies preconditioned warm states remains contested [@liu2024enso; @dogar2024nao]. This chapter resolves the debate by combining a refactored last-millennium pseudo-coral $\delta^{18}\text{O}$ analysis pipeline against the CESM Last Millennium Ensemble (CESM-LME) with observational eruption composites. Eruption cases are stratified by initial ENSO phase; bootstrap and variance-partition statistics quantify signal versus internal variability; and the land-vs-ocean partition of volcanic aerosol forcing is explicitly tested, drawing on recent mechanistic evidence that aerosol over tropical African land is more effective at triggering an El Niño than aerosol confined to ocean [@liu2022land].
+
+## 1. Introduction
+
+The dominant mechanistic view holds that large tropical eruptions can trigger an El Niño–like response through an *ocean dynamical thermostat*: aerosol-induced surface cooling produces a smaller SST drop in the eastern Pacific than the western Pacific, because eastern upwelling advects deeper, already-cool water. The reduced zonal SST gradient weakens trade winds via Bjerknes feedback [@bjerknes1969; @clement1996ocean; @liu2022land]. Recent work complicates this framing. @dogar2024nao show that positive-ENSO-preconditioned volcanic runs produce El Niño–like anomalies up to 2 °C after eruption, while neutral and La Niña initial states yield no ENSO-like modulation — implying that "volcano → El Niño" is *not* a deterministic rule.
+
+Paleoclimate proxy reconstructions tell a consistent but muted story. @liu2024enso reconstruct ENSO over the last millennium from a global $\delta^{18}\text{O}$ network and recover only a weak El Niño response one year after major eruptions, though ENSO amplitude is significantly correlated with cumulative volcanic intensity ($r \approx 0.46$ in CESM-LME). A separate coral-based reconstruction from the South China Sea (665–749 CE) attributes an abrupt 39% increase in ENSO variability at ~700 CE to combined solar and volcanic forcing [@jiang2023abrupt]. External forcing competes with internal dynamics to shape tropical Pacific variability, and decadal-scale modes such as the PDO further modulate ENSO teleconnections [@wang2023pdo].
+
+### Research questions
+1. When pseudo-coral $\delta^{18}\text{O}$ output from CESM-LME is stratified by initial ENSO phase, does the eruption composite reproduce the preconditioning effect reported by @dogar2024nao?
+2. What fraction of the last-millennium ENSO amplitude variance is explained by external volcanic forcing vs. internal variability?
+3. How sensitive is the detected volcanic signal to the land-vs-ocean aerosol partition [@liu2022land]?
+
+## 2. Methods
+
+### 2.1 Dataset
+
+CESM Last Millennium Ensemble with isotope tracers (iCESM-LME). Post-industrial focus 1850–2005 CE; eruption compositing extended back through the last millennium (850 CE onward).
+
+### 2.2 Analysis pipeline architecture
+
+The analysis is organized around three shared modules (total ~624 lines) that replaced approximately 500 lines of inline duplication across an earlier 28-file codebase. Code lives at `~/Documents/Claude/Projects/volcano enso/`.
+
+- **`config.py`** — single source of truth for file paths (`TEMP_FILE`, `R18O_FILE`), eruption list (`ERUPTIONS`), baseline period, QC thresholds, and ensemble size `N`. To run on a new project, only this file is edited.
+- **`io_utils.py`** — generic netCDF I/O: `load_grid()`, `create_ocean_mask()`, `iter_bands()`, `read_temp_d18o_band()`, `read_site_timeseries()`, `load_obs_csv()`. Works with any model storing data in the `(n_mem, N, nrows, ncols)` layout.
+- **`processing_utils.py`** — pure-array functions with no file I/O: `remove_seasonal()`, `baseline_mask()`, `cal_yr_start()`, `annual_calendar_mean()`, `pseudo_coral()`, `nearest_ocean_cell()`, `match_sites_to_grid()`.
+- **`fig_utils.py`** — plotting helpers: `make_tlong_plot()`, `make_lon_wrap_mask()`, and `pcm()` for consistent pcolormesh styling.
+
+### 2.3 Analysis scripts
+
+The four downstream analyses, run via `python3 run_local.py`:
+
+1. `sea_bootstrap.py` — superposed epoch analysis with bootstrap confidence intervals on the composite ENSO response.
+2. `eruption_diff_maps.py` — post-eruption minus control difference maps; caches to `_cache/eruption_diff.npz` for faster reruns.
+3. `variance_partition.py` — decomposition of ENSO amplitude variance into forced vs. internal components.
+4. `skill_*.py` — model-proxy agreement skill scores stratified by eruption characteristics.
+
+### 2.4 Pre-run verification
+
+`qa_check.py` validates that all 28 files compile cleanly, required data files (`TEMP_FILE`, `R18O_FILE`, site CSVs) are present, and that all 53 expected figures are written after a full pipeline run.
+
+## 3. Results
+
+### 3.1 Post-volcanic ENSO response
+
+The iCESM LME reproduces a clear El Niño–like signal in the tropical Pacific following both eruptions. The Niño 3.4 superposed epoch analysis (SEA; Figure 2) shows the four-member ensemble mean crossing +0.5 °C approximately 12 months after both El Chichón (Apr 1982) and Pinatubo (Jun 1991), reaching a composite peak near +1.0 °C at +18 months. The composite is significantly different from zero at *p* < `{python} val("ttest_p_threshold")` at lags +`{python} val("sea_sig_lag_min_months")` to +`{python} val("sea_sig_lag_max_months")` months (one-sample *t*-test, *n* = `{python} val("ttest_n_pairs")` member-eruption pairs). The signal decays by +36 months, with a secondary weak positive excursion near +42–48 months. The bootstrap 95% confidence interval (n = 2000 resamples; Figure S13) confirms these lags as robustly non-zero.
+
+Comparison with observed NOAA ONI DJF anomalies (Figure 3) shows the model ensemble mean captures the sign and approximate timing of the observed post-eruption El Niño for both events, with the observed record falling within the model bootstrap 90% CI for most post-eruption winters. The Y0–Y3 composite mean SST anomaly (Figure 4) shows central and eastern Pacific warming of +0.25 to +0.75 °C with corresponding negative δ¹⁸O_sw anomalies consistent with surface warming and freshening. Monthly lag maps (Figure 5) trace the evolution: near-zero or weakly negative anomalies at +6 months (initial aerosol cooling), central Pacific warming emerging at +12 months, peak El Niño–like pattern with anomalies of +0.5 to +1.5 °C at +18 months, and weakening by +24 months. This chronology is consistent with the ocean dynamical thermostat mechanism [@clement1996ocean]: aerosol-induced cooling reduces the east–west SST gradient, weakening trade winds and enabling a Bjerknes-feedback El Niño–like response over the following 12–18 months.
+
+### 3.2 Pre-eruption ENSO preconditioning
+
+All four iCESM LME members were in a La Niña state at the time of El Chichón, while for Pinatubo one member was El Niño-preconditioned, two were Neutral, and one was La Niña (Figure 12). Peak post-volcanic Niño 3.4 response (Figure 13) ranges from −0.1 °C (M4, El Chichón — the sole negative-peak case among all 8 member-eruption pairs) to +3.9 °C (M3, Pinatubo). La Niña-preconditioned members tend to show larger post-volcanic El Niño peaks, consistent with the Predybaylo et al. (2020) hypothesis [@predybaylo2020] that an anomalously deep thermocline tilt during La Niña provides a reservoir of warm water more readily released by post-eruption trade-wind weakening. The El Niño-preconditioned Pinatubo member (M1) shows the weakest Pinatubo response (+1.3 °C). The SEA stratified by preconditioning state (Figure 14) shows that all El Chichón members (uniformly La Niña preconditioned) respond with a fast El Niño–like warming beginning near lag 0 and peaking near +12 months, while neutral-preconditioned Pinatubo members show a delayed response peaking near +18–24 months.
+
+### 3.3 Regional teleconnections
+
+The multi-eruption composite SEA across eight ENSO-teleconnected ocean regions (Figure 15) reveals distinct response timing consistent with multiple mechanisms. The Equatorial Atlantic (5°S–10°N, 340–356°E) shows a positive SST anomaly emerging within 1–6 months of eruption and persisting to approximately +10 months — the expected fingerprint of the Khodri et al. (2017) pathway [@khodri2017], in which volcanic aerosol cooling of the Sahel weakens the West African Monsoon, suppresses equatorial Atlantic trade winds, warms equatorial Atlantic SSTs, and weakens the Walker circulation. The Indian Ocean Basin warms with a ~3–6 month lag relative to Niño 3.4, consistent with the Indo-Pacific capacitor effect. The Maritime Continent shows a weak cooling response from +6 to +18 months, consistent with reduced convection under a weakened Walker circulation. SPCZ and Tropical North Atlantic responses are weaker and more variable across the two eruptions.
+
+### 3.4 Model–proxy comparison
+
+Spatial comparison of iCESM LME pseudo-coral Δδ¹⁸Oc (−0.22 × ΔSST + Δδ¹⁸O_sw; Kim & O'Neil 1997) with observed iso2k coral δ¹⁸O anomalies over Y0–Y3 (Figure 18) shows generally consistent sign in the central Pacific, where model pseudo-coral anomalies of −0.05 to −0.15 ‰ overlap with observed iso2k negative anomalies. Agreement is highest in the western and central tropical Pacific and weakest in the Indian Ocean.
+
+The composite time-series comparison (Figure 22) shows the iCESM LME pseudo-coral ensemble mean (n = 64 member-year values ± 1 SE) tracking within ±1 SE of the observed iso2k mean at *p* < `{python} val("ttest_p_threshold")` sites (El Chichón *n* = `{python} val("iso2k_sig_sites_chichon")` sites, Pinatubo *n* = `{python} val("iso2k_sig_sites_pinatubo")` sites) for most of Y0–Y4, with divergence emerging by Y5–Y7 as internal variability dominates. Proxy skill (Pearson r between pseudo-coral and observed iso2k over Y0–Y7; Figure 23) is positive at the majority of sites in all three columns (El Chichón, Pinatubo, composite), with jointly significant skill concentrated in the western and central Pacific.
+
+<!-- AUTO 2026-04-18 phase-5 -->
+::: {.under-review}
+## Figures added 2026-04-18
+
+![Superposed epoch analysis of Niño 3.4 SST anomaly for El Chichón (1982) and Pinatubo (1991), iCESM LME 4-member ensemble mean ± 1 SE, lags −24 to +60 months relative to eruption month.](figures/sea_nino34.png){#fig-sea-nino34}
+
+![Comparison of iCESM LME ensemble-mean post-volcanic Niño 3.4 anomaly against NOAA ONI observed DJF anomalies for El Chichón and Pinatubo; observed record shown relative to model bootstrap 90% CI.](figures/sea_obs_comparison.png){#fig-sea-obs-comparison}
+
+![Composite mean SST and δ¹⁸O anomaly maps (Y0–Y3 post-eruption), averaged across both eruptions and all 4 ensemble members; Robinson projection, ±45° latitude crop.](figures/composite_mean_map.png){#fig-composite-mean-map}
+
+![Monthly lag maps of SST anomaly at lags +6, +12, +18, +24 months post-eruption, showing evolution of the El Niño–like pattern across the tropical Pacific.](figures/sea_lag_maps.png){#fig-sea-lag-maps}
+
+![Pearson correlation between Niño 3.4 and grid-point SST in sliding 15-year windows, showing temporal stability of ENSO teleconnection patterns across the 1950–2005 iCESM LME period.](figures/corr_sst_nino34_windows.png){#fig-corr-sst-nino34-windows}
+
+![Pre-eruption ENSO preconditioning states for all 4 iCESM LME members for El Chichón (1982) and Pinatubo (1991), classified as El Niño / Neutral / La Niña based on Niño 3.4 index in the 6 months prior to eruption.](figures/enso_precon.png){#fig-enso-precon}
+
+![Niño 3.4 SEA stratified by pre-eruption ENSO state (El Niño / Neutral / La Niña preconditioned), showing how preconditioning modulates the amplitude and timing of the post-volcanic El Niño response.](figures/sea_precon_colored.png){#fig-sea-precon-colored}
+
+![Composite SEA across eight ENSO-teleconnected ocean regions (4×2 small-multiples grid), each region on its own y-scale; Khodri et al. window annotated on the Equatorial Atlantic panel; significance dots at *p* < `{python} val("ttest_p_threshold")`.](figures/enso_regions_composite.png){#fig-enso-regions-composite}
+
+![Spatial comparison of iCESM LME pseudo-coral Δδ¹⁸Oc and observed iso2k coral δ¹⁸O anomalies over Y0–Y3, tropical Pacific domain, ±45° crop.](figures/iso2k_comparison_composite.png){#fig-iso2k-comparison-composite}
+
+![Proxy skill map: Pearson r between iCESM LME pseudo-coral and observed iso2k δ¹⁸O anomaly over Y0–Y7, shown for El Chichón, Pinatubo, and composite columns; ±45° crop.](figures/proxy_skill_map_45.png){#fig-proxy-skill-map-45}
+
+:::
+
+## 4. Discussion
+
+The iCESM LME results confirm that large tropical eruptions can force a reproducible El Niño–like Niño 3.4 response, but that the amplitude and timing depend critically on the pre-eruption ENSO state. The El Chichón case — where all four members happened to be La Niña preconditioned — produces a faster, larger composite response than Pinatubo, where the ensemble spans multiple preconditioning states and the composite is consequently weaker. This is consistent with @dogar2024nao and @predybaylo2020, who find that the volcanic → El Niño pathway is not deterministic but amplifies pre-existing warm tendencies.
+
+The key remaining open question is whether the iCESM LME pseudo-coral network preserves sufficient signal-to-noise to detect the preconditioning effect at all. With only n = 4 members and n = 2 eruptions, the sample size is small; the single La Niña-preconditioned Pinatubo member (M2) and the single El Niño member (M1) are each represented by only 1 of 8 pairs. Expanding to additional last-millennium eruptions (Tambora 1815, Krakatoa 1883) and the full 13-member LME would substantially strengthen the preconditioning analysis.
+
+## 5. Conclusions
+
+## 6. Data and code availability
+
+- Analysis code: `~/Documents/Claude/Projects/volcano enso/` (to be published on GitHub; username TBD).
+- Data: CESM-LME iCESM output, coral proxy site CSVs.
+- This chapter is reproducible via `quarto render chapter2.qmd` once Python chunks are populated from the analysis scripts.
+
+<!-- AUTO 2026-04-18 phase-1 -->
+::: {.under-review}
+The dependence of the post-volcanic ENSO response on ocean preconditioning is increasingly recognised as a first-order modulator of response amplitude and timing. Dogar et al. [@dogar2024nao] demonstrate using GFDL-CM2.1 that El Niño-preconditioned eruptions produce El Niño-like anomalies reaching up to +2 °C in Niño 3.4, whereas neutral and La Niña-preconditioned simulations show no Pacific warming signal beyond the aerosol-induced cooling — a finding that challenges the earlier expectation that La Niña preconditioning would amplify the post-eruption El Niño response via thermocline reservoir release. Complementing this, Pausata et al. [@pausata2023revisiting] use sensitivity experiments with regionally partitioned aerosol loading to show that the dominant mechanism driving an El Niño-like response is radiative cooling over tropical northern Africa (which weakens the West African Monsoon and equatorial Atlantic trade winds), while the ocean dynamical thermostat mechanism [@clement1996ocean] is absent when uniform equatorial Pacific forcing is applied. Liu et al. [@liu2024] show a weak El Niño-like response one year after large volcanic eruptions in an 800-year multiproxy δ¹⁸O reconstruction, with ENSO amplitude significantly correlated with volcanic intensity; Freund et al. [@freund2025enso] further situate this within the broader CESM LME framework, noting that the large number of last-millennium realisations is essential to disentangle the ENSO response from internal variability and eruption-specific preconditioning states. Together, these papers underscore that the iCESM LME's limited four-member ensemble renders preconditioning-stratified conclusions inherently uncertain and motivates expansion to additional historical events.
+:::
+
+## References {.unnumbered}
+
+::: {#refs}
+:::

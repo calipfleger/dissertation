@@ -1,0 +1,40 @@
+# Figure sync config — maps each chapter folder to one or more external
+# source directories that contain analysis output figures.
+#
+# The nightly pipeline (and standalone `./sync_figures.sh`) reads this file
+# and rsyncs PNG / PDF / JPG / SVG from each source into the chapter's
+# `figures/` folder. Files are copied if newer or not present; never deleted.
+#
+# Paths can use `~` (expanded as your home) or be absolute.
+# Add new sources as you produce figures. Empty `sources: []` = chapter
+# is skipped during sync.
+
+chapter-1-ilme-pwc:
+  sources: []   # TODO — add when iLME PWC analysis produces figures
+
+chapter-2-volc-enso:
+  sources:
+    # Figures are written directly at the project root (not in a figures/ subdir).
+    # The sync script uses maxdepth 1, which naturally skips node_modules/, .git/,
+    # __pycache__/, and old_figures/.
+    - ~/Documents/Claude/Projects/volcano enso
+    # To also pull from the archive: uncomment
+    # - ~/Documents/Claude/Projects/volcano enso/old_figures
+
+chapter-3-california-volc-enso:
+  sources: []   # TODO — California-VOLC-ENSO analysis output dir
+
+chapter-4-biogeochem-geofish:
+  sources: []   # TODO — biogeochem analysis output dir
+
+chapter-5-climate-tech-sentiment:
+  sources:
+    # The figures/ folder has three subdirs: v7, v8, advisor_pptx.
+    # - advisor_pptx/ currently holds the only real PNGs (dummy placeholder layouts
+    #   for the advisor deck — filenames end in `_dummy`).
+    # - v7/ and v8/ are version directories that will hold real analysis outputs
+    #   once the GDELT + VADER pipeline starts producing figures.
+    # The sync script tries each path; missing/empty ones are skipped silently.
+    - ~/Documents/Claude/Projects/Sentiment Analysis/figures/advisor_pptx
+    - ~/Documents/Claude/Projects/Sentiment Analysis/figures/v8
+    - ~/Documents/Claude/Projects/Sentiment Analysis/figures/v7

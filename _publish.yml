@@ -1,0 +1,23 @@
+# Quarto publish config — fills in automatically on first
+# `quarto publish quarto-pub` from your Mac.
+#
+# Do NOT commit actual auth tokens to this file. Quarto stores tokens in
+# ~/.config/quarto/_publish.yml (user-level), not here. This file only records
+# the project's publish destination(s).
+#
+# After the first `quarto publish quarto-pub`, Quarto will rewrite this with
+# the real id and url. Example:
+#
+#   - source: project
+#     quarto-pub:
+#       - id: abc123xyz
+#         url: 'https://calipfleger.quarto.pub/dissertation'
+#
+# The id and url are safe to commit (they are public identifiers, not secrets).
+# The auth TOKEN is what needs to be added as the GitHub secret
+# QUARTO_PUB_AUTH_TOKEN so the CI job can publish without manual intervention.
+
+- source: project
+  quarto-pub:
+    - id: PLACEHOLDER_WILL_BE_FILLED_ON_FIRST_PUBLISH
+      url: PLACEHOLDER_WILL_BE_FILLED_ON_FIRST_PUBLISH

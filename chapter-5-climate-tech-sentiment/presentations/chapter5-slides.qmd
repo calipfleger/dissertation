@@ -1,0 +1,84 @@
+---
+title: "Climate Technology Sentiment: GDELT + VADER Analysis of News Coverage"
+subtitle: "Chapter 5 — dissertation talk"
+author: Cali Pfleger
+date: last-modified
+bibliography: ../literature/bibliography.bib
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+    footer: "Ch 5 · Climate Tech Sentiment · calipfleger@ucsb.edu"
+---
+
+## The question
+
+Can we track public discourse around climate technologies — **carbon removal, solar geoengineering, renewables** — through automated sentiment analysis of news coverage?
+
+And **how much do we trust the tools** before reading meaning into the numbers?
+
+## The methodological catch
+
+VADER [@hutto2014vader] is the canonical lexicon tool — but it was designed for short informal microblog text.
+
+::: {.incremental}
+- On formal journalism, **lexicon methods underperform** transformers [@ghosh2023librarians; @nicula2026monuments].
+- VADER agreed with human coders on **only 49% of negative tweets** in one validation [@lee2024ftx].
+- On financial news headlines (SEntFiN 1.0, 10,753 annotations), off-the-shelf VADER falls far short of domain-tuned RoBERTa / finBERT ($F_1 \approx 0.93$) [@sinha2022sentfin].
+:::
+
+## Mitigations (from the literature)
+
+1. **Extend VADER's lexicon** with domain-specific polarity terms.
+2. **Asymmetric scaling** — correct VADER's documented positivity bias on formal news [@nicula2026monuments].
+3. **Human-coder validation** on a stratified subset (Cohen's $\kappa$ against the pipeline) [@lee2024ftx].
+4. Compare to **Zero-Shot Learning** as a transformer alternative [@ghosh2023librarians].
+
+## Research questions
+
+1. How does a lexicon-extended, asymmetric-scaled VADER pipeline compare to zero-shot + transformer baselines on climate-tech headlines?
+2. What is the VADER–human Cohen's $\kappa$ on a 100-headline validation subset?
+3. How has sentiment toward solar geoengineering, CDR, and renewables evolved across major news outlets 2015–present?
+
+## Data: GDELT
+
+Global Knowledge Graph, worldwide news coverage since 1979 [@leetaru2013gdelt].
+
+. . .
+
+**Known limitation:** the public API caps at 250 records per query → recency bias. Migration path: BigQuery (SQL already drafted in notebook §9).
+
+## Pipeline
+
+1. Base VADER compound score.
+2. Lexicon extension (~200 curated climate-tech polarity terms).
+3. Asymmetric scaling for positivity-bias correction.
+4. Transformer baseline (Twitter-roBERTa-base).
+5. Zero-shot baseline (HF multilingual NLI).
+6. Human-validation subset (100 headlines, two coders).
+
+## Policy context
+
+The chapter's public-perception framing lines up with:
+
+- @jobin2020support — support for 10 climate-engineering technologies.
+- @waller2023carbon — carbon-removal demonstrations and public perception.
+- @mclaren2021politics — governance of solar geoengineering.
+- @carton2020negative — long history of negative-emissions framing.
+
+## Figures {.scrollable}
+
+_Phase 5 of the nightly pipeline pulls from `chapter-5-climate-tech-sentiment/figures/` — currently empty pending BigQuery migration + first analysis runs._
+
+## Open items
+
+- ⚠ BigQuery migration (scope claims until done).
+- ⚠ 100-headline Cohen's $\kappa$ validation.
+- ⚠ Method head-to-head table.
+
+## References {.scrollable}
+
+::: {#refs}
+:::

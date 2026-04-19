@@ -1,0 +1,17 @@
+---
+title: "References (deprecated — see per-chapter)"
+---
+
+# References moved into each chapter {.unnumbered}
+
+This dissertation now uses **per-chapter bibliographies** instead of a single combined references list.
+
+Each chapter resolves its own `.bib` file and renders its own `## References` section at the end. Open any chapter to see its references list:
+
+- [Chapter 1 — iLME PWC](chapter-1-ilme-pwc/chapter1.html#references)
+- [Chapter 2 — VOLC ENSO](chapter-2-volc-enso/chapter2.html#references)
+- [Chapter 3 — California–VOLC–ENSO](chapter-3-california-volc-enso/chapter3.html#references)
+- [Chapter 4 — Biogeochem & Geo Fish](chapter-4-biogeochem-geofish/chapter4.html#references)
+- [Chapter 5 — Climate Tech Sentiment](chapter-5-climate-tech-sentiment/chapter5.html#references)
+
+This page is not part of the published book — it's kept only as a breadcrumb in case someone looks for a global references page. Source-of-truth `.bib` files live at `chapter-N-<topic>/literature/bibliography.bib`.
