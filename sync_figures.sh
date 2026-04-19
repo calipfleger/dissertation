@@ -3,7 +3,12 @@
 # into each chapter's `figures/` directory.
 #
 # Reads:  .figures-sources.yml  (at this folder's root)
-# Writes: chapter-*/figures/*.{png,pdf,jpg,jpeg,svg}
+# Writes: chapter-*/figures/*.{png,jpg,jpeg,svg}
+#
+# PDF figures are intentionally excluded — they bloat the git repo (~200 MB)
+# and Quarto's HTML + PDF outputs both render PNGs fine. If you later need
+# vector figures for publication, re-enable `pdf` in the extension list below
+# and consider moving to git-lfs to keep the repo lean.
 #
 # Idempotent: only copies files that are new or newer than the destination.
 # Never deletes anything — safe to re-run.
@@ -85,8 +90,9 @@ for chapter_dir in chapter-*/; do
     echo "    ← $src"
 
     # Loop over supported image extensions. Use `find` + conditional cp so
-    # we work on Macs without rsync in a portable way.
-    for ext in png pdf jpg jpeg svg; do
+    # we work on Macs without rsync in a portable way. PDF intentionally
+    # omitted — see header comment.
+    for ext in png jpg jpeg svg; do
       while IFS= read -r -d '' f; do
         base=$(basename "$f")
         target="$dest/$base"

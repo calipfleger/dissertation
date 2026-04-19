@@ -55,6 +55,12 @@ chapter*.html
 # Stray files accidentally created by shell typos (e.g. `cat > -`).
 /-
 
+# Figure PDFs — we keep only PNGs in the repo (they render in HTML and
+# embed fine in Quarto's PDF output). Analysis scripts may still emit PDFs
+# locally, but sync_figures.sh ignores them. This keeps the repo ~200 MB
+# lighter than the prior state.
+chapter-*/figures/*.pdf
+
 # QA artifacts from local `quarto preview` or PPT-to-image renders.
 **/presentations/daily/slide-*.jpg
 **/presentations/daily/slide-*.png
