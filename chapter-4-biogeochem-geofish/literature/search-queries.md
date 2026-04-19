@@ -1,4 +1,4 @@
-# Search queries — Chapter 4 (climate)
+# Search queries — Chapter 4 (Biogeochem × Geo-Fish)
 
 The weekly literature loop reads this file and runs each query as a `semanticSearch`.
 
@@ -11,16 +11,19 @@ The weekly literature loop reads this file and runs each query as a `semanticSea
 - Save the file. The next scheduled run will pick up the changes.
 
 ## Working topic
-_TBD — one-sentence description of what this chapter is about._
+*Scope still being finalized.* Working direction: how geographic variation in marine biogeochemistry (oxygen, nutrients, carbonate chemistry) shapes the ecology and population distribution of commercially and ecologically important fish species, with emphasis on mechanisms that link ocean-physical drivers to population-scale responses.
 
 ## Queries
-- _Add a query here._
-- _Add another._
+- How does spatial variation in dissolved-oxygen minimum-zone extent reshape the distribution and population dynamics of pelagic fish species?
+- What recent syntheses link ocean-acidification hotspots to measurable population-level responses in commercially harvested fish stocks?
+- How do regional differences in nutrient delivery (coastal upwelling, river plumes, iron limitation) modulate primary-production support for fish populations on decadal timescales?
+- What observational and modeling work connects ENSO-scale tropical Pacific variability to biogeochemical anomalies relevant to mid- and high-latitude fisheries?
+- Have recent assessments of fish-stock climate vulnerability integrated biogeochemical indicators alongside temperature, and what has that added?
 
 ## Filters
-- **Year range:** 2020–present _(edit as needed)_
+- **Year range:** 2020–present
 - **Max results per query:** 15
 - **Include retracted content:** no
 
 ## Notes
-_Anything Claude should keep in mind — preferred journals, specific authors to track, methods to emphasize._
+Queries will be refined once scope, geography, and specific species of interest are finalized with the committee. Current focus: biogeochem-as-covariate to fish-ecology records. Preferred journals: *ICES Journal of Marine Science*, *Biogeosciences*, *Fish and Fisheries*, *Global Change Biology*, *Journal of Geophysical Research: Oceans*.

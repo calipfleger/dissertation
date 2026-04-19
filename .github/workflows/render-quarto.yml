@@ -1,13 +1,23 @@
 name: Render Quarto book
 
 # Renders the dissertation book on every push to main, on every pull request,
-# and nightly at 06:00 UTC (a sanity render even if no commits hit). On main,
-# also publishes to Quarto Pub.
+# and nightly at 06:00 UTC. On main, also publishes to Quarto Pub.
 #
-# Required GitHub repo secret: QUARTO_PUB_AUTH_TOKEN
+# Required GitHub repo secret (publish job only): QUARTO_PUB_AUTH_TOKEN
 #   Get it from your Mac after first-time `quarto publish quarto-pub`:
 #     cat ~/.config/quarto/_publish.yml          # → token field
-#   then in the repo: Settings → Secrets and variables → Actions → New secret.
+#   Add in: Settings → Secrets and variables → Actions → New secret.
+#
+# Design notes:
+#   - Python deps are kept deliberately MINIMAL. Only `jupyter` is required to
+#     execute the `{python}` chunks that currently exist (chapter2.qmd uses only
+#     json + pathlib from stdlib). Add heavier packages like cartopy/netCDF4
+#     ONLY when a chapter actually imports them — they need system libs
+#     (libproj-dev, libgeos-dev) via `apt-get`, which adds ~2 minutes to CI.
+#   - HTML-only for now. PDF rendering is disabled — the primary deliverable
+#     is the Quarto Pub site. When ready to produce a submission PDF, add back
+#     the "Render PDF" step (see git history) and install TinyTeX.
+#   - Slideshows are rendered via build.sh step 2 (not Quarto's book mode).
 
 on:
   push:
@@ -15,7 +25,7 @@ on:
   pull_request:
     branches: [main]
   schedule:
-    - cron: "0 6 * * *"      # 06:00 UTC nightly (~22:00 PT / 23:00 PT depending on DST)
+    - cron: "0 6 * * *"     # 06:00 UTC nightly
   workflow_dispatch:         # manual trigger from the Actions tab
 
 jobs:
@@ -37,27 +47,31 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install Python deps
+      - name: Install minimal Python deps
         run: |
           python -m pip install --upgrade pip
-          # Core analysis stack used in chapter {python} chunks.
-          pip install jupyter matplotlib numpy pandas scipy xarray netCDF4 cartopy nltk vaderSentiment
-          # If a chapter has its own requirements.txt, install it too.
+          # Only jupyter is needed to execute {python} chunks in current chapters.
+          # When a chapter starts importing matplotlib/numpy/etc., add them here.
+          pip install jupyter pyyaml
+          # If a chapter ships its own requirements.txt, honor it.
           for f in chapter-*/code/requirements.txt; do
             [ -f "$f" ] && pip install -r "$f"
           done
 
-      - name: Install TeX (for PDF render)
-        uses: quarto-dev/quarto-actions/setup@v2
-        with:
-          tinytex: true
-
-      - name: Build book + slideshows + wire them together
+      - name: Render HTML book
         run: |
-          chmod +x build.sh
-          ./build.sh
+          quarto render --to html
+
+      - name: Render slideshows (reveal.js)
+        continue-on-error: true
+        run: |
+          for q in chapter-*/presentations/chapter*-slides.qmd chapter-*/presentations/chapter*-progress.qmd; do
+            [ -f "$q" ] || continue
+            quarto render "$q" --to revealjs
+          done
 
       - name: Upload _book/ as artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: dissertation-book
@@ -85,17 +99,28 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install Python deps
+      - name: Install minimal Python deps
         run: |
           python -m pip install --upgrade pip
-          pip install jupyter matplotlib numpy pandas scipy xarray netCDF4 cartopy nltk vaderSentiment
+          pip install jupyter pyyaml
           for f in chapter-*/code/requirements.txt; do
             [ -f "$f" ] && pip install -r "$f"
           done
 
       - name: Publish to Quarto Pub
+        if: env.QUARTO_PUB_AUTH_TOKEN != ''
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: quarto-pub
+        env:
+          QUARTO_PUB_AUTH_TOKEN: ${{ secrets.QUARTO_PUB_AUTH_TOKEN }}
+
+      - name: Skip publish (no token configured)
+        if: env.QUARTO_PUB_AUTH_TOKEN == ''
+        run: |
+          echo "::warning::QUARTO_PUB_AUTH_TOKEN secret is not set."
+          echo "Run 'quarto publish quarto-pub' locally once, then add the token from"
+          echo "~/.config/quarto/_publish.yml to Settings → Secrets → Actions."
+          echo "Skipping publish for this run."
         env:
           QUARTO_PUB_AUTH_TOKEN: ${{ secrets.QUARTO_PUB_AUTH_TOKEN }}

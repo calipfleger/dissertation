@@ -46,7 +46,7 @@ _New entries auto-appended below this divider every night._
 
 ## What we did
 
-- Synced 148 analysis figures from `~/Documents/Claude/Projects/volcano enso` into the dissertation repo via `sync_figures.sh`.
+- Synced 148 analysis figures from the volcano-ENSO analysis folder (at `~/Documents/Claude/Projects/Cladue/volcano enso/` since the 2026-04-19 move into the Cladue workspace) into the dissertation repo via `sync_figures.sh`.
 - Wired two slideshows per chapter: curated `chapterN-slides.qmd` (hand-edited) and this living `chapterN-progress.qmd` (auto-appended nightly).
 - Built `build.sh` — one command that runs `sync_figures.sh`, renders the book + slideshows, and copies everything into `_book/` so the "View as slideshow →" links resolve on the published site.
 - Verified all 14 slideshow figure references in `chapter2-slides.qmd` resolve to files in `figures/`.

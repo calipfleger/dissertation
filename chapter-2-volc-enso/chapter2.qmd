@@ -37,7 +37,7 @@ def val(key, fmt=None):
 :::
 
 ::: {.callout-note appearance="simple" icon=false}
-📥 **[Download full analysis deck (PPTX)](presentations/VolcanoENSO_Analysis_v4.pptx)** — 41 slides, all figures. To refresh after a pipeline rerun, run `bash sync_figures.sh` from `~/Documents/Claude/Projects/volcano\ enso/`.
+📥 **[Download full analysis deck (PPTX)](presentations/VolcanoENSO_Analysis_v4.pptx)** — 41 slides, all figures. To refresh after a pipeline rerun, run `bash sync_figures.sh` from the dissertation repo root (it pulls from `~/Documents/Claude/Projects/Cladue/volcano\ enso/`).
 :::
 
 ## Abstract
@@ -63,7 +63,7 @@ CESM Last Millennium Ensemble with isotope tracers (iCESM-LME). Post-industrial 
 
 ### 2.2 Analysis pipeline architecture
 
-The analysis is organized around three shared modules (total ~624 lines) that replaced approximately 500 lines of inline duplication across an earlier 28-file codebase. Code lives at `~/Documents/Claude/Projects/volcano enso/`.
+The analysis is organized around three shared modules (total ~624 lines) that replaced approximately 500 lines of inline duplication across an earlier 28-file codebase. Code lives at `~/Documents/Claude/Projects/Cladue/volcano enso/` on the author's Mac; the dissertation repo references it via the relative path `../../../volcano enso` in `.figures-sources.yml`.
 
 - **`config.py`** — single source of truth for file paths (`TEMP_FILE`, `R18O_FILE`), eruption list (`ERUPTIONS`), baseline period, QC thresholds, and ensemble size `N`. To run on a new project, only this file is edited.
 - **`io_utils.py`** — generic netCDF I/O: `load_grid()`, `create_ocean_mask()`, `iter_bands()`, `read_temp_d18o_band()`, `read_site_timeseries()`, `load_obs_csv()`. Works with any model storing data in the `(n_mem, N, nrows, ncols)` layout.

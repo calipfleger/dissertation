@@ -1,4 +1,4 @@
-# Search queries — Chapter 3 (climate)
+# Search queries — Chapter 3 (California–Volcano–ENSO)
 
 The weekly literature loop reads this file and runs each query as a `semanticSearch`.
 
@@ -11,16 +11,19 @@ The weekly literature loop reads this file and runs each query as a `semanticSea
 - Save the file. The next scheduled run will pick up the changes.
 
 ## Working topic
-_TBD — one-sentence description of what this chapter is about._
+Regional case study testing whether volcanically-triggered ENSO signals leave a coherent fingerprint in California coastal and eastern-Pacific coral proxies, with emphasis on atmospheric rivers, winter precipitation, and drought teleconnections.
 
 ## Queries
-- _Add a query here._
-- _Add another._
+- What does the instrumental and paleoclimate record show about the response of California winter precipitation and atmospheric-river activity to tropical volcanic eruptions?
+- Are there corroborating coral δ¹⁸O signals in eastern tropical Pacific and Gulf of California sites following El Chichón (1982) and Pinatubo (1991)?
+- How do tree-ring and speleothem archives from western North America reconstruct drought–ENSO teleconnections before and after major volcanic events?
+- Do regional climate-model downscaling studies reproduce the observed California hydroclimate response to volcanic-forced ENSO anomalies?
+- What is the current literature on the predictive skill of volcanic eruptions for North American Pacific-margin precipitation extremes?
 
 ## Filters
-- **Year range:** 2020–present _(edit as needed)_
+- **Year range:** 2020–present
 - **Max results per query:** 15
 - **Include retracted content:** no
 
 ## Notes
-_Anything Claude should keep in mind — preferred journals, specific authors to track, methods to emphasize._
+Preferred journals: *JGR Atmospheres*, *Climate Dynamics*, *Journal of Hydrometeorology*, *Water Resources Research*, *Geophysical Research Letters*. Track authors: Dettinger, Swain, Cook, Ault, Seager, Williams. Emphasize work connecting tropical Pacific forcing to western US hydroclimate.
