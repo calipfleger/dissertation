@@ -2,12 +2,29 @@
 # source directories that contain analysis output figures.
 #
 # The nightly pipeline (and standalone `./sync_figures.sh`) reads this file
-# and rsyncs PNG / PDF / JPG / SVG from each source into the chapter's
-# `figures/` folder. Files are copied if newer or not present; never deleted.
+# and copies image files from each source into the chapter's `figures/`
+# folder. Files are copied if newer or not present; never deleted.
 #
 # Paths can use `~` (expanded as your home) or be absolute.
 # Add new sources as you produce figures. Empty `sources: []` = chapter
 # is skipped during sync.
+#
+# ---------------------------------------------------------------------------
+# FORMATS — which image file types to sync into chapter figures folders.
+# ---------------------------------------------------------------------------
+# Default: png only (keeps the git repo ~200 MB lighter).
+# Allowed values: png, pdf, jpg, jpeg, svg
+# Examples:
+#   formats: [png]          # PNG only (current default)
+#   formats: [png, pdf]     # both — use for final thesis submission
+#   formats: [pdf]          # PDF only — rare, vector-only workflows
+#
+# You can also override at runtime:
+#   ./sync_figures.sh --formats png,pdf
+#
+# NOTE: if you turn PDFs on, also remove the
+# `chapter-*/figures/*.pdf` line from .gitignore so git will track them.
+formats: [png]
 
 chapter-1-ilme-pwc:
   sources: []   # TODO — add when iLME PWC analysis produces figures

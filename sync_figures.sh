@@ -3,38 +3,46 @@
 # into each chapter's `figures/` directory.
 #
 # Reads:  .figures-sources.yml  (at this folder's root)
-# Writes: chapter-*/figures/*.{png,jpg,jpeg,svg}
+# Writes: chapter-*/figures/*.{ext}  for each ext in the configured formats list.
 #
-# PDF figures are intentionally excluded — they bloat the git repo (~200 MB)
-# and Quarto's HTML + PDF outputs both render PNGs fine. If you later need
-# vector figures for publication, re-enable `pdf` in the extension list below
-# and consider moving to git-lfs to keep the repo lean.
+# Format selection:
+#   1. Reads `formats: [...]` from .figures-sources.yml (default: [png])
+#   2. Can be overridden at runtime with --formats png,pdf
+# PNG-only is the default because PDFs bloat the git repo. Turn PDF on
+# when you need vector figures for final thesis submission — and remember
+# to also remove the `chapter-*/figures/*.pdf` line from .gitignore so
+# git will actually track them.
 #
 # Idempotent: only copies files that are new or newer than the destination.
 # Never deletes anything — safe to re-run.
 #
 # Usage:
-#   ./sync_figures.sh                # sync every chapter listed in the config
-#   ./sync_figures.sh chapter-2      # sync one chapter (substring match)
-#   ./sync_figures.sh --dry-run      # show what would happen, change nothing
+#   ./sync_figures.sh                        # sync every chapter, formats from .yml
+#   ./sync_figures.sh chapter-2              # sync one chapter (substring match)
+#   ./sync_figures.sh --dry-run              # show what would happen, change nothing
+#   ./sync_figures.sh --formats png,pdf      # override formats list for this run
 #
 # The nightly pipeline runs this at the start of Phase 5 so figures flow
 # automatically from your analysis projects into the dissertation repo.
 
-set -euo pipefail
+set -eu
 cd "$(dirname "$0")"
 
 filter=""
 dry_run=0
-for arg in "$@"; do
-  case "$arg" in
+formats_override=""
+while [ $# -gt 0 ]; do
+  case "$1" in
     --dry-run) dry_run=1 ;;
+    --formats) formats_override="$2"; shift ;;
+    --formats=*) formats_override="${1#--formats=}" ;;
     --help|-h)
-      sed -n '2,19p' "$0"
+      sed -n '2,26p' "$0"
       exit 0
       ;;
-    *) filter="$arg" ;;
+    *) filter="$1" ;;
   esac
+  shift
 done
 
 cfg=".figures-sources.yml"
@@ -42,6 +50,45 @@ if [ ! -f "$cfg" ]; then
   echo "ERROR: $cfg not found. Create it at the dissertation root." >&2
   exit 1
 fi
+
+# Resolve which image formats to sync.
+# Precedence: --formats CLI > `formats:` in yml > default [png].
+if [ -n "$formats_override" ]; then
+  formats_csv="$formats_override"
+else
+  formats_csv=$(python3 - <<'PY'
+import yaml
+with open(".figures-sources.yml") as f:
+    cfg = yaml.safe_load(f) or {}
+fmts = cfg.get("formats") or ["png"]
+# normalize + dedupe, lower-case
+seen = []
+for x in fmts:
+    x = str(x).strip().lower().lstrip(".")
+    if x and x not in seen:
+        seen.append(x)
+print(",".join(seen))
+PY
+)
+fi
+# Split CSV → array. Whitelist allowed extensions for safety.
+allowed="png pdf jpg jpeg svg"
+formats=()
+IFS=',' read -r -a _raw <<< "$formats_csv"
+for ext in "${_raw[@]}"; do
+  ext="${ext// /}"   # strip spaces
+  ext="${ext,,}"     # lower-case (bash 4+)
+  if [[ " $allowed " == *" $ext "* ]]; then
+    formats+=("$ext")
+  else
+    echo "    ⚠ skipping unknown format: $ext (allowed: $allowed)" >&2
+  fi
+done
+if [ ${#formats[@]} -eq 0 ]; then
+  echo "ERROR: no valid formats resolved (got '$formats_csv'). Edit .figures-sources.yml." >&2
+  exit 1
+fi
+echo "▸ formats: ${formats[*]}"
 
 # Read sources for a given chapter using a tiny python one-liner (ships with macOS).
 get_sources_for() {
@@ -89,10 +136,10 @@ for chapter_dir in chapter-*/; do
     fi
     echo "    ← $src"
 
-    # Loop over supported image extensions. Use `find` + conditional cp so
-    # we work on Macs without rsync in a portable way. PDF intentionally
-    # omitted — see header comment.
-    for ext in png jpg jpeg svg; do
+    # Loop over configured image extensions (resolved from .figures-sources.yml
+    # or --formats CLI). Use `find` + conditional cp so we work on Macs
+    # without rsync in a portable way.
+    for ext in "${formats[@]}"; do
       while IFS= read -r -d '' f; do
         base=$(basename "$f")
         target="$dest/$base"
