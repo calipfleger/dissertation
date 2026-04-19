@@ -35,11 +35,14 @@ chapter-2-volc-enso:
     # The sync script uses maxdepth 1, which naturally skips node_modules/, .git/,
     # __pycache__/, and old_figures/.
     #
-    # Moved 2026-04-19 from ~/Documents/Claude/Projects/volcano enso into the
-    # Cladue cowork mount so the sandbox sync can actually reach it.
-    - ~/Documents/Claude/Projects/Cladue/volcano enso
+    # Relative path resolves identically from your Mac home (`~/Documents/
+    # Claude/Projects/Cladue/shared-brain/projects/dissertation/`) and from the
+    # sandbox mount (`/sessions/.../mnt/Cladue/shared-brain/projects/dissertation/`).
+    # That's why we use `../../../volcano enso` instead of a `~/` absolute path —
+    # the sandbox's `~` doesn't point at your Mac home.
+    - ../../../volcano enso
     # To also pull from the archive: uncomment
-    # - ~/Documents/Claude/Projects/Cladue/volcano enso/old_figures
+    # - ../../../volcano enso/old_figures
 
 chapter-3-california-volc-enso:
   sources: []   # TODO — California-VOLC-ENSO analysis output dir

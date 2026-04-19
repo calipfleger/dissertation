@@ -76,8 +76,8 @@ allowed="png pdf jpg jpeg svg"
 formats=()
 IFS=',' read -r -a _raw <<< "$formats_csv"
 for ext in "${_raw[@]}"; do
-  ext="${ext// /}"   # strip spaces
-  ext="${ext,,}"     # lower-case (bash 4+)
+  ext="${ext// /}"                                 # strip spaces
+  ext=$(printf '%s' "$ext" | tr '[:upper:]' '[:lower:]')  # portable lowercase (macOS bash 3.2)
   if [[ " $allowed " == *" $ext "* ]]; then
     formats+=("$ext")
   else
