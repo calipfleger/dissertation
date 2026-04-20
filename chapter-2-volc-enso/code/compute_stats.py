@@ -61,19 +61,67 @@ def compute_all() -> dict:
     stats["sea_peak_month"] = None             # ⚠ TODO: month of Niño 3.4 peak post-eruption
     stats["sea_peak_celsius"] = None           # ⚠ TODO: peak Niño 3.4 anomaly
     stats["ttest_n"] = stats["n_members"]      # already a policy constant
+    stats["n_eruptions"] = len(stats["eruptions"])   # 2 — El Chichón + Pinatubo
     stats["ttest_n_pairs"] = (                 # member × eruption pairs used in §3.1 t-test
-        stats["n_members"] * len(stats["eruptions"])
+        stats["n_members"] * stats["n_eruptions"]
     )
     stats["ttest_p_threshold"] = 0.05          # policy constant
     stats["iso2k_window_years"] = 7            # Y0-Y7 post-eruption window
 
+    # -------------------------------------------------------------------------
     # §3.1 — lag window over which composite SEA is significant at p<0.05
-    stats["sea_sig_lag_min_months"] = None     # ⚠ TODO: first lag where |t| > crit
-    stats["sea_sig_lag_max_months"] = None     # ⚠ TODO: last lag where |t| > crit
+    # -------------------------------------------------------------------------
+    # These numbers appear in prose at chapter2.qmd §3.1 line 90:
+    #   "...significantly different from zero at p < 0.05 at lags
+    #    +{sea_sig_lag_min_months} to +{sea_sig_lag_max_months} months..."
+    #
+    # How to compute from existing analysis:
+    #   sea_bootstrap.py runs the SEA + bootstrap CI + t-test. Its stdout
+    #   prints "Significant lags bootstrap p<0.05: <N>/<total>". Before the
+    #   print, the variable `boot_sig95` is a boolean mask (n_lags long)
+    #   indicating which lags are significant. The array `lags` goes from
+    #   -24 to +84 months. So:
+    #
+    #       sig_lags = lags[boot_sig95]   # e.g. array([10, 11, 12, ..., 26])
+    #       stats["sea_sig_lag_min_months"] = int(sig_lags.min())
+    #       stats["sea_sig_lag_max_months"] = int(sig_lags.max())
+    #
+    # If you want only the CENTRAL cluster (ignoring isolated significant
+    # lags at the tails), filter to lags > 0 first, or look for the largest
+    # contiguous run.
+    #
+    # Simplest path: run sea_bootstrap.py, note the min and max significant
+    # lag from the output figure or add a `np.save("sea_sig_lags.npy", ...)`
+    # line to save it, then load here.
+    stats["sea_sig_lag_min_months"] = None     # ⚠ TODO: see header comment
+    stats["sea_sig_lag_max_months"] = None     # ⚠ TODO: see header comment
 
+    # -------------------------------------------------------------------------
     # §3.4 — iso2k sites passing p<0.05 per eruption
-    stats["iso2k_sig_sites_chichon"] = None    # ⚠ TODO: count sites with p<0.05 vs pseudo-coral
-    stats["iso2k_sig_sites_pinatubo"] = None   # ⚠ TODO: count sites with p<0.05 vs pseudo-coral
+    # -------------------------------------------------------------------------
+    # These numbers appear in prose at chapter2.qmd §3.4 line 106:
+    #   "...observed iso2k mean at p < 0.05 sites (El Chichón n = {X} sites,
+    #    Pinatubo n = {Y} sites)..."
+    #
+    # How to compute:
+    #   iso2k_comparison.py produces site-level p-values. Either check the
+    #   arrays it saves to _cache/ or compute directly. The site count at
+    #   p<0.05 is the number of iso2k coral sites where the pseudo-coral
+    #   vs observed iso2k correlation is significant for that eruption.
+    #
+    # If iso2k_comparison.py saves per-site p-values as an array of length
+    # n_iso2k_sites (currently 89), the extraction is:
+    #
+    #       import numpy as np
+    #       p_chichon = np.load("_cache/iso2k_pvals_chichon.npy")   # or wherever
+    #       stats["iso2k_sig_sites_chichon"] = int((p_chichon < 0.05).sum())
+    #       p_pinatubo = np.load("_cache/iso2k_pvals_pinatubo.npy")
+    #       stats["iso2k_sig_sites_pinatubo"] = int((p_pinatubo < 0.05).sum())
+    #
+    # If no cached per-site p-values exist yet, add an `np.save(...)` line
+    # to iso2k_comparison.py and re-run it once.
+    stats["iso2k_sig_sites_chichon"] = None    # ⚠ TODO: see header comment
+    stats["iso2k_sig_sites_pinatubo"] = None   # ⚠ TODO: see header comment
 
     # --- Figure-level stats (one per referenced figure) ---------------------
     # For each figure, record the statistical summary the caption cites.

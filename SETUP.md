@@ -1,158 +1,84 @@
-# One-time setup — GitHub + Quarto Pub
+# One-time setup — Status & what's left
 
-Run these on your Mac, **in order**, from the dissertation folder. Total time: ~10 minutes.
+This is a running checklist of the one-time tasks needed to get the dissertation fully live. Items marked ✅ are already done; items marked ⏳ are still pending.
 
-## 0. You should already have
+Last updated: 2026-04-19.
 
-- Quarto installed (`quarto --version` works).
-- A GitHub account at `https://github.com/calipfleger`.
-- Your `chicago-author-date.csl` file in the dissertation folder (already present).
+---
 
-If `gh` isn't installed:
+## ✅ Completed
+
+- **Local Quarto install** — `quarto --version` works.
+- **Git repo initialized** — see `git log` in this folder.
+- **Initial commit + push** — landed on main as commit `28c3916` (2026-04-19).
+- **Public GitHub repo created** at <https://github.com/calipfleger/dissertation>.
+- **Pre-commit hook installed** at `.git/hooks/pre-commit` (runs citation integrity + stats.json soft-warning check).
+- **HTML-only CI** — `.github/workflows/render-quarto.yml` renders on every push; PDF disabled until submission-ready.
+- **Beginner-friendly README + `CLAUDE.md` + preface** — landed on main.
+- **Bug-free figure sync** — `OUTDIR` trailing-slash bug squashed in the volcano-enso source; relative paths verified in `.figures-sources.yml`.
+- **Scheduled loops active** — nightly pipeline, repo-hygiene, volcano-enso memory sync, weekly verification audit all registered.
+
+---
+
+## ⏳ Still pending
+
+### 1. Install GitHub CLI (optional but useful)
+
+`gh` is not currently installed. It's not required for anything ongoing — plain `git` works fine — but it makes some future tasks easier (viewing CI logs from the terminal, setting secrets in one command). Install when convenient:
+
 ```bash
 brew install gh
+gh auth login    # one-time
 ```
 
 ---
 
-## 1. Pre-flight cleanup
+### 2. First Quarto Pub publish → capture the token
 
-Build artifacts and operational files don't belong in the repo. The `.gitignore` will keep them out of new commits, but anything already on disk should be cleared first.
-
-```bash
-cd ~/Documents/Claude/Projects/Cladue/shared-brain/projects/dissertation/
-
-# Remove rendered output (will be re-built by Quarto / CI)
-rm -rf _book/ .quarto/ _freeze/
-
-# Remove preview artifacts
-rm -f presentations/daily/slide-*.jpg presentations/daily/*.pdf
-
-# Sanity-check that gitignore covers what it should
-git check-ignore -v drafts/from-drive/ \
-                    chapter-2-volc-enso/presentations/2026-04-17-recap.pptx \
-                    chapter-2-volc-enso/daily-summaries/2026-04-17.md 2>/dev/null \
-  || echo "(no git repo yet — that's expected before step 3)"
-```
-
----
-
-## 2. Authenticate `gh` to GitHub (one-time)
+CI currently renders the book but can't publish until the `QUARTO_PUB_AUTH_TOKEN` secret is set in the repo. The token comes from the first local publish.
 
 ```bash
-gh auth login
-```
-- Choose **GitHub.com** → **HTTPS** → authorize via browser.
-
----
-
-## 3. Initialize git + first commit
-
-```bash
-git init
-git add .
-git status                                  # ← read this output
-git commit -m "Initial dissertation scaffold
-
-- Quarto book project (5 chapters)
-- Bibliography per chapter + Chicago author-date CSL
-- GitHub Actions workflow for render + publish
-- Three-tier license (prose all-rights-reserved; bib data open;
-  code dual-licensed → MIT after first publication)"
-```
-
-**Read `git status` carefully before you commit.** Confirm:
-- ✅ `_quarto.yml`, `index.qmd`, `chapterN.qmd` files all present.
-- ✅ `chapter-N-*/literature/bibliography.bib` and `literature-review.md` for each chapter.
-- ❌ NO `_book/`, `.quarto/`, or `_freeze/`.
-- ❌ NO `drafts/from-drive/` content (those are private mirrors).
-- ❌ NO `daily-summaries/` content (private operational notes).
-- ❌ NO `*.pptx` (nightly recap binaries).
-
-If any ❌ items show up as "Changes to be committed," check `.gitignore` and run `git rm -r --cached <path>` to untrack them, then re-commit.
-
----
-
-## 4. Render once locally to verify
-
-Before triggering CI, render locally — easier to debug.
-
-```bash
-quarto render
-```
-
-If all 5 chapters produce HTML + PDF without error, you're golden. If something fails, paste the output back to Claude and we'll fix before pushing.
-
-Common issues:
-- Missing Python module → add to `chapter-N/code/requirements.txt`.
-- Citation key mismatch (`Citation 'foo2024' not found`) → check the `.bib` file has that entry.
-- Missing CSL → confirm `chicago-author-date.csl` is in the dissertation root.
-
----
-
-## 5. Create the public GitHub repo and push
-
-```bash
-gh repo create calipfleger/dissertation \
-  --public \
-  --description "PhD dissertation — Cali Pfleger, UCSB Bren — Quarto book" \
-  --source=. \
-  --push \
-  --remote=origin
-```
-
-This creates the repo on GitHub and pushes the initial commit in one step.
-
----
-
-## 6. First Quarto Pub publish (gets the auth token)
-
-```bash
+cd ~/Documents/Claude/Projects/Cladue/shared-brain/projects/dissertation
 quarto publish quarto-pub
 ```
-- A browser tab opens — sign in to Quarto Pub (or create the account with your `calipfleger@ucsb.edu` email).
-- Authorize the CLI.
-- Quarto renders + uploads. Site URL is printed at the end.
 
-This step also writes the auth token into `~/.config/quarto/_publish.yml`.
+A browser tab opens — sign in to Quarto Pub (or create an account with `calipfleger@ucsb.edu`). Authorize the CLI. Quarto renders and uploads; the site URL is printed at the end (save it — it's also your live dissertation URL).
+
+This step writes the token to `~/.config/quarto/_publish.yml`.
 
 ---
 
-## 7. Copy the Quarto Pub token into GitHub secrets
+### 3. Save the token as a GitHub secret
+
+**If `gh` is installed:**
 
 ```bash
-# Get the token (it's a long random string in this file):
-cat ~/.config/quarto/_publish.yml
-
-# Save it as a repo secret so CI can publish on every push:
+cat ~/.config/quarto/_publish.yml        # find the "token:" line
 gh secret set QUARTO_PUB_AUTH_TOKEN --repo calipfleger/dissertation
-# Paste the token at the prompt, hit Enter, then Ctrl-D.
+# paste the token when prompted, then Ctrl-D
 ```
+
+**Without `gh`:**
+
+1. `cat ~/.config/quarto/_publish.yml` — copy the token value.
+2. Open <https://github.com/calipfleger/dissertation/settings/secrets/actions> in your browser.
+3. Click **New repository secret**.
+4. Name: `QUARTO_PUB_AUTH_TOKEN`. Value: paste the token.
+5. **Add secret**.
+
+After that, every push to `main` will auto-publish to your Quarto Pub URL.
 
 ---
 
-## 8. Trigger CI to verify end-to-end
+### 4. Notify Ch1 co-authors
 
-```bash
-gh workflow run render-quarto.yml --repo calipfleger/dissertation
-
-# Wait ~5 minutes, then:
-gh run list --repo calipfleger/dissertation --limit 3
-```
-
-A green ✓ on the most recent run means: CI rendered the book and published it. Your live site is up to date.
-
----
-
-## 9. (Recommended) Notify your Ch1 co-authors
-
-Ch1 lists Samantha Stevenson, Sloan Coats, Bronwen Knockey, and Georgina Falster as authors. Public draft repos with co-authors' names are normal in our field, but courtesy = email them a quick heads-up. Sample:
+Ch1 lists Samantha Stevenson, Sloan Coats, Bronwen Knockey, and Georgina Falster. Public draft repos with co-authors' names are normal in this field, but it's courtesy to email a heads-up:
 
 > Hi Samantha (cc Sloan, Bronwen, Georgina),
 >
-> I'm setting up my dissertation as a Quarto book in a public GitHub repo so my committee and I can track the live render: <https://calipfleger.quarto.pub/dissertation>.
+> I'm setting up my dissertation as a Quarto book in a public GitHub repo so my committee can track the live render: <https://github.com/calipfleger/dissertation>.
 >
-> Your name appears on Chapter 1 (the iLME PWC paper). Right now the chapter is at the in-progress stage — abstract and key findings are there, results section is being filled in. The repo is public mainly so the committee can view the rendered website without logins; the underlying paper text isn't published anywhere else yet.
+> Your name appears on Chapter 1 (the iLME PWC paper). Right now the chapter is at the in-progress stage — abstract and framing are there, results section is being filled in. The repo is public mainly so the committee can view the rendered website without logins; the underlying paper text isn't published anywhere else yet.
 >
 > If you'd prefer I keep the repo private until the chapter is closer to submission, just say so and I'll switch it. Otherwise, no action needed — I'll keep you in the loop as Ch1 evolves.
 >
@@ -160,19 +86,84 @@ Ch1 lists Samantha Stevenson, Sloan Coats, Bronwen Knockey, and Georgina Falster
 
 ---
 
-## You're done
+### 5. Move `Sentiment Analysis/` into Cladue (Ch5 only)
 
-From now on:
-- Every push to `main` auto-renders + republishes — about 5 minutes from `git push` to live site update.
-- The nightly pipeline at 11:30pm runs phases 1–5 locally then commits + pushes — you wake up to a fresh dissertation site.
-- Edit a `.qmd`, `git push`, refresh the site — that's the loop.
+The Ch5 analysis code lives at `~/Documents/Claude/Projects/Sentiment Analysis/` — outside the Cladue cowork mount. That means:
+- The nightly pipeline can't sync its figures automatically.
+- Any sandbox-based Claude session can't read the code.
+
+To fix:
+
+```bash
+mv ~/Documents/Claude/Projects/"Sentiment Analysis" ~/Documents/Claude/Projects/Cladue/
+```
+
+Then the Ch5 entries in `.figures-sources.yml` should be rewritten to relative paths (same pattern as Ch2 — see the `../../../volcano enso` example). That edit is pre-staged in the commented-out block at the bottom of `.figures-sources.yml`; swap it in after the move.
+
+---
+
+### 6. Decide what to do with `~/Desktop/VOLC/volcano`
+
+Your `find` command turned up this folder as a second volcano-ENSO tree. If it's an older snapshot, rename it out of `Desktop/` so it stops causing confusion:
+
+```bash
+mkdir -p ~/Archive
+mv ~/Desktop/VOLC ~/Archive/VOLC-legacy-2025
+```
+
+If it's actively being used in parallel to `~/Documents/Claude/Projects/Cladue/volcano enso/`, pick one canonical copy and make the other a symlink (or delete it) — otherwise you'll silently edit two trees and lose work.
+
+---
+
+### 7. Push `volcano enso/` as its own public repo (disaster recovery)
+
+The Chapter 2 analysis code currently lives as a local-only git repo at `~/Documents/Claude/Projects/Cladue/volcano enso/` with no remote. If your Mac dies, only the rendered figures survive (in the dissertation repo) — not the code that produced them. A second public repo solves this plus enables collaboration.
+
+Scaffold is already in place (LICENSE added 2026-04-19, README cleaned up, `.gitignore` handles the big PPTX / NC / PDF files). Push when you're ready:
+
+```bash
+cd ~/Documents/Claude/Projects/Cladue/"volcano enso"
+
+# 1. Confirm what will be pushed — should be ~30 Python files + small CSVs.
+git status
+git ls-files | wc -l          # should be ~50
+
+# 2. If LICENSE is untracked, commit it:
+git add LICENSE README.md
+git commit -m "Add MIT license + README for public release"
+
+# 3. Create the GitHub repo (via browser):
+#    https://github.com/new
+#    Name: volcano-enso-pipeline
+#    Visibility: Public
+#    Do NOT initialize (no README, no .gitignore, no license)
+
+# 4. Push:
+git branch -M main
+git remote add origin https://github.com/calipfleger/volcano-enso-pipeline.git
+git push -u origin main
+```
+
+Then add a `repository` link to the Ch2 chapter so readers can find it.
+
+### 8. Fill in `compute_stats.py` with real data loads
+
+Chapter 2's §§3.1 and 3.4 currently render `⚠TODO⚠` on the live site for four stats (`sea_sig_lag_min_months`, `sea_sig_lag_max_months`, `iso2k_sig_sites_chichon`, `iso2k_sig_sites_pinatubo`). Open `chapter-2-volc-enso/code/compute_stats.py` and replace the `None` values with real computations from the volcano-enso analysis cache. Then:
+
+```bash
+python3 chapter-2-volc-enso/code/compute_stats.py
+# _warnings list should disappear if all values are filled
+quarto preview chapter-2-volc-enso/chapter2.qmd
+# visually confirm §§3.1 and 3.4 now show real numbers
+```
+
+---
 
 ## Troubleshooting
 
-- **CI render fails on a `{python}` chunk:** add the missing dependency to `chapter-N-<topic>/code/requirements.txt`. CI installs each chapter's requirements automatically.
-- **CI render fails on a missing CSL:** confirm `chicago-author-date.csl` is present at the dissertation root and committed.
-- **CI render fails on a missing `.bib`:** confirm each chapter's `literature/bibliography.bib` exists (even if empty placeholder).
-- **CI publishes but Quarto Pub URL gives 404:** wait 60 seconds for CDN propagation, then refresh.
-- **Quarto Pub token rejected:** regenerate with `quarto publish quarto-pub --no-render --no-prompt` locally, then re-add the new token to GitHub secrets via `gh secret set QUARTO_PUB_AUTH_TOKEN --repo calipfleger/dissertation`.
-- **Want to make the repo private later:** `gh repo edit calipfleger/dissertation --visibility private --accept-visibility-change-consequences`.
-- **Accidentally committed something private:** `git rm --cached <path>`, add to `.gitignore`, commit. (Note: it's still in git history. For real removal, use `git filter-repo` — ask Claude for the exact incantation if needed.)
+- **`.git/index.lock` file exists**: `rm -f .git/index.lock` (or `sudo rm -f` if owned by a different user). The `repo-hygiene` nightly loop self-heals this automatically.
+- **Pre-commit hook fails on citations**: add the missing `@bibkey` entry to the chapter's `literature/bibliography.bib`, or remove the `[@bibkey]` from the `.qmd`.
+- **CI render fails on a `{python}` chunk**: add the missing dependency to `chapter-N-*/code/requirements.txt`.
+- **CI publishes but URL gives 404**: wait 60 seconds for Quarto Pub's CDN, then refresh.
+- **Want the repo private later**: `gh repo edit calipfleger/dissertation --visibility private --accept-visibility-change-consequences` (or flip via the GitHub UI).
+- **Accidentally committed private content**: `git rm --cached <path>`, add to `.gitignore`, re-commit. For full history removal (rare): ask Claude for a `git filter-repo` walkthrough.

@@ -50,13 +50,17 @@ jobs:
       - name: Install minimal Python deps
         run: |
           python -m pip install --upgrade pip
-          # Only jupyter is needed to execute {python} chunks in current chapters.
-          # When a chapter starts importing matplotlib/numpy/etc., add them here.
-          pip install jupyter pyyaml
+          # Quarto's {python} chunks need a Jupyter kernel to execute. `ipykernel`
+          # is the minimum (pulls in ipython + jupyter_client). This is narrower
+          # than the full `jupyter` meta-package — fewer deps = fewer install
+          # failure modes. pyyaml is used by sync_figures.sh.
+          python -m pip install --retries 5 --timeout 60 ipykernel pyyaml
           # If a chapter ships its own requirements.txt, honor it.
           for f in chapter-*/code/requirements.txt; do
-            [ -f "$f" ] && pip install -r "$f"
+            [ -f "$f" ] && python -m pip install --retries 5 -r "$f"
           done
+          # Sanity check — fail fast if the essentials didn't land.
+          python -c "import ipykernel, yaml; print('✓ ipykernel', ipykernel.__version__, '✓ pyyaml', yaml.__version__)"
 
       - name: Render HTML book
         run: |

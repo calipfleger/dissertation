@@ -38,6 +38,12 @@ bibliography: literature/bibliography.bib
 
 ## Conclusions
 
+
+<!-- AUTO 2026-04-20 phase-4 -->
+::: {.under-review}
+The spatial extent and vertical shoaling of oxygen minimum zones (OMZs) in the eastern Pacific constitute a first-order constraint on pelagic fish distribution. Byrne et al. [-@byrne2024pacific] show using satellite telemetry that the Pacific OMZ creates a distributional boundary for shortfin mako sharks in the Eastern North Pacific, with the limit corresponding to the apex of OMZ shoaling in the North Equatorial Current; projected OMZ expansion will progressively compress suitable habitat for aerobically demanding species. Zhou et al. [-@zhou2020spatial] reconstruct bigeye tuna habitat across the Pacific and find that ENSO-driven OMZ fluctuations shift habitat hotspots: El Niño expands high-quality habitat northward while contracting the western equatorial band via oxycline depth changes. Gutiérrez-Bravo et al. [-@gutierrez2024anoxic] sample fish larvae across five oxygen levels in the Eastern Tropical North Pacific OMZ and find the anoxic core nearly devoid of larvae, forcing early stages into the thin oxygenated surface layer — a compression that tightens with OMZ expansion. At broader trophic scales, Le Grix et al. [-@legrix2023extreme] show using a global marine fish model that compound extreme ocean events (not single-driver anomalies) drive extremely low pelagic fish biomass over 78% of the global ocean, with low oxygen in the eastern equatorial Pacific emerging as a key co-driver alongside temperature and primary productivity. Xing et al. [-@xing2023mesoscale] further demonstrate that mesoscale eddies modulate fishing activity in midlatitude oceans through temperature and oxygen gradients at depth. Together, these studies establish OMZ geometry, ENSO-driven thermocline variability, and compound biogeochemical anomalies as a mechanistic bridge between ocean physics and fish population responses.
+:::
+
 ## References {.unnumbered}
 
 ::: {#refs}

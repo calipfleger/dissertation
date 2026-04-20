@@ -11,6 +11,7 @@
   "sea_peak_month": null,
   "sea_peak_celsius": null,
   "ttest_n": 4,
+  "n_eruptions": 2,
   "ttest_n_pairs": 8,
   "ttest_p_threshold": 0.05,
   "iso2k_window_years": 7,

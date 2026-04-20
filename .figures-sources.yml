@@ -58,6 +58,16 @@ chapter-5-climate-tech-sentiment:
     # - v7/ and v8/ are version directories that will hold real analysis outputs
     #   once the GDELT + VADER pipeline starts producing figures.
     # The sync script tries each path; missing/empty ones are skipped silently.
+    #
+    # CURRENT PATHS (absolute, Mac-only) — work when sync_figures.sh is run from
+    # your Mac, but NOT from the sandbox (the sandbox `~` doesn't point at your
+    # Mac home). See SETUP.md step 5 for the folder move that fixes this.
     - ~/Documents/Claude/Projects/Sentiment Analysis/figures/advisor_pptx
     - ~/Documents/Claude/Projects/Sentiment Analysis/figures/v8
     - ~/Documents/Claude/Projects/Sentiment Analysis/figures/v7
+
+    # AFTER the move — `mv Sentiment\ Analysis Cladue/` — swap in these relative
+    # paths by commenting out the three lines above and uncommenting these:
+    # - ../../../Sentiment Analysis/figures/advisor_pptx
+    # - ../../../Sentiment Analysis/figures/v8
+    # - ../../../Sentiment Analysis/figures/v7

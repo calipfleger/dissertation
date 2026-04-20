@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  macOS LaunchAgent for repo-hygiene-local.sh
+  Runs at 2:03 AM every day, natively on C's Mac (no VM involvement).
+
+  Install:
+    cp scripts/com.calipfleger.repo-hygiene.plist ~/Library/LaunchAgents/
+    launchctl load ~/Library/LaunchAgents/com.calipfleger.repo-hygiene.plist
+
+  Uninstall:
+    launchctl unload ~/Library/LaunchAgents/com.calipfleger.repo-hygiene.plist
+    rm ~/Library/LaunchAgents/com.calipfleger.repo-hygiene.plist
+
+  Verify it's loaded:
+    launchctl list | grep calipfleger.repo-hygiene
+
+  Run manually (test):
+    launchctl start com.calipfleger.repo-hygiene
+
+  Check last exit status:
+    launchctl print user/$(id -u)/com.calipfleger.repo-hygiene | grep -i status
+
+  Log locations:
+    stdout:  /tmp/repo-hygiene.out (truncated each run)
+    stderr:  /tmp/repo-hygiene.err
+    content: ~/Documents/Claude/Projects/Cladue/shared-brain/documents/repo-hygiene-local-log.md
+-->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.calipfleger.repo-hygiene</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/calipfleger/Documents/Claude/Projects/Cladue/shared-brain/projects/dissertation/scripts/repo-hygiene-local.sh</string>
+    </array>
+
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>2</integer>
+        <key>Minute</key>
+        <integer>3</integer>
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>/tmp/repo-hygiene.out</string>
+
+    <key>StandardErrorPath</key>
+    <string>/tmp/repo-hygiene.err</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+        <key>HOME</key>
+        <string>/Users/calipfleger</string>
+    </dict>
+
+    <key>RunAtLoad</key>
+    <false/>
+</dict>
+</plist>

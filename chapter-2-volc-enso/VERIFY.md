@@ -43,9 +43,12 @@ Status column meaning:
 | Intro paragraph | "r ≈ 0.46 in CESM-LME" (@liu2024enso) | Liu et al. 2024 | N/A — value from cited paper, not our analysis | ⏸ — confirm paper reports this r |
 | Intro paragraph | "2 °C after eruption" (@dogar2024nao) | Dogar et al. 2024 | N/A — value from cited paper | ⏸ |
 | Intro paragraph | "39% increase in ENSO variability at ~700 CE" (@jiang2023abrupt) | Jiang et al. 2023 | N/A | ⏸ |
-| Methods §2.1 | "4 iCESM ensemble members" | Study design | Should be `stats["n_members"]` via `{python}` chunk | ❌ currently hardcoded — convert |
-| Methods §2.1 | "89 tropical iso2k coral sites" | Study design | Should be `stats["n_iso2k_sites"]` | ❌ currently hardcoded — convert |
-| Fig 6 caption | "n = 4 members, p < 0.05" | Computed | Should be `stats["ttest_n"]`, `stats["ttest_p_threshold"]` | ❌ hardcoded — convert |
+| Methods §2.1 | "4 iCESM ensemble members" | Study design | Not currently in §2.1 prose (terse section) — add via `val("n_members")` if expanding §2.1 | ⏸ deferred — §2.1 intentionally short |
+| Methods §2.1 | "89 tropical iso2k coral sites" | Study design | Not currently in §2.1 prose — add via `val("n_iso2k_sites")` if expanding §2.1 | ⏸ deferred — §2.1 intentionally short |
+| §3.1 | "*p* < 0.05 at lags +10 to +26 months, n = 8 pairs" | Computed from SEA t-test | ✅ via `val("ttest_p_threshold")`, `val("sea_sig_lag_min/max_months")`, `val("ttest_n_pairs")` | ✅ wiring done 2026-04-19 (lag values still render ⚠TODO⚠ until compute_stats.py is filled from data) |
+| §3.4 | "p < 0.05 sites, El Chichón n=24, Pinatubo n=15" | Computed per eruption | ✅ via `val("ttest_p_threshold")`, `val("iso2k_sig_sites_chichon/pinatubo")` | ✅ wiring done 2026-04-19; site counts render ⚠TODO⚠ until filled |
+| §3.3 fig cap | "significance dots at p < 0.05" | Policy threshold | ✅ via `val("ttest_p_threshold")` | ✅ converted 2026-04-19 |
+| §4 Discussion | "n = 4 members and n = 2 eruptions" | Study design | ✅ via `val("n_members")` + `val("n_eruptions")` + `val("ttest_n_pairs")` | ✅ converted 2026-04-19 |
 
 ## Tracking
 
