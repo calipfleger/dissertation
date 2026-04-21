@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
 # pre-commit-hook.sh — run from .git/hooks/pre-commit (symlinked or copied).
 #
-# Blocks a commit if:
+# BLOCKS a commit if:
 #   1. Any [@bibkey] cited in a .qmd doesn't resolve to the chapter's .bib.
 #   2. Any *.qmd staged for commit contains a `_TODO:` marker that should be
 #      resolved before publishing.
-#   3. Any stats.json has `_warnings` — meaning hardcoded nulls remain.
+#
+# WARNS but allows the commit if:
+#   3. Any stats.json has `_warnings` — null computed stats will render as
+#      `⚠TODO⚠` sentinels on the live site. This is a soft reminder that
+#      compute_stats.py still has placeholder values; the commit proceeds.
 #
 # Install once:
 #   ln -sf ../../scripts/pre-commit-hook.sh .git/hooks/pre-commit

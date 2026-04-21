@@ -12,9 +12,10 @@
 #     (safety — we don't remove user agents without explicit opt-in).
 #
 # Usage:
-#   ./scripts/install-automation.sh           # install + load everything
-#   ./scripts/install-automation.sh --list    # just list, don't change
-#   ./scripts/install-automation.sh --unload  # unload everything (rare)
+#   ./scripts/install-automation.sh             # install + load everything
+#   ./scripts/install-automation.sh --list      # just list, don't change
+#   ./scripts/install-automation.sh --unload    # stop running agents (keep files on disk)
+#   ./scripts/install-automation.sh --uninstall # stop AND delete agent files (full removal)
 
 set -eu
 
@@ -59,14 +60,35 @@ case "$ACTION" in
         ;;
 
     --unload)
-        echo "Unloading all agents..."
+        # Stop running agents but LEAVE the plist files on disk so they can
+        # be re-loaded later with `./install-automation.sh` (no re-copy needed).
+        echo "Stopping all agents (files preserved on disk)..."
+        for p in "${plists[@]}"; do
+            label=$(basename "$p" .plist)
+            target="$AGENT_DIR/$(basename "$p")"
+            if [ -f "$target" ]; then
+                launchctl unload "$target" 2>/dev/null || true
+                echo "  stopped: $label"
+            else
+                echo "  (not installed): $label"
+            fi
+        done
+        echo "To fully remove: ./scripts/install-automation.sh --uninstall"
+        exit 0
+        ;;
+
+    --uninstall)
+        # Stop AND delete the plist files. Use this for full removal.
+        echo "Uninstalling all agents (stop + delete)..."
         for p in "${plists[@]}"; do
             label=$(basename "$p" .plist)
             target="$AGENT_DIR/$(basename "$p")"
             if [ -f "$target" ]; then
                 launchctl unload "$target" 2>/dev/null || true
                 rm -f "$target"
-                echo "  unloaded: $label"
+                echo "  uninstalled: $label"
+            else
+                echo "  (not installed): $label"
             fi
         done
         exit 0

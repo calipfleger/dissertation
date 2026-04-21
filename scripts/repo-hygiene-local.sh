@@ -39,20 +39,36 @@ log_block() {
     } >> "$LOG"
 }
 
-# --- 1. Self-heal stale lock (>5 min old) ---
-if [ -f .git/index.lock ]; then
-    # Only remove if older than 5 minutes — avoid fighting a live git process.
-    lock_age_min=$(( ( $(date +%s) - $(stat -f %m .git/index.lock) ) / 60 ))
+# --- 1. Self-heal stale locks (>5 min old) ---
+# The sandbox-side pipeline can leave THREE different lock files when its
+# Phase-5 push hits EPERM on the mount:
+#   .git/index.lock                    — from `git add`/`git commit`
+#   .git/HEAD.lock                     — from ref updates
+#   .git/objects/maintenance.lock      — from gc / repack
+# All three need clearing; if any is recent (<5 min), we assume a live git
+# process owns it and abort this run rather than race.
+lock_paths=(".git/index.lock" ".git/HEAD.lock" ".git/objects/maintenance.lock")
+cleared=()
+live_lock=""
+for lock in "${lock_paths[@]}"; do
+    [ -f "$lock" ] || continue
+    lock_age_min=$(( ( $(date +%s) - $(stat -f %m "$lock") ) / 60 ))
     if [ "$lock_age_min" -gt 5 ]; then
-        rm -f .git/index.lock
-        lock_msg="✓ cleared stale index.lock (was $lock_age_min min old)"
+        rm -f "$lock"
+        cleared+=("$(basename "$lock") (${lock_age_min} min old)")
     else
-        # Lock is recent — another git process may be running. Abort.
-        log_block "⚠ live index.lock ($lock_age_min min old) — aborting this run"
-        exit 0
+        live_lock="$lock (${lock_age_min} min old)"
+        break
     fi
+done
+if [ -n "$live_lock" ]; then
+    log_block "⚠ live lock found: $live_lock — aborting this run"
+    exit 0
+fi
+if [ ${#cleared[@]} -gt 0 ]; then
+    lock_msg="✓ cleared ${#cleared[@]} stale lock(s): ${cleared[*]}"
 else
-    lock_msg="· no lock to clear"
+    lock_msg="· no locks to clear"
 fi
 
 # --- 2. Junk sweep ---

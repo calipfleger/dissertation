@@ -173,6 +173,18 @@ The composite time-series comparison (Figure 22) shows the iCESM LME pseudo-cora
 
 :::
 
+<!-- AUTO 2026-04-21 phase-5 -->
+::: {.under-review}
+## Figures added 2026-04-21
+
+![Three-panel Robinson map comparing (a) iCESM LME model mean-state δ¹⁸O_sw climatology, (b) LeGrande & Schmidt (2006) observational δ¹⁸O_sw climatology from GISS, and (c) model − obs bias; ±60° latitude crop.](figures/obs_d18o_meanstate_map.png){#fig-obs-d18o-meanstate-map}
+
+![Model bias in δ¹⁸O_sw at `{python} val("n_iso2k_sites")` iso2k coral proxy locations: Robinson projection, RdBu colorscale centred at zero, showing site-level discrepancy between iCESM LME and LeGrande & Schmidt (2006) observations.](figures/obs_d18o_bias_map.png){#fig-obs-d18o-bias-map}
+
+![Scatter plot and histogram of iCESM LME δ¹⁸O_sw vs. LeGrande & Schmidt (2006) observational values at `{python} val("n_iso2k_sites")` iso2k coral sites, with 1:1 reference line; illustrates model bias distribution across the proxy network.](figures/obs_d18o_bias_scatter.png){#fig-obs-d18o-bias-scatter}
+
+:::
+
 ## 4. Discussion
 
 The iCESM LME results confirm that large tropical eruptions can force a reproducible El Niño–like Niño 3.4 response, but that the amplitude and timing depend critically on the pre-eruption ENSO state. The El Chichón case — where all four members happened to be La Niña preconditioned — produces a faster, larger composite response than Pinatubo, where the ensemble spans multiple preconditioning states and the composite is consequently weaker. This is consistent with @dogar2024nao and @predybaylo2020, who find that the volcanic → El Niño pathway is not deterministic but amplifies pre-existing warm tendencies.
