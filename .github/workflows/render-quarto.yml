@@ -74,6 +74,25 @@ jobs:
             quarto render "$q" --to revealjs
           done
 
+      - name: Copy slideshow HTML into _book/ so links resolve on the live site
+        continue-on-error: true
+        run: |
+          # Book mode rendered the presentation .qmds as flat chapter HTML;
+          # here we replace those with the proper reveal.js HTML produced by
+          # the step above. This mirrors build.sh step 3.
+          for chapter_dir in chapter-*/; do
+            src="${chapter_dir}presentations"
+            dest="_book/${chapter_dir}presentations"
+            if [ -d "$src" ]; then
+              mkdir -p "$dest"
+              for f in "$src"/*.html "$src"/*_files; do
+                [ -e "$f" ] || continue
+                cp -R "$f" "$dest/"
+                echo "  copied: $f → $dest/"
+              done
+            fi
+          done
+
       - name: Upload _book/ as artifact
         if: always()
         uses: actions/upload-artifact@v4
