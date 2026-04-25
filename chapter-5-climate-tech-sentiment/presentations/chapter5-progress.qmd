@@ -43,6 +43,15 @@ _New entries auto-appended below this divider every night._
 
 ---
 
+## 2026-04-23 — Nightly pipeline {.smaller}
+
+**Literature:** Phase-4 AUTO block appended to `chapter5.qmd` and `literature-review.md` on climate discourse framing.
+
+- Liu et al. (2025): diachronic *China Daily* vs. *NYT* framing comparison — outlet-level framing differences may confound VADER topic-level scores. ⚠ relevance uncertain — Cali to verify.
+- Freeman (2025): political ecology critique of NbS framing — academic debates may precede/shape media narratives Ch5 tracks.
+
+**Bib:** 2 new entries (`liu2025discourse`, `freeman2025nbs`). All 16 citations resolve ✓.
+
 ## References {.scrollable}
 
 ::: {#refs}

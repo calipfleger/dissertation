@@ -120,6 +120,22 @@ All 14 canonical Ch2 figures are now synced into `figures/` and mirrored here. E
 
 ---
 
+## 2026-04-23 — Nightly pipeline {.smaller}
+
+**Figures:** 88 total (+22 new/updated today)
+
+New figures include:
+
+- `adams2003_sea.png` — Adams et al. (2003) SEA benchmark for post-volcanic Niño 3.4 response
+- `emilegeay2008_nino34.png` — Emile-Geay et al. (2008) Niño 3.4; foundational ocean dynamical thermostat reference
+- `sea_nino34_dualdate.png` — dual-date SEA overlay for Niño 3.4
+- δ¹⁸O and SST composite maps (annual + DJF, y0–y3 and y4–y6, standard and global extent)
+- Observational validation: `obs_d18o_bias_map.png`, `obs_d18o_bias_scatter.png`, `obs_d18o_meanstate_map.png`
+
+**Literature:** Phase-1 AUTO block appended (ODT vs. NAFR mechanism debate — Pausata et al. 2023, Liu et al. 2022, Dogar et al. 2024).
+
+**Blockers:** 10 null keys in `stats.json` (inline ⚠TODO⚠); CI failing at render step (run #14); bib duplicate `liu2024enso` / `liu2024` flagged.
+
 ## References {.scrollable}
 
 ::: {#refs}

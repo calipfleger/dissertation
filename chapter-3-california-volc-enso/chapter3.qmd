@@ -110,6 +110,11 @@ Source of truth for this chapter's research framing: the Drive doc "Ch3. Cal-Vol
 `drafts/from-drive/ch3-lit-review.md` — this chapter pulls from that mirror plus session work.
 -->
 
+<!-- AUTO 2026-04-23 phase-4 -->
+::: {.under-review}
+Interpreting a volcanically-triggered El Niño's impact on California hydroclimate requires understanding the broader teleconnection context and its inherent variability. Guirguis et al. [@guirguis2024enso] show, using seven decades of California precipitation and snowpack records, that ENSO modulates the synoptic character of impactful wet-weather regimes but not their seasonal frequency — a finding that matters for Chapter 3 because volcanic El Niños may shift the atmospheric-river circulation pattern without proportionally changing total precipitation counts, complicating composite detection. Zamora-Reyes et al. [@zamorareyes2022california] place 20th-century California hydroclimate variability in a 600-year tree-ring context, demonstrating that recent decades show anomalously high variability driven by increasingly wet extremes rather than dry ones — establishing the baseline against which any post-volcanic precipitation anomaly from El Chichón (1982) or Pinatubo (1991) must be assessed. Evans et al. [@evans2022intrinsic] model the intrinsic century-scale variability in the ENSO–southwest-US hydroclimate teleconnection using the Last Millennium Ensemble, showing that decade-long intervals of non-significant or reversed correlations can arise from internal variability alone; this finding motivates ensemble-based attribution methods for isolating any volcanic forcing signal from background teleconnection fluctuations.
+:::
+
 ## References {.unnumbered}
 
 ::: {#refs}

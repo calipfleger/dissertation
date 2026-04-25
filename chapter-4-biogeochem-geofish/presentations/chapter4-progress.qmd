@@ -43,6 +43,16 @@ _New entries auto-appended below this divider every night._
 
 ---
 
+## 2026-04-23 — Nightly pipeline {.smaller}
+
+**Literature:** Phase-4 AUTO block appended to `chapter4.qmd` and `literature-review.md` on Eastern Tropical Pacific OMZ–fish dynamics.
+
+- Clarke et al. (2022): ocean warming primary driver of large pelagic catch composition changes in Ecuador/Galápagos EEZs; OMZ amplifies vulnerability during extreme El Niño events.
+- Taboada et al. (2022): 3-D biogeochemical forecasts outperform surface-only predictors for bigeye tuna CPUE; four biogeochemical regimes 1960–2016.
+- Galloso et al. (2025): six decades of Humboldt Current pelagic community data — DO + temperature explain compositional shifts; warmer/less-oxygenated conditions drive higher diversity via habitat compression.
+
+**Bib:** 3 new entries (`clarke2022pelagic`, `taboada2022bigeye`, `galloso2025humboldt`). All 10 citations resolve ✓.
+
 ## References {.scrollable}
 
 ::: {#refs}

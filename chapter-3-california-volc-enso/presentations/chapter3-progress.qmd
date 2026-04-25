@@ -43,6 +43,16 @@ _New entries auto-appended below this divider every night._
 
 ---
 
+## 2026-04-23 — Nightly pipeline {.smaller}
+
+**Literature:** Phase-4 AUTO block appended to `chapter3.qmd` and `literature-review.md` on ENSO–California teleconnection variability.
+
+- Guirguis et al. (2024): ENSO modulates synoptic character of CA wet regimes but not seasonal frequency — volcanic El Niños may shift AR circulation without proportionally changing precipitation counts.
+- Zamora-Reyes et al. (2022): 600-year CA hydroclimate context — recent decades show anomalously high variability driven by wet extremes.
+- Evans et al. (2022): intrinsic century-scale variability in ENSO–SW-US teleconnection; motivates ensemble-based volcanic attribution.
+
+**Bib:** 3 new entries (`guirguis2024enso`, `zamorareyes2022california`, `evans2022intrinsic`). All 24 citations resolve ✓.
+
 ## References {.scrollable}
 
 ::: {#refs}
