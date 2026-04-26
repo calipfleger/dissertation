@@ -50,17 +50,20 @@ jobs:
       - name: Install minimal Python deps
         run: |
           python -m pip install --upgrade pip
-          # Quarto's {python} chunks need a Jupyter kernel to execute. `ipykernel`
-          # is the minimum (pulls in ipython + jupyter_client). This is narrower
-          # than the full `jupyter` meta-package — fewer deps = fewer install
-          # failure modes. pyyaml is used by sync_figures.sh.
-          python -m pip install --retries 5 --timeout 60 ipykernel pyyaml
+          # Quarto's {python} chunks need the full nb-stack to execute, not
+          # just ipykernel. nbformat + nbclient are required by Quarto's
+          # share/jupyter/jupyter.py wrapper. Without them, render fails with
+          # "ModuleNotFoundError: No module named 'nbformat'" at the first
+          # {python} chunk (e.g. chapter2.qmd's stats.json setup chunk).
+          # pyyaml is used by sync_figures.sh.
+          python -m pip install --retries 5 --timeout 60 \
+              ipykernel nbformat nbclient jupyter_client pyyaml
           # If a chapter ships its own requirements.txt, honor it.
           for f in chapter-*/code/requirements.txt; do
             [ -f "$f" ] && python -m pip install --retries 5 -r "$f"
           done
           # Sanity check — fail fast if the essentials didn't land.
-          python -c "import ipykernel, yaml; print('✓ ipykernel', ipykernel.__version__, '✓ pyyaml', yaml.__version__)"
+          python -c "import ipykernel, nbformat, nbclient, jupyter_client, yaml; print('✓ all deps imported successfully')"
 
       - name: Render HTML book
         run: |
