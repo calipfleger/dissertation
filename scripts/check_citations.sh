@@ -36,10 +36,30 @@ check_chapter() {
 
     # Extract every [@bibkey] cited in any .qmd for this chapter.
     # Use `|| true` so an empty result doesn't kill the pipeline under set -e.
+    #
+    # Pre-strip HTML comments so example/placeholder citations inside
+    # `<!-- ... -->` blocks (e.g. boilerplate slideshow examples in
+    # chapter1-slides.qmd) don't count as live and aren't flagged as missing.
+    # The Python heredoc handles multi-line comments cleanly — bash regex
+    # alone can't do non-greedy `.*?` matching across lines.
     local used
-    used=$( { grep -rhoE '@[A-Za-z0-9_]+' "$ch"/*.qmd "$ch"/presentations/*.qmd 2>/dev/null || true; } \
-        | grep -v '@ucsb\.edu\|@ucsb$' \
-        | sed 's/@//' | sort -u)
+    used=$( {
+        python3 - "$ch" <<'PY' 2>/dev/null || true
+import re, sys, glob
+ch = sys.argv[1]
+files = glob.glob(f"{ch}/*.qmd") + glob.glob(f"{ch}/presentations/*.qmd")
+for f in files:
+    try:
+        text = open(f).read()
+    except OSError:
+        continue
+    # Strip HTML comments (single- and multi-line)
+    text = re.sub(r'<!--.*?-->', '', text, flags=re.DOTALL)
+    for m in re.finditer(r'@[A-Za-z0-9_]+', text):
+        print(m.group(0))
+PY
+    } | grep -v '@ucsb\.edu\|@ucsb$' \
+      | sed 's/@//' | sort -u)
 
     # Count safely: wc -l never fails; strip whitespace.
     local count_used

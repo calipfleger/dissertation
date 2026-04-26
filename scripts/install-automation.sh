@@ -139,7 +139,7 @@ case "$ACTION" in
 
     *)
         echo "Unknown action: $ACTION"
-        echo "Usage: $0 [install|--list|--unload]"
+        echo "Usage: $0 [install|--list|--unload|--uninstall]"
         exit 1
         ;;
 esac

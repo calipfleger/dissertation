@@ -91,5 +91,3 @@ chapter-*/figures/*.pdf
 
 # Memory consolidation log — internal operational audit trail.
 **/memory-consolidation-log.md
-
-/.quarto/

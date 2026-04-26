@@ -9,15 +9,18 @@ name: Render Quarto book
 #   Add in: Settings → Secrets and variables → Actions → New secret.
 #
 # Design notes:
-#   - Python deps are kept deliberately MINIMAL. Only `jupyter` is required to
-#     execute the `{python}` chunks that currently exist (chapter2.qmd uses only
-#     json + pathlib from stdlib). Add heavier packages like cartopy/netCDF4
-#     ONLY when a chapter actually imports them — they need system libs
-#     (libproj-dev, libgeos-dev) via `apt-get`, which adds ~2 minutes to CI.
+#   - Python deps are kept MINIMAL but complete: ipykernel + nbformat + nbclient
+#     + jupyter_client + pyyaml. Quarto's `{python}` chunks require the full
+#     nb-stack (not just ipykernel) — chapter2.qmd's stats.json setup chunk
+#     wouldn't render without nbformat. Add heavier packages like cartopy /
+#     netCDF4 ONLY when a chapter actually imports them; those need system
+#     libs (libproj-dev, libgeos-dev) via `apt-get`, adding ~2 minutes to CI.
 #   - HTML-only for now. PDF rendering is disabled — the primary deliverable
 #     is the Quarto Pub site. When ready to produce a submission PDF, add back
 #     the "Render PDF" step (see git history) and install TinyTeX.
-#   - Slideshows are rendered via build.sh step 2 (not Quarto's book mode).
+#   - Slideshows render in two passes: (1) book render flattens them as chapter
+#     HTML; (2) the "Render slideshows" step re-renders to revealjs; (3) the
+#     copy step replaces the book-mode HTML with the revealjs HTML in _book/.
 
 on:
   push:
@@ -111,6 +114,12 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+    # Hoist the secret to job-level env so `if: env.QUARTO_PUB_AUTH_TOKEN != ''`
+    # in the steps below can actually see it. Step-level env is NOT visible at
+    # the time GitHub evaluates each step's `if:` condition — without this
+    # hoist, the publish step would silently skip even when the secret is set.
+    env:
+      QUARTO_PUB_AUTH_TOKEN: ${{ secrets.QUARTO_PUB_AUTH_TOKEN }}
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
@@ -140,8 +149,6 @@ jobs:
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: quarto-pub
-        env:
-          QUARTO_PUB_AUTH_TOKEN: ${{ secrets.QUARTO_PUB_AUTH_TOKEN }}
 
       - name: Skip publish (no token configured)
         if: env.QUARTO_PUB_AUTH_TOKEN == ''
@@ -150,5 +157,3 @@ jobs:
           echo "Run 'quarto publish quarto-pub' locally once, then add the token from"
           echo "~/.config/quarto/_publish.yml to Settings → Secrets → Actions."
           echo "Skipping publish for this run."
-        env:
-          QUARTO_PUB_AUTH_TOKEN: ${{ secrets.QUARTO_PUB_AUTH_TOKEN }}

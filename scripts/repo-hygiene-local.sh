@@ -14,7 +14,9 @@
 #   4. Stages tracked modifications + pipeline-generated new files.
 #   5. Commits with an auto-generated summary message.
 #   6. Pushes to origin/main with a 60-second timeout.
-#   7. Appends a log entry to shared-brain/documents/repo-hygiene-local-log.md.
+#   7. Appends a log entry to shared-brain/documents/repo-hygiene-log.md.
+#      (Same canonical log file the morning-digest loop reads — keeping one
+#      log path means the digest works regardless of which loop wrote.)
 #
 # Safe to re-run any time (idempotent). If there's nothing to commit,
 # it logs "working tree clean" and exits.
@@ -72,23 +74,28 @@ else
 fi
 
 # --- 2. Junk sweep ---
+# `swept` accumulates a multi-line bullet list. Use $'\n' (ANSI-C quoting)
+# for real newlines — earlier this concatenated the literal characters \n,
+# which printed as backslash-n in the log instead of line breaks.
 swept=""
 if [ -e -- - ]; then
     rm -f -- -
-    swept="$swept\n  - removed stray '-' file"
+    swept="$swept"$'\n'"  - removed stray '-' file"
 fi
 for f in *.tex; do
     [ -e "$f" ] || continue
     rm -f "$f"
-    swept="$swept\n  - removed root $f"
+    swept="$swept"$'\n'"  - removed root $f"
 done
 for f in chapter-*/presentations/*.html; do
     [ -e "$f" ] || continue
-    # `git rm --cached` if tracked, else just rm
+    # `git rm --cached` if tracked, else just rm — both paths are tolerated.
     git rm --cached -- "$f" 2>/dev/null || true
     rm -f "$f"
-    swept="$swept\n  - removed rendered $f"
+    swept="$swept"$'\n'"  - removed rendered $f"
 done
+# Build dirs are gitignored, so removing them has zero impact on what gets
+# committed. This is just disk-cleanup hygiene.
 rm -rf _book/ .quarto/ _freeze/ 2>/dev/null || true
 
 # --- 3. Check if there's anything to commit ---
