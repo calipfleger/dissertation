@@ -18,6 +18,16 @@ _Themes will be added here automatically as topics come up in sessions. Each the
 
 ---
 
+## Theme: Oxygen minimum zones and pelagic fish distributions
+
+<!-- AUTO 2026-04-26 phase-4 -->
+::: {.under-review}
+The expanding Pacific oxygen minimum zone (OMZ) presents a direct constraint on the vertical and horizontal distributions of commercially and ecologically important fish species. Gutiérrez-Bravo et al. (2024) show that anoxic waters in the Eastern Tropical North Pacific OMZ compress the habitable depth range for fish larvae to a thin oxycline layer, with consequences for recruitment and cross-shelf connectivity [@gutierrez2024anoxic]. At the basin scale, Byrne et al. (2024) document that the Pacific OMZ acts as a hard biogeographic boundary for shortfin mako sharks in the eastern North Pacific, with tracking data showing abrupt avoidance of low-oxygen waters regardless of thermal preference [@byrne2024pacific]. Community-level responses are captured by Galloso et al. (2025), who reconstruct 40+ years of pelagic fish community dynamics in the northern Humboldt Current and identify regime shifts tied to combined temperature and O₂ forcing; periods of elevated ENSO-driven stratification co-occur with species composition turnover [@galloso2025humboldt]. Le Grix et al. (2023) link these dynamics to compound ocean extremes — co-occurring marine heatwaves and low-oxygen events — which drive disproportionately large reductions in projected global pelagic fish biomass in Earth system models; their framework suggests that additive or multiplicative stressor interactions, rather than individual stressors alone, dominate future biogeochemical impacts on fisheries [@legrix2023extreme]. Together these papers motivate Ch4's core questions: what is the biogeochemical signature of ENSO-driven OMZ variability, and how does it propagate through the food web to commercially fished populations?
+
+**References:** @byrne2024pacific; @galloso2025humboldt; @gutierrez2024anoxic; @legrix2023extreme
+:::
+<!-- END AUTO 2026-04-26 phase-4 -->
+
 ## Gaps & open questions
 
 _Things the literature hasn't addressed, or areas where findings disagree. Auto-appended by Claude when searches surface disagreement._

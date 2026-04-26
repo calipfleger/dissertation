@@ -18,6 +18,16 @@ _Themes will be added here automatically as topics come up in sessions. Each the
 
 ---
 
+## Theme: ENSO teleconnections to California precipitation
+
+<!-- AUTO 2026-04-26 phase-4 -->
+::: {.under-review}
+The canonical view of ENSO as the dominant driver of California precipitation variability has been complicated by recent work that emphasizes the role of atmospheric rivers (ARs) and the California Precipitation Mode (CPM). Guirguis et al. (2024) reinterpret ENSO's role using a conditional framing: rather than a monotonic wet El Niño / dry La Niña response, they find that ENSO's influence is mediated by the AR landfall position and frequency, with El Niño conditions increasing the probability of heavy AR events only when atmospheric circulation anomalies align correctly [@guirguis2024enso]. Chen et al. (2021) identify a spatially coherent CPM — a low-frequency precipitation pattern distinct from ENSO teleconnections — that accounts for a large fraction of interannual variance in California rainfall and is tied to variations in the North Pacific jet stream and AR genesis regions [@chen2021distinct]. Both findings are relevant for Ch3's framing: if volcanic forcing drives El Niño–like anomalies (per Stevenson et al. 2016 and Adams et al. 2003), the downstream California precipitation response may be contingent on background circulation state in ways that complicate a simple signal detection. Torbenson et al. (2025) provide paleo context by documenting a ~1700 CE disruption of Pacific drought teleconnections in tree-ring records across the Pacific Rim; while not focused on volcanic forcing, this result suggests that ENSO-hydroclimate teleconnections are not stationary through the Common Era — a potential caveat for Ch3's attribution claims [⚠ uncertain relevance; @torbenson2025disruption].
+
+**References:** @chen2021distinct; @guirguis2024enso; @torbenson2025disruption
+:::
+<!-- END AUTO 2026-04-26 phase-4 -->
+
 ## Gaps & open questions
 
 _Things the literature hasn't addressed, or areas where findings disagree. Auto-appended by Claude when searches surface disagreement._

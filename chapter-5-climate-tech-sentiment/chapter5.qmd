@@ -170,3 +170,8 @@ Two recent contributions from outside the GDELT/VADER methodological core of Ch5
 
 ::: {#refs}
 :::
+
+<!-- AUTO 2026-04-26 phase-1 -->
+::: {.under-review}
+Today's OAE sentiment analysis work — ten publication-quality figures and formal statistical tests on reader-reach-weighted polarity — sits within a rapidly expanding scientific literature on ocean-based carbon dioxide removal. Roberts et al. [@roberts2026climate] provide the most recent comprehensive review of climate interventions and their potential marine ecosystem impacts (*Rev. Geophys.*, 2026), synthesizing CDR and SRM pathways and noting that Ocean Alkalinity Enhancement specifically seeks to increase the ocean's dissolved inorganic carbon storage by adding alkaline materials or electrochemically raising seawater alkalinity. Their review notes substantial knowledge gaps about OAE's ecosystem trade-offs at deployment scale, a scientific uncertainty that is itself likely to generate media coverage patterns distinct from more established carbon removal technologies. This framing is directly relevant to Ch5: if OAE occupies a scientific frontier with contested risk profiles, the media sentiment trajectory tracked by the GDELT + VADER pipeline may reflect that uncertainty rather than stable public acceptance or rejection. The reach-weighting analysis completed today — finding that positive articles reach substantially more readers despite lower counts — should therefore be interpreted alongside the Roberts et al. context that OAE remains a nascent CDR pathway where media framing may be outpacing scientific consensus.
+:::

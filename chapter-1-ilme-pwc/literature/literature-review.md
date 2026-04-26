@@ -27,6 +27,16 @@ _Themes are added here automatically as substantive topics come up in sessions._
 
 ---
 
+## Theme: Walker Circulation trends — forced vs. internal variability
+
+<!-- AUTO 2026-04-26 phase-4 -->
+::: {.under-review}
+A central interpretive challenge for Ch1 is separating the forced Walker Circulation (PWC) response from multi-decadal internal variability. Heede & Fedorov (2023) offer a direct decomposition: they find that the early-21st-century PWC strengthening and cold eastern equatorial Pacific (EEP) are primarily attributable to the Interdecadal Pacific Oscillation (IPO) in its negative phase, with the long-run forced response actually pointing toward weakening under continued greenhouse gas forcing — consistent with the Held-Soden thermodynamic expectation [@heede2023colder]. Watanabe et al. (2023) identify two competing mechanisms driving the observed trend: a La Niña–like cooling of the EEP (reinforcing the PWC) and an Indo-Pacific warming pattern that acts to weaken it, with their net effect explaining the observed multidecadal ambiguity in reanalyses [@watanabe2023two]. On the feedbacks side, Fu & Fedorov (2023) show that the Bjerknes feedback and shortwave cloud feedbacks together govern whether the EEP warms or cools relative to the warm pool in CMIP6 models, explaining much of the inter-model spread in projected tropical Pacific SST gradients [@fu2023bjerknes]. For iLME/iCESM attribution, this framing is useful: isotopic signatures of PWC strength in the iCESM ensemble should be screened against the background IPO phase to isolate the forced signal. Shrestha & Soden (2023) further corroborate an anthropogenic weakening of large-scale atmospheric overturning detectable in the satellite era, lending observational support to the thermodynamic weakening prediction [@shrestha2023anthropogenic]. Model biases — specifically the equatorial cold-tongue bias — may cause models like iCESM to overestimate PWC strengthening during La Niña states; Wills et al. (2022) document these biases in CMIP6 and their implication for trend attribution [@wills2022systematic].
+
+**References:** @fu2023bjerknes; @heede2023colder; @shrestha2023anthropogenic; @watanabe2023two; @wills2022systematic
+:::
+<!-- END AUTO 2026-04-26 phase-4 -->
+
 ## Gaps & open questions
 
 ---
