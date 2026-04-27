@@ -84,3 +84,47 @@ Search queries: climate technology sentiment social media NLP; ocean acidificati
 | Ch5 | 4 | 0 | all already in bib |
 
 AUTO phase-4 synthesis blocks written to `literature-review.md` for Ch1, Ch3, Ch4. Ch2 and Ch5 received phase-4 blocks in phase-1 of this pipeline run.
+
+---
+
+## Run-2 Supplement — 2026-04-26 (Phase-4 extended Ch5 searches)
+
+_Run-2 focused on the 5 newly active Ch5 search queries (first run this chapter had real queries) plus a Ch2 recheck and Ch3 rerun._
+
+### Chapter 2 — VOLC ENSO (run-2 recheck)
+
+All returned papers already in bib (25 entries). **0 new additions.**
+
+### Chapter 3 — California-VOLC-ENSO (run-2 extended)
+
+| Key | Status | Authors | Year | Journal | Summary |
+|-----|--------|---------|------|---------|---------|
+| `carrillo2022megadrought` | **NEW** | Carrillo et al. | 2022 | JGR Atmos | Multi-year La Niña sequences driving western US megadrought; cumulative precipitation deficit context for Ch3 |
+| `park2023subseasonal` | **NEW** | Park et al. | 2023 | JGR Atmos | Sub-seasonal variability of ENSO teleconnections to western North America; argues for intraseasonal resolution in composite studies |
+
+**New entries added to bib:** `carrillo2022megadrought`, `park2023subseasonal`
+
+### Chapter 5 — Climate Tech Sentiment (run-2, first real searches)
+
+| Key | Status | Authors | Year | Journal | Summary |
+|-----|--------|---------|------|---------|---------|
+| `baum2025hope` | **NEW** | Baum, Brutschin, Fritz & Sovacool | 2025 | Risk Analysis | 30-country survey of climate emotions; hope predicts CDR support, fear predicts SRM opposition — testable via NRC lexicon in Ch5 pipeline |
+| `sanz2025media` | **NEW** | Sanz & López Iturriaga | 2025 | Business Ethics Env Resp | GDELT + BERTopic for EU climate funds media sentiment; validates GDELT-based headline sentiment approach |
+| `brazys2021gdelt` | **NEW** | Brazys & Schoonvelde | 2021 | JCMS | GDELT GKG tone measure: construction, coding criticisms, and validation in international-relations context |
+| `markusson2022natural` | **NEW** | Markusson | 2022 | WIREs Climate Change | Natural vs technological framing of carbon removal drives differential public acceptance — predicts VADER score asymmetry across NbS/CDR/SRM categories |
+
+**New entries added to bib:** `baum2025hope`, `sanz2025media`, `brazys2021gdelt`, `markusson2022natural`
+
+AUTO phase-4 synthesis block written to `chapter5.qmd` (2026-04-26 phase-4).  
+AUTO phase-4 synthesis block also written to `chapter3.qmd` (2026-04-26 phase-4).
+
+### Updated summary
+
+| Chapter | Run-1 new | Run-2 new | Total new 2026-04-26 | Notes |
+|---------|-----------|-----------|----------------------|-------|
+| Ch1 | 2 | 0 | 2 | |
+| Ch2 | 0 | 0 | 0 | bib well-populated |
+| Ch3 | 1 ⚠ | 2 | 3 | run-2 added ENSO-WNA background papers |
+| Ch4 | 0 | 0 | 0 | |
+| Ch5 | 0 | 4 | 4 | first real search queries active |
+| **Total** | **3** | **6** | **9** | |

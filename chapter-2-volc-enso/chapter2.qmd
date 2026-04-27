@@ -203,6 +203,59 @@ The key remaining open question is whether the iCESM LME pseudo-coral network pr
 
 ## 5. Conclusions
 
+The iCESM Last Millennium Ensemble reproduces a robust El Niño–like Niño 3.4
+response to both El Chichón (April 1982) and Pinatubo (June 1991), with the
+four-member ensemble mean crossing +0.5 °C at approximately 12 months
+post-eruption and peaking near `{python} val("sea_peak_celsius")` °C at lag
++`{python} val("sea_peak_month")` months. The composite is statistically
+significant at *p* < `{python} val("ttest_p_threshold")` from lags
++`{python} val("sea_sig_lag_min_months")` to
++`{python} val("sea_sig_lag_max_months")` months, confirming that both
+eruptions — each a boreal spring or early summer event — produce a
+measurable forced ENSO response in this model.
+
+Pre-eruption ENSO state modulates the amplitude and timing of that response.
+All four iCESM LME members were La Niña–preconditioned at the time of El
+Chichón, producing a rapid, coherent composite warming. Pinatubo members
+spanned El Niño, Neutral, and La Niña pre-states, yielding a weaker and more
+delayed composite. This asymmetry is consistent with the preconditioning
+hypothesis of Predybaylo et al. [-@predybaylo2020]: a La Niña–like background
+deepens the west Pacific thermocline, providing a larger reservoir of warm
+subsurface water that post-eruption trade-wind weakening can release.
+
+Regional teleconnection analysis implicates both the ocean dynamical thermostat
+[@clement1996ocean] and the Atlantic–African pathway [@khodri2017] as active
+mechanisms in this simulation. The Equatorial Atlantic warms within 1–6 months
+of each eruption, consistent with Khodri et al.'s proposed sequence of aerosol
+cooling → weakened West African Monsoon → reduced Atlantic trade winds →
+Atlantic SST warming → Walker circulation weakening. The Maritime Continent
+shows concurrent cooling, consistent with @pausata2023revisiting.
+
+Comparison with the iso2k coral proxy network reveals that iCESM pseudo-coral
+Δδ¹⁸Oc agrees in sign with observed anomalies at the majority of
+`{python} val("n_iso2k_sites")` tropical sites during Y0–Y3, with positive
+composite skill concentrated in the western and central Pacific. Agreement
+is weakest in the Indian Ocean, where the model's known δ¹⁸O_sw mean-state
+bias [@thompson2022hydrosensitive] likely degrades the pseudo-coral signal.
+Site-level responses remain highly variable — consistent with prior null
+findings in proxy-model comparisons — underscoring that with only two eruptions and four
+ensemble members, distinguishing the forced signal from internal ENSO
+variability at individual proxy locations requires large ensembles or many
+eruptions.
+
+Three scientific priorities follow directly from these findings. First, expanding
+to additional historical eruptions (Tambora 1815, Krakatoa 1883, Agung 1963)
+within the full 13-member iCESM LME would substantially increase the sample
+size for preconditioning-stratified composites and bring the study into direct
+comparison with prior CESM-LME ENSO studies. Second, diagnosing
+atmospheric fields (precipitation, wind stress, OLR) would allow explicit
+attribution of the Equatorial Atlantic warming to the Khodri pathway rather
+than inferring it from SST alone. Third, applying a higher-resolution isotope-
+enabled ocean model [cf. @stevenson2023palmyra] at the proxy sites with the
+weakest skill could clarify whether the model–proxy discrepancy reflects a
+forced-response bias or a resolution limitation in representing the
+advective controls on δ¹⁸O_sw.
+
 ## 6. Data and code availability
 
 - Analysis code: mirrored in this repo's adjacent [`volcano enso/`](https://github.com/calipfleger/dissertation/tree/main/) folder (private working copy lives in the author's local Cladue workspace). Git repo: [`calipfleger/dissertation`](https://github.com/calipfleger/dissertation).
