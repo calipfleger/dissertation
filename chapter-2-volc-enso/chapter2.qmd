@@ -296,6 +296,16 @@ Today's refactoring of the Ch2 benchmark comparison scripts — specifically the
 :::
 <!-- END AUTO 2026-04-26 phase-5 -->
 
+<!-- AUTO 2026-04-27 phase-5 -->
+::: {.under-review}
+## Figures added 2026-04-27
+
+![Sign-flip permutation test null distributions for field significance of the post-eruption tropical SST composite. Each panel (Y0–Y3) shows a histogram of the fraction of tropical ocean cells (|lat| ≤ 30°) achieving *p* < 0.05 under 10,000 sign-flip permutations (gray); the vertical red line marks the observed fraction *f*\_obs. Annotations give *f*\_obs and the field-significance p-value *p*\_field. A high *f*\_obs to the right of the null distribution indicates the composite significance exceeds chance.](figures/field_significance_histograms.png){#fig-field-sig-histograms}
+
+![Summary of field significance across post-eruption years Y0–Y3 and the full 8-year window. Left panel: bar chart of observed tropical cell fraction *f*\_obs (red) versus the 95th-percentile null threshold (dashed black) and the 5% expected-by-chance level (horizontal dashed); starred bars achieve field significance (*p*\_field < 0.05). Right panel: time series of *f*\_obs across all 8 post-eruption years (connected dots) with the 5th–95th percentile null envelope shaded gray; red-highlighted bars indicate years with *p*\_field < 0.05.](figures/field_significance_summary.png){#fig-field-sig-summary}
+
+:::
+
 ## References {.unnumbered}
 
 ::: {#refs}
