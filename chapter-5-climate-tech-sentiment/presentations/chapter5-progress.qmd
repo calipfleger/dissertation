@@ -41,6 +41,34 @@ _New entries auto-appended below this divider every night._
 
 <!-- PROGRESS-INSERT-MARKER — phase 5 of the nightly pipeline appends new sections HERE -->
 
+<!-- AUTO 2026-05-04 phase-5 -->
+## 2026-05-04 — Nightly pipeline {.smaller}
+
+**Figures:** OAE_Sentiment_Figures.pptx (29 slides) created — location unconfirmed (not in figures/ dir; likely in Dispatch or local Mac folder). 5 dummy figures already in  unchanged.
+
+**Data collection:** 8 Dispatch coding sessions completed — topics/article count unreadable from automated pipeline (mobile sessions inaccessible).
+
+**Literature:** `nawaz2025community` (ERSS 2025) added — community OAE perceptions (Sequim, WA): preferences for existing infrastructure, minimal industrialization, community/Tribal ownership. Contextualizes positive GDELT/VADER OAE media tone vs. ground-level ambivalence.
+
+**Bib:** 25 entries total.
+
+**Blockers:**
+- OAE_Sentiment_Figures.pptx location unknown to pipeline — C to confirm path
+- 8 Dispatch sessions unreadable (mobile-side sessions)
+- Dispatch coding schema not yet visible to pipeline
+
+## nawaz2025community — OAE community perceptions
+
+**Nawaz & Belotti (2025)** *ERSS*: community workshops in Sequim, WA on OAE.
+
+- Participants open to OAE under conditions of local control and co-design
+- Concerns: scale, coastline industrialization (not the chemistry itself)
+- Key finding: **community–media sentiment gap** — positive media framing (GDELT/VADER) may not reflect community ambivalence
+
+→ Ch5 implication: positive tone in VADER scores may mask nuanced community reservations not captured in news framing.
+
+
+
 ---
 
 ## 2026-04-23 — Nightly pipeline {.smaller}

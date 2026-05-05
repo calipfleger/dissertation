@@ -184,3 +184,18 @@ Beyond methodology, two substantive contributions inform the chapter's theoretic
 
 ⚠ Verify author lists for `baum2025hope` and `sanz2025media` via Zotero DOI import before citing (DOIs confirmed; author names in bibliography.bib are best-available from search metadata). ⚠ `brazys2021gdelt` title is a reconstruction — confirm via DOI 10.1111/jcms.13290.
 :::
+
+<!-- AUTO 2026-04-30 phase-1 -->
+::: {.under-review}
+Lexicon-based sentiment analysis of climate technology discourse has gained traction as a scalable complement to human annotation. [@mullerhansen2023attention] applied both deep-learning classifiers and lexicon-based tools to over 1.5 million tweets covering sixteen GGR and SRM technologies, finding that positive sentiment predominates for carbon removal while ocean-based interventions — including ocean fertilization — attract higher shares of negative sentiment. The present chapter extends this line of inquiry by applying a validated multi-lexicon ensemble (VADER, AFINN, Bing Liu, NRC; κ≥0.70 inter-rater agreement on the OAE domain) to a focused corpus of ocean alkalinity enhancement discourse, enabling both within-domain comparison across lexicons and cross-domain comparison with the broader climate technology landscape characterized by [@mullerhansen2023attention].
+:::
+
+<!-- AUTO 2026-04-30 phase-4 -->
+::: {.under-review}
+The evolving social media discourse on carbon dioxide removal offers an important benchmark for Chapter 5's OAE sentiment analysis. [@repke2024cdr] document exponentially growing Twitter attention to CDR methods from 2010–2022, with broadly positive sentiment trends across most technologies. Setting the OAE sub-corpus against this baseline — alongside the sixteen-technology comparison in [@mullerhansen2023attention] — allows Chapter 5 to assess whether ocean alkalinity enhancement follows the general CDR positivity trend or exhibits the more contested reception pattern associated with ocean-based interventions. The validated multi-lexicon ensemble (κ≥0.70) described in the Methods is designed to detect such sub-domain divergence robustly across VADER, AFINN, Bing Liu, and NRC lexicons.
+:::
+
+<!-- AUTO 2026-05-04 phase-1 -->
+::: {.under-review}
+Media sentiment analysis of OAE coverage must be interpreted against the backdrop of actual community attitudes. [@nawaz2025community] document that coastal communities in a potential OAE deployment region (Sequim, WA) express concern primarily around environmental justice and political-economic arrangements rather than ecological impacts alone — and that scale awareness substantially conditions acceptance. This community ambivalence may not be captured in professional news discourse, where [@mullerhansen2023attention] and [@repke2024cdr] both document broadly positive sentiment trajectories for CDR technologies including ocean-based interventions. If OAE news coverage is dominated by project announcements and institutional communications rather than community voices, the positive GDELT `AvgTone` and VADER scores derived in this chapter may reflect a structural media bias toward institutional framings — a caveat worth explicit treatment in the discussion.
+:::

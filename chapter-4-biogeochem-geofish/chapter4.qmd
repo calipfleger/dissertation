@@ -58,3 +58,13 @@ Three recent studies sharpen the mechanistic picture linking marine biogeochemis
 
 ::: {#refs}
 :::
+
+<!-- AUTO 2026-04-30 phase-4 -->
+::: {.under-review}
+The coupling between ENSO variability and fish habitat availability through OMZ dynamics represents a central mechanism for Chapter 4. [@enso2025aerobic] demonstrate that ENSO mode and amplitude jointly determine aerobic habitat compression in the Southeast Pacific, while [@scott2025metabolic] show that this coupling yields predictable interannual fisheries outcomes at lead times useful for management. These findings anchor Chapter 4's framing: geographic variation in biogeochemical state (oxygen, nutrients, carbonate chemistry) shapes not just instantaneous habitat but its interannual and decadal predictability, with ENSO-driven OMZ dynamics as a primary driver.
+:::
+
+<!-- AUTO 2026-05-04 phase-4 -->
+::: {.under-review}
+[@galloso2025ensofish] directly quantify ENSO-phase effects on fish community structure in the northern HCS: El Niño events increase diversity via expanded warm oxygenated habitat; La Niña phases decrease diversity as OMZ shoaling restricts the shelf. The response scales with ENSO intensity, providing an empirical community-composition complement to the habitat-volume framing of [@enso2025aerobic] and the metabolic-constraint predictability of [@scott2025metabolic]. This ENSO-state → biogeochemical anomaly → fish habitat → community composition causal chain is the core mechanistic thread of Chapter 4.
+:::

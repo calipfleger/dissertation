@@ -124,3 +124,8 @@ Two recent studies extend the background context for ENSO–California precipita
 
 ::: {#refs}
 :::
+
+<!-- AUTO 2026-05-04 phase-4 -->
+::: {.under-review}
+The physical pathway from volcanic forcing to California hydroclimate may not operate exclusively through the ENSO teleconnection. [@todd2025drought] demonstrate using speleothem records and iCESM simulations that North Pacific SST cooling — of the kind expected following large tropical eruptions — shifts the jet stream equatorward and reduces California winter precipitation through a storm-track mechanism independent of the ENSO state. This North Pacific pathway would be superimposed on any direct ENSO-mediated precipitation signal, potentially amplifying post-eruption hydroclimate anomalies in the region. Distinguishing these two pathways in the Chapter 3 composite requires conditioning the analysis on the North Pacific SST state, and suggests that the El Niño–drought correlation may underestimate total post-eruption precipitation reduction in California if the North Pacific pathway is not accounted for.
+:::

@@ -315,3 +315,52 @@ Today's refactoring of the Ch2 benchmark comparison scripts — specifically the
 ::: {.under-review}
 Today's work integrating three foundational methods papers into the Ch2 citation network motivates a brief synthesis of how they frame the iCESM pseudo-coral analysis. The canonical review by Robock [@robock2000volcanic] establishes that both El Chichón (1982) and Pinatubo (1991) were associated with subsequent El Niño development, though he cautions that ENSO was already developing when Pinatubo erupted in June 1991 — a confound that motivates the ENSO-preconditioning sensitivity tests in the present study. The statistical methodology adopted throughout Ch2's correlation analyses rests on the effective-sample-size framework of Bretherton et al. [@bretherton1999effective], who demonstrate that for time-varying fields dominated by annual-timescale autocorrelation, the number of spatially and temporally independent samples is approximately n/12 — halving the apparent statistical power relative to naive sample-count-based inference and requiring |r| > 0.26 for significance at the two-tailed p < 0.05 level given n_eff ≈ 56 annual samples. Finally, the observational δ¹⁸O_sw climatology against which iCESM LME mean-state model biases are assessed in `obs_d18o_meanstate_map.py` and `obs_d18o_bias_check.py` derives from LeGrande and Schmidt [@legrande2006global], whose global 1°×1° gridded product remains the standard reference for comparing prognostic water isotope tracers in coupled models. A peripheral result from Fay et al. [@fay2023pinatubo] ⚠ relevance uncertain suggests that the Pinatubo eruption drove a persistent positive oxygen anomaly in CESM that penetrated to mid-depths — a biogeochemical footprint that, while outside Ch2's scope, confirms that the eruption-driven ENSO variability in CESM is qualitatively consistent with the iCESM LME ensemble used here.
 :::
+
+<!-- AUTO 2026-04-30 phase-1 -->
+::: {.under-review}
+The mechanisms by which volcanic eruptions alter ENSO remain actively debated. [@pausata2023revisiting] revisited the three principal candidate mechanisms — the ocean dynamical thermostat (ODT), Maritime Continent cooling, and tropical northern Africa cooling — and found that the ODT played a negligible role, with African cooling dominating the ENSO response. More recently, [@zhang2025telecon] showed that eruptions do not simply force an ENSO-like anomaly but also disrupt the downstream teleconnection structure, altering how ENSO variance propagates to land temperatures in boreal summer. For the present study, this implies that the pseudo-coral δ¹⁸O signal forced by El Chichón and Pinatubo in the iCESM LME reflects both the direct thermodynamic response at the site and a modified ENSO variance field; disentangling these effects motivates the superposed epoch analysis and field significance framework described in the Methods.
+:::
+
+<!-- AUTO 2026-05-04 phase-1 -->
+::: {.under-review}
+The relationship between eruption magnitude and climate response is not guaranteed to be linear. [@timmreck2024linearity] used a large iCESM ensemble spanning two orders of magnitude in volcanic aerosol optical depth to show that while global-mean cooling scales approximately linearly with forcing, ENSO and regional precipitation responses are nonlinear — the El Niño-like response is robust at Pinatubo-scale forcing but weakens disproportionately at sub-Pinatubo amplitudes. For the 0.5× and 0.75× spaghetti experiments analysed in this chapter, this implies that the reduced Niño 3.4 SEA response at lower scaling factors should not be interpreted as simple linear attenuation; rather, it may reflect the response falling below a nonlinear ENSO-triggering threshold, consistent with the preconditioning dependence identified by [@predybaylo2020] and the African-cooling mechanism analysed by [@pausata2023revisiting].
+:::
+
+<!-- AUTO 2026-05-04 phase-5 -->
+::: {.under-review}
+## Seasonal Scaling Figures (2026-05-04)
+
+![Niño 3.4 superposed epoch analysis (SEA) for 0.5×, 0.75×, and 1× Samalas forcing. Each panel shows ensemble-mean Niño 3.4 SST anomaly (°C) over Y−2 to Y+5 post-eruption; individual ensemble members (thin lines) in grey; ensemble mean (thick colored line); ±1 SE shading. Spaghetti layout highlights member-to-member spread and the signal-to-noise ratio at each forcing level.](figures/seasonal-scaling/spaghetti_0p5x.png){#fig-spaghetti-0p5x}
+
+![As @fig-spaghetti-0p5x but for 0.75× Samalas forcing.](figures/seasonal-scaling/spaghetti_0p75x.png){#fig-spaghetti-0p75x}
+
+![As @fig-spaghetti-0p5x but for 1× (full) Samalas forcing.](figures/seasonal-scaling/spaghetti_1x.png){#fig-spaghetti-1x}
+
+![Summary heatmap of post-eruption Niño 3.4 SEA response by forcing level (0.5×, 0.75×, 1×) and post-eruption year (Y0–Y5). Color: ensemble-mean Niño 3.4 anomaly (°C). Cells with stippling indicate significance at *p* < 0.05. Allows direct comparison of how the ENSO response amplitude changes across scaling factors.](figures/seasonal-scaling/summary_heatmaps.png){#fig-summary-heatmaps}
+
+![Hovmöller diagram of equatorial SST anomaly (°C) averaged over 5°S–5°N, as a function of longitude (100°E–80°W) and post-eruption year (Y0–Y5). Ensemble mean for 1× forcing; stippling where *p* < 0.05. Reveals the eastward propagation of the anomalous warming that characterizes the El Niño-like response.](figures/seasonal-scaling/hovmoller_sst.png){#fig-hovmoller-sst}
+
+![Indian Ocean Basin (IOB) index time series for 0.5×, 0.75×, and 1× forcing (ensemble mean ± 1 SE). The IOB is the area-averaged SST anomaly over the tropical Indian Ocean (40°–100°E, 20°S–20°N). Quantifies the Indian Ocean warming that typically follows El Niño and may feed back on Pacific ENSO dynamics.](figures/seasonal-scaling/iob_index.png){#fig-iob-index}
+
+![Annual mean Niño 3.4 bar chart by forcing level and post-eruption year. Each bar shows ensemble-mean anomaly; error bars are ±1 SE. Allows a compact side-by-side comparison of the forced ENSO signal across scaling levels.](figures/seasonal-scaling/annual_nino34_bar.png){#fig-annual-nino34-bar}
+
+![Probability density (KDE) of Niño 3.4 peak anomaly across ensemble members, stratified by forcing level (0.5×, 0.75×, 1×). Shows whether the distribution of responses shifts and/or widens with increased forcing.](figures/seasonal-scaling/nino34_kde.png){#fig-nino34-kde}
+
+![Composite post-eruption SST anomaly maps for El Niño years within the forced ensemble (1× Samalas forcing). Panels show Y0 through Y3; stippling where *p* < 0.05. Spatial pattern of the El Niño-like response.](figures/seasonal-scaling/composite_sst_elnino.png){#fig-composite-sst-elnino}
+
+![As @fig-composite-sst-elnino but for La Niña years within the forced ensemble. Reveals asymmetry between El Niño–like and La Niña–like ensemble members.](figures/seasonal-scaling/composite_sst_lanina.png){#fig-composite-sst-lanina}
+
+![Composite post-eruption precipitation anomaly (mm/day) maps for El Niño years within the 1× forced ensemble. Panels Y0–Y3; stippling *p* < 0.05. Hydroclimate footprint of the El Niño-like response, directly relevant to Ch3 California drought teleconnection.](figures/seasonal-scaling/composite_prect_elnino.png){#fig-composite-prect-elnino}
+
+![As @fig-composite-prect-elnino but for La Niña years. Contrasts precipitation anomaly patterns under opposite ENSO phase within the forced ensemble.](figures/seasonal-scaling/composite_prect_lanina.png){#fig-composite-prect-lanina}
+
+![Walker Circulation anomaly composite (velocity potential, 200 hPa) for El Niño years within the 1× forced ensemble, averaged over Y1–Y2. Stippling *p* < 0.05. Contextualizes the large-scale circulation change associated with the El Niño-like SST response.](figures/seasonal-scaling/walker_elnino.png){#fig-walker-elnino}
+
+![As @fig-walker-elnino but for La Niña years.](figures/seasonal-scaling/walker_lanina.png){#fig-walker-lanina}
+
+![Seasonal precipitation anomaly by sub-region (tropical Pacific, Maritime Continent, Indian Ocean, California) for 0.5×, 0.75×, 1× forcing. Each panel: DJF/MAM/JJA/SON anomaly as grouped bars. Shows how seasonal timing of the hydroclimate response changes with forcing magnitude.](figures/seasonal-scaling/subregion_prect_seasons.png){#fig-subregion-prect-seasons}
+
+![All-season (annual) precipitation anomaly by sub-region and forcing level. Complementary to @fig-subregion-prect-seasons showing the annual-mean signal stripped of seasonal aliasing.](figures/seasonal-scaling/subregion_prect_allregions.png){#fig-subregion-prect-allregions}
+
+![SST composites stratified by eruption magnitude level (0.5×, 0.75×, 1×), averaged over Y1–Y2 post-eruption. Shows how the spatial pattern of warming changes — not just its amplitude — as forcing scales.](figures/seasonal-scaling/composite_sst_by_magnitude.png){#fig-composite-sst-magnitude}
+:::

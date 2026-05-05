@@ -58,7 +58,7 @@ for f in files:
     for m in re.finditer(r'@[A-Za-z0-9_]+', text):
         print(m.group(0))
 PY
-    } | grep -v '@ucsb\.edu\|@ucsb$' \
+    } | grep -v '@ucsb\.edu\|@ucsb$\|^@fig$' \
       | sed 's/@//' | sort -u)
 
     # Count safely: wc -l never fails; strip whitespace.

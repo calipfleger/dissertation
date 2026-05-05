@@ -41,6 +41,67 @@ _New entries auto-appended below this divider every night._
 
 <!-- PROGRESS-INSERT-MARKER — phase 5 of the nightly pipeline appends new sections HERE -->
 
+<!-- AUTO 2026-05-04 phase-5 -->
+## 2026-05-04 — Nightly pipeline {.smaller}
+
+**Figures:** +10 new (seasonal scaling analysis, `seasonal scaling icesm volc/`)
+
+- `spaghetti_0p5x.png`, `spaghetti_0p75x.png`, `spaghetti_1x.png` — Niño 3.4 SEA spaghetti at 0.5×/0.75×/1× Samalas forcing
+- `summary_heatmaps.png` — heatmap of ENSO response amplitude by scaling level and post-eruption year
+- `hovmoller_sst.png` — equatorial SST Hovmöller Y0–Y5 (1× forcing)
+- `iob_index.png` — Indian Ocean Basin index by forcing level
+- `annual_nino34_bar.png` — annual Niño 3.4 bar chart by scaling level
+- `nino34_kde.png` — KDE of peak Niño 3.4 across ensemble members
+- `composite_sst_elnino.png`, `composite_sst_lanina.png` — SST composites by ENSO phase
+- `composite_prect_elnino.png`, `composite_prect_lanina.png` — precipitation composites by ENSO phase
+- `walker_elnino.png`, `walker_lanina.png` — Walker Circulation anomaly composites
+- `subregion_prect_seasons.png`, `subregion_prect_allregions.png` — sub-region precipitation by season and forcing
+- `composite_sst_by_magnitude.png` — SST spatial pattern stratified by forcing level
+
+**Literature:** `timmreck2024linearity` (J. Climate 2024) added — volcanic forcing linearity/nonlinearity directly relevant to spaghetti scaling interpretation.
+
+**Blockers:** 10 null keys in `stats.json` persist; 8 Dispatch sessions unreadable (mobile-only); git push requires manual run from Mac terminal (index.lock on APFS mount).
+
+## Spaghetti — 0.5× forcing
+
+![Niño 3.4 SEA, 0.5× Samalas. Thin grey = individual members; thick line = ensemble mean; shading = ±1 SE. Low forcing; reduced signal-to-noise.](../figures/seasonal-scaling/spaghetti_0p5x.png){.r-stretch}
+
+## Spaghetti — 0.75× forcing
+
+![Niño 3.4 SEA, 0.75× Samalas. Intermediate forcing level.](../figures/seasonal-scaling/spaghetti_0p75x.png){.r-stretch}
+
+## Spaghetti — 1× forcing
+
+![Niño 3.4 SEA, 1× Samalas (full). Largest El Niño-like signal; reference scaling.](../figures/seasonal-scaling/spaghetti_1x.png){.r-stretch}
+
+## Summary heatmap
+
+![Response amplitude heatmap by forcing level × post-eruption year. Stippled cells: *p* < 0.05.](../figures/seasonal-scaling/summary_heatmaps.png){.r-stretch}
+
+## Hovmöller — equatorial SST
+
+![Equatorial SST anomaly (5°S–5°N) vs. longitude and post-eruption year; 1× forcing ensemble mean.](../figures/seasonal-scaling/hovmoller_sst.png){.r-stretch}
+
+
+<!-- AUTO 2026-04-30 phase-5 -->
+# 2026-04-30 {.center}
+
+::: {.under-review}
+
+## What we did
+- Completed seasonal volcanic–ENSO scaling paper (`chapter5_seasonal_volcanic_enso_v2.docx`): 12 experiments, 7 figures, Table 1, 29 citations, 5 conclusions + supplementary
+- 47 new figures synced to `chapter-2-volc-enso/figures/` (annual/DJF SST+δ¹⁸O maps, baseline sensitivity, coral sites, correlation maps, FDR, field significance, effect size, SNR, pseudo-coral decomposition, Niño 3.4 timeseries, ENSO preconditioning)
+- Ch2 bib now 25 entries (+1: zhang2025telecon — Nat. Commun. 2025)
+- AUTO phase-1 lit-review block added to chapter2.qmd and literature-review.md
+- compute_stats.py: same 10 null keys — no regression
+
+## New literature
+- Zhang et al. 2025 — "Volcanic eruptions disrupt ENSO teleconnections with land summer temperatures" — Nat. Commun. 16, 9882 [@zhang2025telecon]
+
+:::
+
+---
+
 
 # 2026-04-18 {.center}
 

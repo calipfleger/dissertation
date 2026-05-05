@@ -153,3 +153,8 @@ Two recent studies strengthen the methodological basis for using isotope-enabled
 
 ::: {#refs}
 :::
+
+<!-- AUTO 2026-04-30 phase-4 -->
+::: {.under-review}
+The paleoclimate context for recent PWC changes was substantially refined by [@falster2023pwc], who constructed the first annually resolved multi-proxy PWC reconstruction spanning 1200–2000 CE. Their finding that the 1992–2011 strengthening is anomalous but not unprecedented implies that iCESM LME simulations of the same period should reproduce such excursions through internally generated variability even without external forcing — a testable prediction that motivates the variance decomposition approach in Chapter 1.
+:::
