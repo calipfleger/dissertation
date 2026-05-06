@@ -57,3 +57,18 @@ _New entries auto-appended below this divider every night._
 
 ::: {#refs}
 :::
+
+---
+
+## 2026-05-05 — Nightly pipeline {.smaller}
+
+**Literature:** Phase-4 AUTO blocks appended to `chapter3.qmd` and `literature-review.md` on two-pathway volcanic hydroclimate framework.
+
+- Luna-Niño et al. (2025): atmospheric rivers as disruptors of canonical ENSO–SW-US precipitation teleconnections — motivates explicit AR-frequency pathway in Ch3 composite analysis.
+- Zhang et al. (2025): volcanic eruptions suppress ENSO teleconnections with land summer temperature — cross-disciplinary confirmation of ENSO-mediated volcanic dampening applicable to CA precipitation composites.
+
+**Bib:** 2 new entries (`lunanino2025heresy`, `zhang2025ensotel`). All citations resolve ✓ (33 total in Ch3).
+
+**Figures:** sync_figures.sh — 0 files copied (source path mismatch, carry-forward blocker ⚠).
+
+**Git:** index.lock EPERM blocks commit in sandbox. 3 commits ahead of origin; C must push from terminal.

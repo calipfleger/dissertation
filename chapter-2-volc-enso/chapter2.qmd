@@ -306,6 +306,12 @@ Today's refactoring of the Ch2 benchmark comparison scripts — specifically the
 
 :::
 
+
+<!-- AUTO 2026-05-05 phase-4 -->
+::: {.under-review}
+The mechanism debate over how volcanic forcing drives ENSO anomalies has been substantially refined by large-ensemble studies. [@fang2025itcz] use a 100-member MPI-ESM1-2-LR ensemble forced with idealized extratropical eruptions to show that ITCZ displacement — driven by the interhemispheric energy imbalance imposed by aerosol forcing — is the dominant mechanism governing the ENSO response in the second post-eruption winter. North-hemisphere extratropical eruptions produce a strong El Niño-like response, while south-hemisphere eruptions generate a weaker La Niña-like anomaly. An additional finding is that the initial ENSO state at eruption time governs distinct response trajectories persisting for several years, consistent with the preconditioning role documented by [@predybaylo2020]. Although Chapter 2 focuses primarily on tropical eruptions (El Chichón and Pinatubo) where the tropical African cooling mechanism described by [@khodri2017] dominates rather than the extratropical interhemispheric energy pathway, the Fang et al. results are directly relevant in two ways: first, they isolate the ITCZ shift as a self-sufficient ENSO-triggering mechanism; and second, their finding that seasonal ITCZ position modulates response strength provides context for interpreting why eruptions in different calendar seasons — even at similar aerosol magnitudes — produce quantitatively different ENSO outcomes. This has direct implications for the 0.5×/0.75×/1× scaling experiments in Chapter 2, where eruption timing and the pre-eruption ENSO state both need to be controlled to isolate the forcing-magnitude signal.
+:::
+
 ## References {.unnumbered}
 
 ::: {#refs}

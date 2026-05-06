@@ -84,3 +84,17 @@ _New entries auto-appended below this divider every night._
 
 ::: {#refs}
 :::
+
+---
+
+## 2026-05-05 — Nightly pipeline {.smaller}
+
+**Literature:** Phase-4 AUTO block appended to `chapter5.qmd` and `literature-review.md` on chemtrail conspiracy contamination of SRM sentiment signal.
+
+- Buck et al. (2025): U.S. public concerns about solar geoengineering research — chemtrail conspiracy framing overlaps SRM vocabulary and may inflate VADER negativity scores for SRM topics.
+
+**Bib:** 1 new entry (`buck2025solar`). All citations resolve ✓ (26 total in Ch5).
+
+**Figures:** OAE_Sentiment_Figures.pptx located in `chapter-5-climate-tech-sentiment/figures/` — pipeline cannot auto-sync; C to confirm path and update sync_figures.sh.
+
+**Git:** index.lock EPERM blocks commit in sandbox. C must push from terminal.
