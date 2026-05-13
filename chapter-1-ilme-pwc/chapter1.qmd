@@ -155,6 +155,11 @@ Two recent studies strengthen the methodological basis for using isotope-enabled
 A recent study by [@cho2025iwc] ⚠ relevance uncertain provides a useful methodological companion for the iCESM-based δ¹⁸Op approach central to Chapter 1. Cho et al. use the iCESM-iLME, ECHAM5-wiso, and ERA5 reanalysis to examine how the Indian Walker Circulation (IWC) imprints on δ¹⁸Op variability across the Indian Ocean Basin during both the instrumental era and the last millennium. Their core finding — that δ¹⁸Op effectively captures large-scale atmospheric circulation signals even during periods of low precipitation variability — validates the use of stable isotopes in precipitation as an integrative Walker Circulation tracer over centennial timescales. Although their focus is the IWC rather than the Pacific Walker Circulation (PWC), the authors explicitly document interactions between the IWC and PWC that modulate δ¹⁸Op across the Indo-Pacific region, and they exploit the same iCESM-iLME framework that underlies Chapter 1's forced experiments. The overlap in model infrastructure and co-authorship with Falster [@falster2023pwc] makes this a relevant cross-reference for benchmarking the δ¹⁸Op fingerprint methodology, while the IWC focus warrants care in direct interpretation.
 :::
 
+<!-- AUTO 2026-05-12 phase-4 -->
+::: {.under-review}
+Recent pacemaker and hindcast simulations by [@kang2025sst] demonstrate that constraining coupled models to match observed La Niña-like tropical Pacific SST trends produces a robust Walker Circulation response in boreal winter, with reduced tropical tropospheric warming and improved precipitation trends across ENSO-sensitive regions. The inter-model spread in simulated tropical Pacific SST gradients propagates directly into equivalent spread in circulation-strength diagnostics, suggesting that iLME ensemble members forced with realistic volcanic and anthropogenic boundary conditions should narrow the uncertainty range in Ch1's PWC index output. ⚠ relevance uncertain — primary focus is on the satellite-era model–observation SST discrepancy rather than isotopic fingerprinting; most applicable to the forced-response attribution section.
+:::
+
 ## References {.unnumbered}
 
 ::: {#refs}
