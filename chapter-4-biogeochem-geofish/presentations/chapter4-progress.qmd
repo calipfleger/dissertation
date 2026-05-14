@@ -41,6 +41,23 @@ _New entries auto-appended below this divider every night._
 
 <!-- PROGRESS-INSERT-MARKER — phase 5 of the nightly pipeline appends new sections HERE -->
 
+<!-- AUTO 2026-05-14 phase-5 -->
+# 2026-05-14 {.center}
+
+::: {.under-review}
+
+## What we did
+- No direct dissertation research today (automated pipeline only)
+- Phase-4 literature scan added 1 new entry to Ch4 bibliography (Stevenson co-author)
+
+## New literature
+- Eddebbar et al. 2026 — ENSO-driven O₂ variability in tropical Pacific; El Niño increases O₂ via reduced biological drawdown despite lower ventilation — key process insight for Ch4 OMZ-fish ENSO framework [@eddebbar2026enso]
+
+:::
+
+---
+
+
 ---
 
 ## 2026-04-23 — Nightly pipeline {.smaller}

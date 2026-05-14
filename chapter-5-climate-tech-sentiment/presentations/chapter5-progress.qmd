@@ -41,6 +41,24 @@ _New entries auto-appended below this divider every night._
 
 <!-- PROGRESS-INSERT-MARKER — phase 5 of the nightly pipeline appends new sections HERE -->
 
+<!-- AUTO 2026-05-14 phase-5 -->
+# 2026-05-14 {.center}
+
+::: {.under-review}
+
+## What we did
+- Teaching session: mCDR/EJ grade appeal rubric review — surfaced mCDR public-understanding patterns tangentially relevant to Ch5 corpus noise
+- Automated pipeline: 2 new literature entries added (phase-1 + phase-4)
+
+## New literature
+- Craik 2025 — equitable mCDR governance; legal basis for interstate benefit-sharing in areas beyond national jurisdiction ⚠ relevance uncertain (legal/governance) [@craik2025equitable]
+- Bellamy et al. 2025 — UK survey: strong overall CDR support tempered by skepticism toward biological methods (biochar, peatland, biomass); method-type differentiation testable in GDELT corpus [@bellamy2025carbon]
+
+:::
+
+---
+
+
 <!-- AUTO 2026-05-04 phase-5 -->
 ## 2026-05-04 — Nightly pipeline {.smaller}
 

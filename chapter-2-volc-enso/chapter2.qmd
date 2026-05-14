@@ -317,6 +317,12 @@ The mechanism debate over how volcanic forcing drives ENSO anomalies has been su
 Dogar et al. [@dogar2025mena] use a high-top atmospheric model to demonstrate that tropical volcanic eruptions modulate MENA regional climate through a compound pathway in which the primary stratospheric aerosol forcing triggers both an ENSO-like tropical Pacific response and an NAO-like extratropical circulation anomaly, with the two acting synergistically to produce the strongest regional precipitation anomalies. Their finding that volcanic forcing can independently initiate NAO-like features — with ENSO playing an amplifying rather than necessary role — is relevant to Ch2's interpretation of the post-El Chichón and post-Pinatubo composite patterns: it cautions against attributing the full amplitude of observed ENSO anomalies to the ocean-dynamical thermostat mechanism alone when NAO-coupled pathways may be operating simultaneously. ⚠ relevance uncertain — MENA teleconnection focus limits direct applicability to tropical Pacific coral δ¹⁸O; primary value is as corroboration that volcanic teleconnection pathways are multi-branched.
 :::
 
+
+<!-- AUTO 2026-05-13 phase-4 -->
+::: {.under-review}
+The evolving record of ENSO variability across orbital timescales provides proxy-methodological context for the superposed epoch analysis in Chapter 2. [@lu2025multiyear] combine fossil coral δ¹⁸O records from the central Pacific with a multi-model ensemble of transient Holocene climate simulations to show that multi-year ENSO events have become more frequent toward the present. Their dual reliance on coral oxygen isotopes and coupled model output — the same two evidence streams used in Ch2's pseudo-coral validation — establishes a direct methodological link: discrepancies between coral-reconstructed and model-simulated ENSO statistics in that study illuminate the fidelity limits of the pseudo-coral approach applied here. ⚠ relevance uncertain — the paper primarily addresses orbital forcing of ENSO frequency rather than volcanic forcing; cite as coral δ¹⁸O methodology and ENSO proxy skill context.
+:::
+
 ## References {.unnumbered}
 
 ::: {#refs}

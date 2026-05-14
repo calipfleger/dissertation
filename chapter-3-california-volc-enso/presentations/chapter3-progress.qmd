@@ -41,6 +41,23 @@ _New entries auto-appended below this divider every night._
 
 <!-- PROGRESS-INSERT-MARKER — phase 5 of the nightly pipeline appends new sections HERE -->
 
+<!-- AUTO 2026-05-14 phase-5 -->
+# 2026-05-14 {.center}
+
+::: {.under-review}
+
+## What we did
+- No direct dissertation research today (automated pipeline only)
+- Phase-4 literature scan added 1 new entry to Ch3 bibliography
+
+## New literature
+- El-Askary et al. 2025 — WUS atmospheric teleconnection patterns + hydrological whiplashes; WP/EPO/MJO modulate streamflow extremes independently of ENSO ⚠ relevance uncertain (no volcanic forcing) [@elaskary2025teleconnection]
+
+:::
+
+---
+
+
 ---
 
 ## 2026-04-23 — Nightly pipeline {.smaller}
