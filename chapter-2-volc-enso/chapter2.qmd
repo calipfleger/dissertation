@@ -381,3 +381,8 @@ The relationship between eruption magnitude and climate response is not guarante
 
 ![SST composites stratified by eruption magnitude level (0.5×, 0.75×, 1×), averaged over Y1–Y2 post-eruption. Shows how the spatial pattern of warming changes — not just its amplitude — as forcing scales.](figures/seasonal-scaling/composite_sst_by_magnitude.png){#fig-composite-sst-magnitude}
 :::
+
+<!-- AUTO 2026-05-17 phase-4 -->
+::: {.under-review}
+Kim et al. [-@kim2025mjo] identify the Madden–Julian Oscillation (MJO) as a key physical intermediary between tropical volcanic eruptions and El Niño onset, offering a new mechanistic pathway that complements the land–ocean forcing asymmetry proposed by [@khodri2017] and the ocean dynamical thermostat of [@clement1996ocean]. Using large-ensemble simulations, they show that volcanic aerosols preferentially dry land regions bordering the Indo-Pacific warm pool, creating a moisture-gradient environment that enhances eastward MJO propagation; the resulting westerly wind bursts increase by 76 percent [@kim2025mjo] and excite downwelling oceanic Kelvin waves, raising El Niño onset likelihood by 98 percent [@kim2025mjo]. This mechanistic result — a volcanic drying signal mediated through intraseasonal variability rather than through direct radiative or aerosol-ocean pathways — has direct implications for interpreting the Chapter 2 iCESM Last Millennium Ensemble ensemble spread after El Chichón (1982) and Pinatubo (1991): MJO preconditioning state at the time of eruption may partly explain why the post-volcanic El Niño-like signal is present in some ensemble members but not others.
+:::

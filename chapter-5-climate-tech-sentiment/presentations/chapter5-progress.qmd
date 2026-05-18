@@ -40,6 +40,23 @@ The "What we did" lines are pulled from the daily-summaries the nightly loop wri
 _New entries auto-appended below this divider every night._
 
 <!-- PROGRESS-INSERT-MARKER — phase 5 of the nightly pipeline appends new sections HERE -->
+<!-- AUTO 2026-05-17 phase-5 -->
+# 2026-05-17 {.center}
+
+::: {.under-review}
+
+## What we did
+- Ch5 user session: built `GDELT_Methods_and_Results.pptx` (14 slides, forest green + gold) covering the full GDELT sentiment analysis pipeline
+- Pipeline results: 183 raw → 121 cleaned articles; VADER compound scores: SRM (−0.021), GGR (+0.113), NbS (+0.277) — directionally consistent with [@mullerhansen2023attention] and [@repke2024cdr]
+- Automated pipeline: 2 new literature entries added (phase-1 mudassar2025gdelt + phase-4 magistro2025partisanship)
+
+## New literature
+- Mudassar et al. 2025 — GDELT AvgTone validates climate-topic tone tracking across 200 countries and 9 years; supports Ch5 pipeline design [@mudassar2025gdelt]
+- Magistro, Debnath, Wennberg et al. 2025 — partisan identity overrides message framing for SRM trust; SRM VADER negativity may reflect partisan-source contamination [@magistro2025partisanship]
+
+:::
+
+---
 
 <!-- AUTO 2026-05-14 phase-5 -->
 # 2026-05-14 {.center}
