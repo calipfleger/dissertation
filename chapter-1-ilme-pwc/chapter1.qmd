@@ -169,3 +169,8 @@ Recent pacemaker and hindcast simulations by [@kang2025sst] demonstrate that con
 ::: {.under-review}
 The paleoclimate context for recent PWC changes was substantially refined by [@falster2023pwc], who constructed the first annually resolved multi-proxy PWC reconstruction spanning 1200–2000 CE. Their finding that the 1992–2011 strengthening is anomalous but not unprecedented implies that iCESM LME simulations of the same period should reproduce such excursions through internally generated variability even without external forcing — a testable prediction that motivates the variance decomposition approach in Chapter 1.
 :::
+
+<!-- AUTO 2026-05-21 phase-4 -->
+::: {.under-review}
+A multi-model attribution study clarifies both the timing and the physical determinants of the forced Walker Circulation response to greenhouse gas increases, with implications for how Chapter 1 interprets the iCESM Last Millennium Ensemble signal. [@wu2024emergence] show that the human-induced weakening of the Walker Circulation emerges detectably from internal variability earlier than previously estimated, and that the dominant determinant of emergence timing is the ratio of forced SST gradient change to internal tropical Pacific variability. For Chapter 1, this finding sharpens the attribution argument: the iCESM LME provides a controlled setting in which volcanic, solar, and greenhouse forcings can be isolated, and the [@wu2024emergence] framework for quantifying signal-to-noise ratio against internal variability directly informs the statistical approach for separating forced Walker Circulation trends from internal decadal variability in the δ¹⁸O proxy record.
+:::
