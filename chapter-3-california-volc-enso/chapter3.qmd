@@ -126,6 +126,11 @@ Two recent studies extend the background context for ENSO–California precipita
 A high-resolution attribution study of the February 2024 Southern California flooding event provides an observational test of the multiscale ENSO–AR coupling that Chapter 3 examines in a paleo context. [@mazza2025multiscale] show that an El Niño–MJO interaction effectively doubled atmospheric river water vapour flux relative to a purely ENSO-driven baseline, producing flooding that no single forcing factor could have generated alone. For Chapter 3, this finding implies that the ENSO signal in California proxy records is substantially modulated by synoptic-scale internal variability — particularly AR frequency — suggesting that ensemble rather than single-composite approaches are needed to detect the statistical imprint of volcanic-forced ENSO anomalies in coral and tree-ring archives.
 :::
 
+
+<!-- AUTO 2026-05-22 phase-4 -->
+::: {.under-review}
+Paleoclimate reconstructions reveal that atmospheric river (AR) activity in California during the late Holocene substantially exceeded the modern instrumental range, with the largest pluvial episodes occurring two to three millennia before present [@knight2024ar]. Sediment-based integrated vapor transport proxies document this multi-millennial variability at Leonard Lake, implying that volcanically-triggered El Niño–like states could enhance California winter precipitation via intensified AR landfalls, yet the paleoclimate context cautions against interpreting any single pluvial event as historically unprecedented.
+:::
 ## References {.unnumbered}
 
 ::: {#refs}

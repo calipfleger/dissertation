@@ -172,6 +172,11 @@ Two recent contributions from outside the GDELT/VADER methodological core of Ch5
 A welfare-economics analysis of solar radiation management identifies social-cost categories that aggregate sentiment scores cannot distinguish. [@bronsther2025social] argue that standard SRM cost-benefit frameworks neglect harms arising from geopolitical risk, consent violations, distributional inequity, and mitigation-pathway foreclosure — all of which can generate negative news coverage without manifesting as technical opposition. For Chapter 5's VADER analysis, this taxonomy provides a principled rationale for stratifying sentiment trajectories by article type (governance, scientific, advocacy) rather than treating the GDELT corpus as a homogenous signal: negative sentiment in one stratum may reflect distinct social-cost concerns that carry different policy implications.
 :::
 
+
+<!-- AUTO 2026-05-22 phase-4 -->
+::: {.under-review}
+Cross-national GDELT analyses have confirmed that media recognition of climate adaptation exhibits strong income-group stratification. [@mudassar2026climate] constructed monthly sentiment, concern, and scope indicators from GDELT for 200 countries (March 2015–March 2024), finding systematic divergence across income groups and identifying socioeconomic and demographic correlates of adaptation recognition. This 2026 companion to [@mudassar2025gdelt] provides a country-level disaggregation template directly applicable to Chapter 5's comparative NbS/CDR/SRM framing, where regional media context is expected to shape the polarity and intensity of sentiment signals.
+:::
 ## References {.unnumbered}
 
 ::: {#refs}

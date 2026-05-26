@@ -39,7 +39,23 @@ The "What we did" lines are pulled from the daily-summaries the nightly loop wri
 
 _New entries auto-appended below this divider every night._
 
-<!-- PROGRESS-INSERT-MARKER — phase 5 of the nightly pipeline appends new sections HERE -->
+<!-- PROGRESS-INSERT-MARKER
+<!-- AUTO 2026-05-22 phase-5 -->
+# 2026-05-22 {.center}
+
+::: {.under-review}
+
+## What we did
+- No new user sessions; automated pipeline only
+- Phase 4 lit scan: +1 new citation added to Ch3
+
+## New literature
+- Knight et al. 2024 — "AR activity during the late Holocene exceeds modern range of variability in California" — late Holocene sediment reconstruction shows modern AR intensity remains below Holocene maxima; contextualizes volcanic-ENSO hydroclimate signal [@knight2024ar]
+
+:::
+
+---
+ — phase 5 of the nightly pipeline appends new sections HERE -->
 
 <!-- AUTO 2026-05-14 phase-5 -->
 # 2026-05-14 {.center}

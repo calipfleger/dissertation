@@ -39,7 +39,23 @@ The "What we did" lines are pulled from the daily-summaries the nightly loop wri
 
 _New entries auto-appended below this divider every night._
 
-<!-- PROGRESS-INSERT-MARKER — phase 5 of the nightly pipeline appends new sections HERE -->
+<!-- PROGRESS-INSERT-MARKER
+<!-- AUTO 2026-05-22 phase-5 -->
+# 2026-05-22 {.center}
+
+::: {.under-review}
+
+## What we did
+- No new user sessions; automated pipeline only
+- Phase 4 lit scan: +1 new citation added to Ch5
+
+## New literature
+- Mudassar et al. 2026 — "Exploring the global recognition of climate change adaptation based on GDELT" — sentiment/concern/scope indicators for 200 countries; country-level GDELT disaggregation template for NbS/CDR/SRM comparison [@mudassar2026climate]
+
+:::
+
+---
+ — phase 5 of the nightly pipeline appends new sections HERE -->
 <!-- AUTO 2026-05-17 phase-5 -->
 # 2026-05-17 {.center}
 
