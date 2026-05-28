@@ -89,3 +89,8 @@ Ma et al. [-@ma2026omz] provide a comprehensive synthesis of the global distribu
 ::: {.under-review}
 Recent modelling of the Gulf of California oxygen minimum zone demonstrates that ENSO-phase drives systematic seasonal and interannual OMZ restructuring: El Niño deepens and contracts the OMZ while La Niña promotes shoaling and lateral expansion, propagated by equatorially forced coastal-trapped waves [@herrerabecerril2025omz]. At the pan-tropical scale, OMZ edges are expanding under climate forcing with regionally asymmetric patterns, complicating projections of fish habitat loss [@delteil2026omz]. Future projections using CMIP6 ensembles suggest fish diel vertical migration depths may shift by more than 100 m by 2100 in the Pacific OMZ, with the most sensitive habitats at the OMZ flanks rather than the hypoxic core [@ditkovsky2026migration].
 :::
+
+<!-- AUTO 2026-05-27 phase-4 -->
+::: {.under-review}
+A 2026 study in *Global Biogeochemical Cycles* reveals that ENSO variability drives large interannual swings in nitrous oxide (N₂O) emissions from the Eastern Tropical Pacific, where the oxygen minimum zone sustains high N₂O production under low-oxygen conditions [@harri2026enso]. El Niño suppresses upwelling and deepens the thermocline, contracting the N₂O-productive OMZ volume; La Niña has the opposite effect. This adds a biogeochemical dimension to Chapter 4's central argument: ENSO-scale forcing shapes not only fish habitat and OMZ geometry but also the ocean's greenhouse-gas export, linking climate variability to biogeochemical feedbacks across the Eastern Tropical Pacific.
+:::

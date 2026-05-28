@@ -74,3 +74,21 @@ _New entries auto-appended below this divider every night._
 
 ::: {#refs}
 :::
+
+<!-- AUTO 2026-05-27 phase-5 -->
+# 2026-05-27 {.center}
+
+::: {.under-review}
+
+## What we did
+- No direct dissertation research today (automated pipeline only)
+- Phase-4 literature scan added 1 new Ch4 bib entry (Härri et al. 2026 — ENSO × N₂O × ETP OMZ)
+- Repo hygiene confirmed working tree clean; ~10 commits ahead of origin/main (push still needed from Mac)
+
+## New literature
+- Härri et al. 2026 — ENSO drives interannual N₂O emission variability from Eastern Tropical Pacific OMZ; thermocline displacement during El Niño contracts N₂O-productive low-O₂ volume — adds biogeochemical dimension to Ch4 ENSO–OMZ framework [@harri2026enso]
+
+:::
+
+---
+
