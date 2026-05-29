@@ -40,6 +40,23 @@ The "What we did" lines are pulled from the daily-summaries the nightly loop wri
 _New entries auto-appended below this divider every night._
 
 <!-- PROGRESS-INSERT-MARKER
+
+<!-- AUTO 2026-05-28 phase-5 -->
+# 2026-05-28 {.center}
+
+::: {.under-review}
+
+## What we did
+- Automated pipeline only; no user sessions
+- Phase 4 lit scan added 1 new citation to bib (34 entries total)
+
+## New literature
+- Jacobson 2025 — Critical discourse analysis traces SRM/CDR normalisation from margins to mainstream in science, news media, and congressional hearings 2000–2024 [@jacobson2025discourse] ⚠ relevance uncertain
+
+:::
+
+---
+
 <!-- AUTO 2026-05-22 phase-5 -->
 # 2026-05-22 {.center}
 

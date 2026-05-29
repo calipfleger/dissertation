@@ -41,6 +41,30 @@ _New entries auto-appended below this divider every night._
 
 <!-- PROGRESS-INSERT-MARKER — phase 5 of the nightly pipeline appends new sections HERE -->
 
+<!-- AUTO 2026-05-28 phase-5 -->
+## 2026-05-28 — Stats.json breakthrough {.smaller}
+
+::: {.under-review}
+
+## What we did
+- Automated pipeline only; no user sessions
+- `stats-autorecompute` loop populated 9 previously-null keys in stats.json
+- sync_figures.sh successfully synced 90 Ch2 figures (path resolved — source folder accessible)
+
+## Stats.json update
+- `sea_peak_month` = 25, `sea_peak_celsius` = 1.37°C
+- `sea_sig_lag_min/max_months` = 25/26
+- `iso2k_sig_sites_chichon` = 25, `iso2k_sig_sites_pinatubo` = 19
+- `fig_enso_amplitude` n_members and per-member states populated
+- **1 null remaining:** `enso_amplitude_r_cesm_lme`
+
+## Still blocked
+- 7 phantom `@fig` refs in seasonal-scaling/ (4th week) — run `python3 run_local.py` from Mac
+
+:::
+
+---
+
 <!-- AUTO 2026-05-04 phase-5 -->
 ## 2026-05-04 — Nightly pipeline {.smaller}
 

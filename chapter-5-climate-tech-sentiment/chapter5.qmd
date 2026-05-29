@@ -177,6 +177,11 @@ A welfare-economics analysis of solar radiation management identifies social-cos
 ::: {.under-review}
 Cross-national GDELT analyses have confirmed that media recognition of climate adaptation exhibits strong income-group stratification. [@mudassar2026climate] constructed monthly sentiment, concern, and scope indicators from GDELT for 200 countries (March 2015–March 2024), finding systematic divergence across income groups and identifying socioeconomic and demographic correlates of adaptation recognition. This 2026 companion to [@mudassar2025gdelt] provides a country-level disaggregation template directly applicable to Chapter 5's comparative NbS/CDR/SRM framing, where regional media context is expected to shape the polarity and intensity of sentiment signals.
 :::
+<!-- AUTO 2026-05-28 phase-4 -->
+::: {.under-review}
+The geoengineering discourse has undergone a structural mainstreaming shift over the past two decades across scientific institutions, news media, and legislative bodies. [@jacobson2025discourse] traces this arc through critical discourse analysis of scientific society reports, news journalism, and congressional hearings, finding that technological-necessity narratives have progressively normalised both SRM and CDR. For Chapter 5, this structural shift matters empirically: if geoengineering coverage has moved through a legitimacy arc across the GDELT observation window (2015–2024), temporal trends in VADER compound scores may partly reflect this normalisation rather than purely changing evaluations of the technologies. A robustness check comparing pre- and post-2019 sentiment slopes stratified by article source tier would allow Chapter 5 to test whether observed sentiment trajectories co-vary with the discourse normalisation Jacobson documents. ⚠ relevance uncertain — discourse analysis, not quantitative NLP; verify article vs. book review attribution before final citation.
+:::
+
 ## References {.unnumbered}
 
 ::: {#refs}
