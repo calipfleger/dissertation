@@ -41,6 +41,25 @@ _New entries auto-appended below this divider every night._
 
 <!-- PROGRESS-INSERT-MARKER — phase 5 of the nightly pipeline appends new sections HERE -->
 
+<!-- AUTO 2026-05-29 phase-5 -->
+# 2026-05-29 {.center}
+
+::: {.under-review}
+
+## What we did
+- No user sessions today; automated pipeline only
+- Phase 4 lit scan: +1 **bednarz2026hunga** (ACP 2026, Hunga eruption indirect ENSO climate impacts via CESM2/WACCM6 large ensembles)
+- sync_figures.sh: 7 Ch2 figures copied (pre-existing obs/validation figures refreshed from source)
+- compute_stats.py: ⚠ 10 null keys — previously filled values (from 2026-05-28 stats-autorecompute) were overwritten when compute_stats.py regenerated stats.json. C must re-run the analysis scripts and fill TODOs in compute_stats.py to restore values.
+
+## New literature
+- Bednarz et al. 2026 — Indirect climate impacts of Hunga eruption; ENSO modulation by water-vapor-dominant volcanic forcing extends preconditioning literature [@bednarz2026hunga]
+
+:::
+
+---
+
+
 <!-- AUTO 2026-05-28 phase-5 -->
 ## 2026-05-28 — Stats.json breakthrough {.smaller}
 

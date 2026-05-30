@@ -131,6 +131,12 @@ A high-resolution attribution study of the February 2024 Southern California flo
 ::: {.under-review}
 Paleoclimate reconstructions reveal that atmospheric river (AR) activity in California during the late Holocene substantially exceeded the modern instrumental range, with the largest pluvial episodes occurring two to three millennia before present [@knight2024ar]. Sediment-based integrated vapor transport proxies document this multi-millennial variability at Leonard Lake, implying that volcanically-triggered El Niño–like states could enhance California winter precipitation via intensified AR landfalls, yet the paleoclimate context cautions against interpreting any single pluvial event as historically unprecedented.
 :::
+
+<!-- AUTO 2026-05-29 phase-4 -->
+::: {.under-review}
+A new 504-year reconstruction of Sierra Nevada growing-season maximum temperature from blue-intensity and maximum latewood-density measurements at nine high-elevation conifer sites confirms that four of the five coldest years in the five-century record coincide with major volcanic eruptions [@harley2026california]. The warmest year (2021, +2.38°C above baseline) exceeded any prior year in the reconstruction, while the volcanic cold-year signal accounts for some of the most extreme temperature depressions in the record. For Chapter 3, this independently corroborates that the volcanically-forced cooling detectable in coral δ¹⁸O records is also present in temperature-sensitive tree-ring proxies from the same region, strengthening the multi-proxy case for a detectable volcanic fingerprint in California and broader western US paleoclimate archives. ⚠ relevance uncertain — the study focuses on temperature and fire interactions; the mechanism connecting volcanic cold years to ENSO state (direct radiative cooling vs. ENSO-mediated) warrants explicit attention.
+:::
+
 ## References {.unnumbered}
 
 ::: {#refs}

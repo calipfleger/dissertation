@@ -323,6 +323,12 @@ Dogar et al. [@dogar2025mena] use a high-top atmospheric model to demonstrate th
 The evolving record of ENSO variability across orbital timescales provides proxy-methodological context for the superposed epoch analysis in Chapter 2. [@lu2025multiyear] combine fossil coral δ¹⁸O records from the central Pacific with a multi-model ensemble of transient Holocene climate simulations to show that multi-year ENSO events have become more frequent toward the present. Their dual reliance on coral oxygen isotopes and coupled model output — the same two evidence streams used in Ch2's pseudo-coral validation — establishes a direct methodological link: discrepancies between coral-reconstructed and model-simulated ENSO statistics in that study illuminate the fidelity limits of the pseudo-coral approach applied here. ⚠ relevance uncertain — the paper primarily addresses orbital forcing of ENSO frequency rather than volcanic forcing; cite as coral δ¹⁸O methodology and ENSO proxy skill context.
 :::
 
+
+<!-- AUTO 2026-05-29 phase-4 -->
+::: {.under-review}
+The 2022 Hunga Tonga-Hunga Ha'apai eruption extended the forcing parameter space for volcanically-triggered ENSO anomalies into a previously unexplored regime dominated by stratospheric water vapor rather than sulfate aerosol. [@bednarz2026hunga] use large ensembles of CESM2(WACCM6) simulations to show that the Hunga eruption produced statistically significant extratropical regional climate responses partially mediated by ENSO and its teleconnections, despite a sulfur dioxide injection far smaller than Pinatubo. This result raises an important question for Chapter 2: whether the aerosol-mediated land–ocean asymmetry and MJO-acceleration pathways that link El Chichón and Pinatubo to the iCESM coral δ¹⁸O response operate similarly under water-vapor-dominant eruptions, or whether the different stratospheric perturbation profile alters the ENSO precondition sensitivity documented in this chapter's superposed epoch analysis.
+:::
+
 ## References {.unnumbered}
 
 ::: {#refs}

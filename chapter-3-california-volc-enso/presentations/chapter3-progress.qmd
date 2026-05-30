@@ -40,6 +40,22 @@ The "What we did" lines are pulled from the daily-summaries the nightly loop wri
 _New entries auto-appended below this divider every night._
 
 <!-- PROGRESS-INSERT-MARKER
+<!-- AUTO 2026-05-29 phase-5 -->
+# 2026-05-29 {.center}
+
+::: {.under-review}
+
+## What we did
+- No user sessions today; automated pipeline only
+- Phase 4 lit scan: +1 **harley2026california** (GRL 2026, 504-year Sierra Nevada temperature reconstruction; 4/5 coldest years = major volcanic eruptions) ⚠ relevance uncertain
+
+## New literature
+- Harley et al. 2026 — California temperature since 1520 CE; volcanic eruptions dominate the five coldest years in a 504-year proxy record [@harley2026california] ⚠ relevance uncertain — mechanism (direct radiative vs. ENSO-mediated) not resolved
+
+:::
+
+---
+
 <!-- AUTO 2026-05-22 phase-5 -->
 # 2026-05-22 {.center}
 
