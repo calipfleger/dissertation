@@ -41,6 +41,20 @@ _New entries auto-appended below this divider every night._
 
 <!-- PROGRESS-INSERT-MARKER — phase 5 of the nightly pipeline appends new sections HERE -->
 
+<!-- AUTO 2026-05-30 phase-5 -->
+# 2026-05-30 {.center}
+
+::: {.under-review}
+
+## What we did
+- No user sessions today; automated pipeline only
+- Phase 4 lit scan: +1 **wong2026holocene** (Clim Past 2026, isotope-enabled AGCM ENSO amplitude vs. mean-state effects on δ¹⁸O; methodological precedent for δ¹⁸O as Walker Circulation tracer) ⚠ relevance uncertain
+
+## New literature
+- Wong & Wang 2026 — mid-Holocene ENSO × δ¹⁸O over South America; ECHAM4.6 separates amplitude from mean-state signal [@wong2026holocene]
+
+:::
+
 ---
 
 ## References {.scrollable}

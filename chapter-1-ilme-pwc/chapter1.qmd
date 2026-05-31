@@ -160,6 +160,11 @@ A recent study by [@cho2025iwc] ⚠ relevance uncertain provides a useful method
 Recent pacemaker and hindcast simulations by [@kang2025sst] demonstrate that constraining coupled models to match observed La Niña-like tropical Pacific SST trends produces a robust Walker Circulation response in boreal winter, with reduced tropical tropospheric warming and improved precipitation trends across ENSO-sensitive regions. The inter-model spread in simulated tropical Pacific SST gradients propagates directly into equivalent spread in circulation-strength diagnostics, suggesting that iLME ensemble members forced with realistic volcanic and anthropogenic boundary conditions should narrow the uncertainty range in Ch1's PWC index output. ⚠ relevance uncertain — primary focus is on the satellite-era model–observation SST discrepancy rather than isotopic fingerprinting; most applicable to the forced-response attribution section.
 :::
 
+<!-- AUTO 2026-05-30 phase-4 -->
+::: {.under-review}
+A new isotope-enabled modelling study provides methodological precedent for disentangling ENSO amplitude versus mean-state effects on regional precipitation δ¹⁸O. [@wong2026holocene] used the ECHAM4.6 isotope-enabled atmospheric GCM to isolate the contributions of reduced mid-Holocene ENSO variability versus a La Niña-like tropical Pacific mean state on South American precipitation δ¹⁸O, finding that the mean-state shift dominates the regional isotopic response rather than changes in ENSO event frequency. This result is instructive for Chapter 1's use of iCESM δ¹⁸O as a Walker Circulation tracer: if a systematic mean-state shift (such as the post-volcanic SST pattern) dominates over ENSO amplitude changes, then δ¹⁸O-based reconstructions can preferentially capture forced changes in circulation rather than confounded variance from ENSO event frequency, validating the isotopic fingerprinting approach. ⚠ relevance uncertain — geographic focus is South America, not the Pacific; iCESM and ECHAM4.6 differ substantially in physics; volcanic forcing is not examined in this paper.
+:::
+
 ## References {.unnumbered}
 
 ::: {#refs}

@@ -40,6 +40,22 @@ The "What we did" lines are pulled from the daily-summaries the nightly loop wri
 _New entries auto-appended below this divider every night._
 
 <!-- PROGRESS-INSERT-MARKER
+<!-- AUTO 2026-05-30 phase-5 -->
+# 2026-05-30 {.center}
+
+::: {.under-review}
+
+## What we did
+- No user sessions today; automated pipeline only
+- Phase 4 lit scan: +1 **dong2025opposing** (npj Clim Atmos Sci 2025, opposing AR trends WUS↓/EUS↑ driven by Pacific anticyclonic variability) ⚠ relevance uncertain — no volcanic forcing
+
+## New literature
+- Dong, Zhao, Tan & Ramaswamy 2025 — 4-decade decline in winter AR activity over WUS; Pacific anticyclonic variability deflects ARs eastward; baseline AR context for volcanic-ENSO precipitation detection [@dong2025opposing] ⚠ relevance uncertain
+
+:::
+
+---
+
 <!-- AUTO 2026-05-29 phase-5 -->
 # 2026-05-29 {.center}
 
