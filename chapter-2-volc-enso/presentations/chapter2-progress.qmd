@@ -41,6 +41,24 @@ _New entries auto-appended below this divider every night._
 
 <!-- PROGRESS-INSERT-MARKER — phase 5 of the nightly pipeline appends new sections HERE -->
 
+<!-- AUTO 2026-05-31 phase-5 -->
+# 2026-05-31 {.center}
+
+::: {.under-review}
+
+## What we did
+- No user sessions. Automated pipeline only.
+- Phase 4 lit scan: added [@king2022reappraisal] — paleoclimate data assimilation re-appraisal of volcanic ENSO response.
+- AUTO phase-4 block appended to chapter2.qmd and literature-review.md.
+- compute_stats.py ran — 10 null keys unchanged (C must fill TODOs).
+
+## New literature
+- King et al. 2022 — data assimilation (LMR2.1) finds only weak volcanic–ENSO association; event selection is the key confound [@king2022reappraisal]
+
+:::
+
+---
+
 <!-- AUTO 2026-05-29 phase-5 -->
 # 2026-05-29 {.center}
 
