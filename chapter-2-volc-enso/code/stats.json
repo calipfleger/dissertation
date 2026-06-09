@@ -4,45 +4,99 @@
   "start_year": 1950,
   "end_year": 2005,
   "eruptions": [
-    "El Chich\u00f3n (1982)",
-    "Pinatubo (1991)"
+    "El Chichón",
+    "Pinatubo"
   ],
-  "enso_amplitude_r_cesm_lme": null,
-  "sea_peak_month": null,
-  "sea_peak_celsius": null,
+  "sea_peak_month": 25,
+  "sea_peak_celsius": 1.37,
   "ttest_n": 4,
   "n_eruptions": 2,
   "ttest_n_pairs": 8,
   "ttest_p_threshold": 0.05,
-  "iso2k_window_years": 7,
-  "sea_sig_lag_min_months": null,
-  "sea_sig_lag_max_months": null,
-  "iso2k_sig_sites_chichon": null,
-  "iso2k_sig_sites_pinatubo": null,
+  "iso2k_window_years": 8,
+  "sea_sig_lag_min_months": 25,
+  "sea_sig_lag_max_months": 26,
+  "iso2k_sig_sites_chichon": 25,
+  "iso2k_sig_sites_pinatubo": 19,
   "fig_sea_nino34": {
-    "peak_month_range": null,
-    "peak_celsius": null
+    "peak_month_range": [
+      25,
+      25
+    ],
+    "peak_celsius": 1.37,
+    "first_sig_peak_month": 14,
+    "first_sig_peak_celsius": 1.05
   },
   "fig_enso_amplitude": {
-    "n_members_la_nina": null,
-    "n_members_el_nino": null,
-    "amplitude_la_nina_mean": null,
-    "amplitude_el_nino_mean": null
+    "n_members_la_nina": 4,
+    "n_members_el_nino": 2,
+    "n_members_neutral": 2,
+    "amplitude_la_nina_mean": 2.03,
+    "amplitude_el_nino_mean": 1.9,
+    "states": [
+      {
+        "eruption": "El Chichón",
+        "member": 1,
+        "precon_nino34": -0.67,
+        "state": "La Niña",
+        "peak_response": 3.51
+      },
+      {
+        "eruption": "El Chichón",
+        "member": 2,
+        "precon_nino34": -1.11,
+        "state": "La Niña",
+        "peak_response": 2.7
+      },
+      {
+        "eruption": "El Chichón",
+        "member": 3,
+        "precon_nino34": -0.13,
+        "state": "Neutral",
+        "peak_response": 3.81
+      },
+      {
+        "eruption": "El Chichón",
+        "member": 4,
+        "precon_nino34": -1.26,
+        "state": "La Niña",
+        "peak_response": -0.57
+      },
+      {
+        "eruption": "Pinatubo",
+        "member": 1,
+        "precon_nino34": 1.97,
+        "state": "El Niño",
+        "peak_response": 1.94
+      },
+      {
+        "eruption": "Pinatubo",
+        "member": 2,
+        "precon_nino34": -1.13,
+        "state": "La Niña",
+        "peak_response": 2.47
+      },
+      {
+        "eruption": "Pinatubo",
+        "member": 3,
+        "precon_nino34": 0.6,
+        "state": "El Niño",
+        "peak_response": 1.85
+      },
+      {
+        "eruption": "Pinatubo",
+        "member": 4,
+        "precon_nino34": 0.47,
+        "state": "Neutral",
+        "peak_response": 1.28
+      }
+    ]
   },
   "fig_proxy_skill_map": {
-    "median_r": null,
-    "n_sites_p_sig": null
+    "median_r": 0.087,
+    "n_sites_p_sig": 1,
+    "n_sites_total": 41
   },
-  "_warnings": [
-    "missing: enso_amplitude_r_cesm_lme",
-    "missing: sea_peak_month",
-    "missing: sea_peak_celsius",
-    "missing: sea_sig_lag_min_months",
-    "missing: sea_sig_lag_max_months",
-    "missing: iso2k_sig_sites_chichon",
-    "missing: iso2k_sig_sites_pinatubo",
-    "missing: fig_sea_nino34",
-    "missing: fig_enso_amplitude",
-    "missing: fig_proxy_skill_map"
-  ]
+  "sea_first_sig_peak_month": 14,
+  "sea_first_sig_peak_celsius": 1.05
 }
