@@ -329,6 +329,14 @@ The evolving record of ENSO variability across orbital timescales provides proxy
 The 2022 Hunga Tonga-Hunga Ha'apai eruption extended the forcing parameter space for volcanically-triggered ENSO anomalies into a previously unexplored regime dominated by stratospheric water vapor rather than sulfate aerosol. [@bednarz2026hunga] use large ensembles of CESM2(WACCM6) simulations to show that the Hunga eruption produced statistically significant extratropical regional climate responses partially mediated by ENSO and its teleconnections, despite a sulfur dioxide injection far smaller than Pinatubo. This result raises an important question for Chapter 2: whether the aerosol-mediated land–ocean asymmetry and MJO-acceleration pathways that link El Chichón and Pinatubo to the iCESM coral δ¹⁸O response operate similarly under water-vapor-dominant eruptions, or whether the different stratospheric perturbation profile alters the ENSO precondition sensitivity documented in this chapter's superposed epoch analysis.
 :::
 
+<!-- AUTO 2026-07-07 phase-5 -->
+::: {.under-review}
+## Figures added 2026-07-07
+
+![Signal detection rate as a function of sample size *N*. Caption derived heuristically from the filename `fig_F35_detection_vs_N` and pending author confirmation: the curve shows the probability of detecting the post-eruption ENSO signal as the number of ensemble members / realizations increases. (Provisional — verify axes and the exact statistic before final render.)](figures/fig_F35_detection_vs_N.png){#fig-f35-detection-vs-n}
+
+:::
+
 ## References {.unnumbered}
 
 ::: {#refs}
