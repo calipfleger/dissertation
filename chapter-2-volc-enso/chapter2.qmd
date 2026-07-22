@@ -337,6 +337,14 @@ The 2022 Hunga Tonga-Hunga Ha'apai eruption extended the forcing parameter space
 
 :::
 
+<!-- AUTO 2026-07-12 phase-5 -->
+::: {.under-review}
+## Figures added 2026-07-12
+
+![Agung three-eruption detection test. Caption derived heuristically from the filename `test_agung_3erup_detection` and pending author confirmation (⚠ relevance uncertain — the `test_` prefix suggests a diagnostic/QA figure rather than a main-text figure): a detection-test panel for the 1963 Agung eruption evaluating whether the analysis recovers the volcanic signal across three eruption realizations/windows. _TODO: confirm this is a paper figure vs. a QA diagnostic, and verify axes/statistic before final render._](figures/test_agung_3erup_detection.png){#fig-agung-3erup-detection}
+
+:::
+
 ## References {.unnumbered}
 
 ::: {#refs}

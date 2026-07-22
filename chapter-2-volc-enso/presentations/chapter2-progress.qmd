@@ -41,6 +41,29 @@ _New entries auto-appended below this divider every night._
 
 <!-- PROGRESS-INSERT-MARKER — phase 5 of the nightly pipeline appends new sections HERE -->
 
+<!-- AUTO 2026-07-12 phase-5 -->
+# 2026-07-12 {.center}
+
+::: {.under-review}
+
+## What we did
+
+- Reviewer-style accuracy/consistency pass over the whole `seasonal scaling icesm volc` codebase was requested (publication-grade check of all 148 figure scripts, 5 stats engines, and headline numbers). Session was still running at nightly capture — findings land next run.
+- Confirmed repo structure and reproducible entry points; ~13 dated deliverable snapshots produced today.
+- 11 Ch2 figures re-synced from the `volcano enso` project into the chapter (correlation maps, pseudo-coral SEA/maps, plus a new Agung detection-test panel).
+
+## New literature
+
+- None — semanticSearch unavailable this run, so no new citations were ingested.
+
+## Agung three-eruption detection test
+
+![Agung three-eruption detection test (⚠ relevance uncertain — `test_` prefix suggests a QA diagnostic; confirm before use). Provisional heuristic caption pending author confirmation.](../figures/test_agung_3erup_detection.png){.r-stretch}
+
+:::
+
+---
+
 <!-- AUTO 2026-05-31 phase-5 -->
 # 2026-05-31 {.center}
 

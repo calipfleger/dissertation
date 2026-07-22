@@ -93,3 +93,7 @@ chapter-*/figures/*.pdf
 **/memory-consolidation-log.md
 
 /.quarto/
+/*.tex
+**/presentations/*.html
+chapter*.html
+*.tex
