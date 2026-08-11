@@ -41,6 +41,23 @@ _New entries auto-appended below this divider every night._
 
 <!-- PROGRESS-INSERT-MARKER — phase 5 of the nightly pipeline appends new sections HERE -->
 
+<!-- AUTO 2026-08-10 phase-5 -->
+# 2026-08-10 {.center}
+
+::: {.under-review}
+
+## What we did
+
+- Automation-only day: no substantive user sessions on Ch1 today.
+
+## New literature
+
+- Zhang et al. (2024) — CMIP6 evidence that human-induced Walker Circulation weakening emerges earlier in the mid-upper troposphere than at the surface, via an ocean-thermostat mechanism [@zhang2024walker]
+
+:::
+
+---
+
 <!-- AUTO 2026-05-30 phase-5 -->
 # 2026-05-30 {.center}
 

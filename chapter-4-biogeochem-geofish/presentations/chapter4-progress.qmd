@@ -41,6 +41,23 @@ _New entries auto-appended below this divider every night._
 
 <!-- PROGRESS-INSERT-MARKER — phase 5 of the nightly pipeline appends new sections HERE -->
 
+<!-- AUTO 2026-08-10 phase-5 -->
+# 2026-08-10 {.center}
+
+::: {.under-review}
+
+## What we did
+
+- Automation-only day: no substantive user sessions on Ch4 today (the BGC session continuation was already captured 2026-08-09).
+
+## New literature
+
+- Vedor et al. (2021) — oxygen-minimum-zone shoaling compresses blue-shark habitat into surface layers, raising longline-fishing vulnerability, a concrete OMZ-to-population mechanism [@vedor2021deoxygenation]
+
+:::
+
+---
+
 <!-- AUTO 2026-05-14 phase-5 -->
 # 2026-05-14 {.center}
 

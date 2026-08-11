@@ -40,6 +40,23 @@ The "What we did" lines are pulled from the daily-summaries the nightly loop wri
 _New entries auto-appended below this divider every night._
 
 <!-- PROGRESS-INSERT-MARKER
+
+<!-- AUTO 2026-08-10 phase-5 -->
+# 2026-08-10 {.center}
+
+::: {.under-review}
+
+## What we did
+
+- Automation-only day: no substantive user sessions on Ch3 today.
+
+## New literature
+
+- Diaz et al. (2026) — 500-year California atmospheric-river reconstruction confirms AR activity interferes with the canonical ENSO-precipitation teleconnection but finds no clear link to episodic volcanic forcing [@diaz2026atmrivers]
+
+:::
+
+---
 <!-- AUTO 2026-05-30 phase-5 -->
 # 2026-05-30 {.center}
 

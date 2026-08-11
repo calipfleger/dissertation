@@ -41,6 +41,23 @@ _New entries auto-appended below this divider every night._
 
 <!-- PROGRESS-INSERT-MARKER
 
+<!-- AUTO 2026-08-10 phase-5 -->
+# 2026-08-10 {.center}
+
+::: {.under-review}
+
+## What we did
+
+- Automation-only day: no substantive user sessions on Ch5 today.
+
+## New literature
+
+- Teodor (2024) — global-news NLP sentiment + LDA topic modeling on climate-policy/renewable-energy terms, methodologically adjacent to the Ch5 GDELT/VADER pipeline [@teodor2024sentiment]
+
+:::
+
+---
+
 <!-- AUTO 2026-05-28 phase-5 -->
 # 2026-05-28 {.center}
 
