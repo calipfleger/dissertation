@@ -41,6 +41,31 @@ _New entries auto-appended below this divider every night._
 
 <!-- PROGRESS-INSERT-MARKER — phase 5 of the nightly pipeline appends new sections HERE -->
 
+<!-- AUTO 2026-08-25 phase-5 -->
+# 2026-08-25 {.center}
+
+::: {.under-review}
+
+## What we did
+
+- Covered the 2026-08-19 → 2026-08-25 window after three consecutive aborted pipeline runs (08-19, 08-20, 08-22).
+- `sync_figures.sh` copied **23 new figures** from the `volcano enso` source project into this chapter's `figures/` folder — the first genuinely new figure arrivals since 2026-08-09. Source mtimes span 08-20 through 08-25.
+- Figures were **deliberately not auto-inserted into `chapter2.qmd`** this run. Two reasons, both needing C's judgement rather than an automated guess.
+
+## Why these figures are held for review
+
+- **Six arrived as duplicate pairs.** `fig01_eruption_catalog`, `fig03_sea_per_eruption`, `fig06_spatial_composite`, `fig07_iso2k_multi`, `fig09_forcing_response_scatter` and `fig10_summary_matrix` each exist in both a `ch3_` and a `ch3r_` variant, and `fig04` exists as both `sea_composite` and `sea_composite_dualbaseline`. Inserting every file would place two versions of the same figure in the chapter; choosing between them is a curation call.
+- **The filename prefix contradicts the destination.** All 23 are named `ch3_*` or `ch3r_*` but the sync routed them into Chapter 2. The subject matter — eruption catalog, superposed-epoch composites, iso2k and pseudo-coral comparisons, Niño 3.4 correlations — is squarely Chapter 2's, so the prefix most likely reflects the source project's own internal numbering rather than dissertation Chapter 3. That is an inference, not a confirmation, and it is worth C settling before the figures are cited.
+
+## New literature
+
+- None for this chapter. The single reference added this run (Gruber & Sarmiento 1997, defining the N* nitrate–phosphate tracer) went to Chapter 4's bibliography only, for the N* maps added there.
+
+:::
+
+---
+
+
 <!-- AUTO 2026-08-10 phase-5 -->
 # 2026-08-10 {.center}
 
