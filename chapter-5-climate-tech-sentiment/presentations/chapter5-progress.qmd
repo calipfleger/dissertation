@@ -39,7 +39,26 @@ The "What we did" lines are pulled from the daily-summaries the nightly loop wri
 
 _New entries auto-appended below this divider every night._
 
-<!-- PROGRESS-INSERT-MARKER
+<!-- PROGRESS-INSERT-MARKER — phase 5 of the nightly pipeline appends new sections HERE -->
+
+<!-- AUTO 2026-08-30 phase-5 -->
+# 2026-08-30 {.center}
+
+::: {.under-review}
+
+## What we did
+
+- Automation-only window (08-29 → 08-30): no substantive user sessions touched Ch5.
+
+## New literature
+
+- Markusson, von Rothkirch & Dooley 2026 — names the "we need to do both" CDR frame and argues it is empty and performative, doing little against the mitigation-deterrence risk it is meant to address [@markusson2026doingboth]
+- Why it matters here: the frame is affectively neutral-to-positive and so registers as such in VADER, while carrying a deterrence function the sentiment score cannot see — a candidate co-occurrence pass over the CDR sub-corpus, scored separately from valence
+- Same first author as [@markusson2022natural], already cited in this chapter
+
+:::
+
+---
 
 <!-- AUTO 2026-08-10 phase-5 -->
 # 2026-08-10 {.center}

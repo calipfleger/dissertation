@@ -41,6 +41,27 @@ _New entries auto-appended below this divider every night._
 
 <!-- PROGRESS-INSERT-MARKER — phase 5 of the nightly pipeline appends new sections HERE -->
 
+<!-- AUTO 2026-08-30 phase-5 -->
+# 2026-08-30 {.center}
+
+::: {.under-review}
+
+## What we did
+
+- Automation-only window (08-29 → 08-30): no substantive user sessions touched Ch2.
+- The 23 figures synced on 08-25 remain held out of chapter prose, still awaiting the `ch3_` vs `ch3r_` variant choice and confirmation that the `ch3` prefix is the source project's numbering rather than dissertation Chapter 3.
+
+## New literature
+
+- He et al. 2026 — SEA across tree-ring reconstructions, nine data-assimilation products and two model ensembles; global cooling robust, but persistence diverges by proxy type (ring density short and physically consistent, ring width longer via biological memory), and the **ENSO response differs across products**, implying a volcanic ENSO signal weak against internal variability [@he2026volcaniccomparison]
+- Tripp et al. 2026 — Galápagos corals at ~4 ka show ENSO variance comparable to 1959–1979 CE but *negatively* skewed, a reminder that the El Niño-like framing tested here is a property of the recent baseline rather than of ENSO in general [@tripp2026galapagos]
+- Implication for this chapter's SEA composites: agreement between two reconstructions is not by itself evidence of a forced response, and the methods text should state how much of the apparent post-eruption anomaly could come from archive properties and sampling
+
+:::
+
+---
+
+
 <!-- AUTO 2026-08-25 phase-5 -->
 # 2026-08-25 {.center}
 

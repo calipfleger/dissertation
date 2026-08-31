@@ -39,7 +39,27 @@ The "What we did" lines are pulled from the daily-summaries the nightly loop wri
 
 _New entries auto-appended below this divider every night._
 
-<!-- PROGRESS-INSERT-MARKER
+<!-- PROGRESS-INSERT-MARKER — phase 5 of the nightly pipeline appends new sections HERE -->
+
+<!-- AUTO 2026-08-30 phase-5 -->
+# 2026-08-30 {.center}
+
+::: {.under-review}
+
+## What we did
+
+- Automation-only window (08-29 → 08-30): no substantive user sessions touched Ch3.
+- Corrected the authorship of the Climate Dynamics atmospheric-river reference, which had been filed under the wrong first author since 08-10, and backfilled the synthesis paragraph it never received.
+
+## New literature
+
+- He et al. 2026 — multi-archive SEA finds coherent post-eruption **wetting over the western United States** in PDSI, across tree-ring reconstructions, nine data-assimilation products and two model ensembles; the closest thing yet to a positive, non-coral volcanic hydroclimate signal for this region [@he2026volcaniccomparison]
+- Tripp et al. 2026 — Galápagos subfossil corals record ENSO variance at ~4 ka comparable to 1959–1979 CE but *negatively* skewed, i.e. stronger cold events, against the positively skewed modern record [@tripp2026galapagos] ⚠ relevance uncertain — mid-Holocene, no volcanic analysis
+- The two new references pull in opposite directions on this chapter's premise: He et al. supply a positive PDSI signal over the western US, while Wahl et al. find no clear volcanic link in California precipitation across 500 years and call it approximately white noise. Present the tension; do not resolve it yet.
+
+:::
+
+---
 
 <!-- AUTO 2026-08-10 phase-5 -->
 # 2026-08-10 {.center}
@@ -52,7 +72,7 @@ _New entries auto-appended below this divider every night._
 
 ## New literature
 
-- Diaz et al. (2026) — 500-year California atmospheric-river reconstruction confirms AR activity interferes with the canonical ENSO-precipitation teleconnection but finds no clear link to episodic volcanic forcing [@diaz2026atmrivers]
+- Wahl et al. (2026) — 500-year California atmospheric-river reconstruction confirms AR activity interferes with the canonical ENSO-precipitation teleconnection but finds no clear link to episodic volcanic forcing [@diaz2026atmrivers] <!-- author corrected 2026-08-30: first author is Wahl, not Diaz; bibkey unchanged -->
 
 :::
 

@@ -41,6 +41,26 @@ _New entries auto-appended below this divider every night._
 
 <!-- PROGRESS-INSERT-MARKER — phase 5 of the nightly pipeline appends new sections HERE -->
 
+<!-- AUTO 2026-08-30 phase-5 -->
+# 2026-08-30 {.center}
+
+::: {.under-review}
+
+## What we did
+
+- Automation-only window (08-29 → 08-30). The v32/v23 notebooks have now sat with C undelivered-on for five days; every figure, table and number in the 72-slide deck is still synthetic-data output.
+
+## New literature
+
+- Hirasawa et al. 2026 — the GeoMIP scenario-design document for marine cloud brightening, parallel to G6-1.5K-SAI, which this chapter's MCB arm has been running without [@hirasawa2026g6mcb]
+- Midlatitude sea-salt injection is chosen specifically to avoid the La Niña-like response predicted for subtropical injection — so the MCB arm's tropical signal should not be assumed to be an ENSO artefact of the forcing design
+- All three ESMs hold GMST at 2020–2039 levels, but the required emission rate varies **by a factor of twenty** across models; a CESM2 biogeochemical response to MCB therefore describes CESM2's implementation of the scenario, not a model-independent property of the intervention
+
+:::
+
+---
+
+
 <!-- AUTO 2026-08-10 phase-5 -->
 # 2026-08-10 {.center}
 
