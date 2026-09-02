@@ -41,6 +41,26 @@ _New entries auto-appended below this divider every night._
 
 <!-- PROGRESS-INSERT-MARKER — phase 5 of the nightly pipeline appends new sections HERE -->
 
+<!-- AUTO 2026-09-02 phase-5 -->
+# 2026-09-02 {.center}
+
+::: {.under-review}
+
+## What we did
+
+- Automation-only window (2026-08-31 → 09-02); no user session touched this chapter.
+- Literature scan added one new reference to the bibliography and literature review. Nothing was written into `chapter5.qmd`.
+
+## New literature
+
+- van Bruggen et al. 2026 — critical metaphor analysis of 257 CDR news articles from UK, US and Canadian outlets, 2018–2024, finding that framing work is carried by metaphor source domains rather than evaluative vocabulary [@vanbruggen2026vacuuming]. A near-companion corpus to this chapter's, and a citable basis for the limitation that lexicon sentiment is blind to metaphorical framing.
+
+⚠ Author byline came from search metadata cross-checked against a third-party index — the Taylor & Francis page returned an empty body for the 4th consecutive run.
+
+:::
+
+---
+
 <!-- AUTO 2026-08-30 phase-5 -->
 # 2026-08-30 {.center}
 

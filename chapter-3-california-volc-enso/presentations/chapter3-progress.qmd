@@ -41,6 +41,26 @@ _New entries auto-appended below this divider every night._
 
 <!-- PROGRESS-INSERT-MARKER — phase 5 of the nightly pipeline appends new sections HERE -->
 
+<!-- AUTO 2026-09-02 phase-5 -->
+# 2026-09-02 {.center}
+
+::: {.under-review}
+
+## What we did
+
+- Automation-only window (2026-08-31 → 09-02); no user session touched this chapter.
+- Literature scan added one new reference to the bibliography and literature review. Nothing was written into `chapter3.qmd`.
+
+## New literature
+
+- Small, Chen & Kerns 2026 — MJO convection is a major boreal-winter water-vapour source for atmospheric rivers reaching the western US, tracked directly rather than via the RMM index [@small2026mjoar]. Supplies the moisture-source physics behind the statistical AR-disrupts-ENSO result in [@lunanino2025heresy] and [@diaz2026atmrivers], and opens a volcanic pathway to California hydroclimate that does not run through Niño 3.4.
+
+⚠ Bibliographic metadata came from search listings — the AGU/Wiley page returned an empty body for the 3rd consecutive run.
+
+:::
+
+---
+
 <!-- AUTO 2026-08-30 phase-5 -->
 # 2026-08-30 {.center}
 
