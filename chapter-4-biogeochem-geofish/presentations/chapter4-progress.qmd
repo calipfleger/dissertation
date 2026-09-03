@@ -41,6 +41,30 @@ _New entries auto-appended below this divider every night._
 
 <!-- PROGRESS-INSERT-MARKER — phase 5 of the nightly pipeline appends new sections HERE -->
 
+<!-- AUTO 2026-09-02 phase-5 -->
+# 2026-09-02 {.center}
+
+::: {.under-review}
+
+## What we did
+
+- Second (delta) pipeline run of the day; the first covered 08-31 → 09-02 and pushed `b5c49dd`. No substantive user work in the 04:0x → 23:32 window — automation only.
+- No new figures, no code changes, no `chapter4.qmd` edits. The chapter's own standing blocker is unchanged: every figure, table and number in the 72-slide deck is still synthetic, now nine days after the v32/v23 notebook handoff, because the real Derecho run has not happened.
+- One new reference added to the chapter bibliography and literature review, giving the MCB arm its first physical-forcing citation to sit alongside the scenario-design one.
+
+## New literature
+
+- Yu et al. 2026 — eastern-Pacific sea-salt MCB under SSP1-1.9 holds global-mean temperature and precipitation at 2020 levels, but leaves Europe, the US, northeastern China and downwind offshore oceans incompletely offset, partly via an AMOC acceleration driven by the seeding pattern's hemispherically asymmetric radiation gradient [@yu2026mcbaerosol].
+
+## Why it matters here
+
+An MCB arm is not a spatially uniform cooling perturbation. The forcing is regionally lopsided and its residuals depend on seeding location, and a circulation response of that kind is the pathway by which surface cooling redistributes nutrients rather than merely slowing their cycling — which is exactly what this chapter's NO₃, PO₄, SiO₃ and N\* diagnostics are built to detect. Yu et al. stop at the physical climate and carry no ocean biogeochemistry; that gap is this chapter's opening.
+
+:::
+
+---
+
+
 <!-- AUTO 2026-08-30 phase-5 -->
 # 2026-08-30 {.center}
 
