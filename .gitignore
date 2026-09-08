@@ -97,3 +97,12 @@ chapter-*/figures/*.pdf
 **/presentations/*.html
 chapter*.html
 *.tex
+
+# Local figure rollback / staging folders (added 2026-09-07).
+# These hold byte-duplicate PNGs kept as safety copies or as candidates
+# awaiting C's adoption decision. Committing ~20 MB of duplicated binaries
+# per regeneration would bloat the repo permanently, so they stay local.
+# Recommended by repo-hygiene 2026-09-04 after it declined to stage them.
+**/_pre-regen-*/
+**/_previous-generation-*/
+**/_candidates-*/
