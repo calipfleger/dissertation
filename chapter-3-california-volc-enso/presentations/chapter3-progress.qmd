@@ -41,6 +41,27 @@ _New entries auto-appended below this divider every night._
 
 <!-- PROGRESS-INSERT-MARKER — phase 5 of the nightly pipeline appends new sections HERE -->
 
+<!-- AUTO 2026-09-20 phase-5 -->
+# 2026-09-20 {.center}
+
+::: {.under-review}
+
+## What we did
+
+- Automation-only window (09-19 → 09-20): nothing under `chapter-3-california-volc-enso/` was touched, and the upstream `volcano enso` project was found dormant for the seventh consecutive sync (HEAD `145b0c6`, clean tree, in sync with `origin/main`, `ch3_config.py` unchanged since 08-20; last science activity 2026-08-25).
+- **Bibliography audit found 8 keys defined in two chapters each**, so the dissertation's 174 `.bib` entries resolve to **166 unique works**. Seven of the eight are Ch2↔Ch3 overlaps — expected for two volcano–ENSO chapters. Nothing is broken: each chapter resolves its own `literature/bibliography.bib`, so duplicate keys never collide at render.
+- **This chapter holds the one divergent copy.** `robock2000volcanic` here reads `Robock, A.` with no issue number and no DOI; Ch2's copy reads `Robock, Alan` with both. Both render, differently — the same reference would print in two forms in one dissertation. **Fix: replace this chapter's entry with Ch2's.** `tiger2023tropical` is also worth a look — it is cited in Ch2 and orphaned here, one of the five keys behind the 32-vs-27 orphan-count difference.
+- Ch3 carries **43 bibliography keys**, the most of the five chapters, and still has 0 figures on disk — `sync_figures.sh` reports "no sources configured" for it.
+
+## New literature
+
+- None. `semanticSearch` has been absent from the toolset for six consecutive runs — 17 days with zero queries executed. No citation was inserted rather than substituting an unverifiable source.
+
+:::
+
+---
+
+
 <!-- AUTO 2026-09-02 phase-5 -->
 # 2026-09-02 {.center}
 
