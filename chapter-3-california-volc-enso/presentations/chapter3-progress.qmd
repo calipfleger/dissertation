@@ -165,7 +165,6 @@ _New entries auto-appended below this divider every night._
 :::
 
 ---
- — phase 5 of the nightly pipeline appends new sections HERE -->
 
 <!-- AUTO 2026-05-14 phase-5 -->
 # 2026-05-14 {.center}
