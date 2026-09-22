@@ -43,6 +43,8 @@ Every log for weeks has recorded the bibliography as **174 keys** (Ch1 30 · Ch2
 
 The overlap is exactly where you would expect it: seven of the eight are Ch2↔Ch3 (the two volcano-ENSO chapters), the eighth pair Ch1↔Ch2 on proxy-network references.
 
+> **Correction, 2026-09-22:** the split above is wrong and was never measured. Counted key by key it is **six Ch2↔Ch3 and two Ch1↔Ch2** (`konecky2020iso2k` and `oppo2026indopacific` are both Ch1↔Ch2). The 174/166/139/27 totals in this file are correct and have since reproduced a third time; only the attribution was wrong. Left in place rather than rewritten, with this note — see `weekly-review-2026-09-21.md`.
+
 **Nothing is broken by this.** `_quarto.yml` carries an explicit note that there is no book-level merged bibliography — each chapter resolves `literature/bibliography.bib` from its own YAML header and renders its own References section. So duplicate keys never collide at render time, and no chapter is at risk of resolving the wrong entry.
 
 **One divergence is worth fixing anyway.** `robock2000volcanic` is not the same entry in the two files:

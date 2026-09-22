@@ -19,7 +19,7 @@
 
 **The fix is a connector, and it closes a second gap at the same time.** A Semantic Scholar or OpenAlex MCP connector would restore Phase 4 and also close the Crossref-verification gap that `context/literature-verification.md` tracks. Ch4 (14 queries) and Ch1 (13) are weighted most heavily and cost the most per missed run.
 
-## Bibliography state — three independent reproductions now agree
+## Bibliography state — the totals reproduce, the attribution did not
 
 Recomputed from source this run, without reference to the prior figures:
 
@@ -31,11 +31,28 @@ Recomputed from source this run, without reference to the prior figures:
 | Unique works never cited anywhere | **27** |
 | **Orphans, per-chapter prose (headline)** | **32** — Ch1 6 · Ch2 8 · Ch3 9 · Ch4 5 · Ch5 4 |
 
-These are the same values the 2026-09-20 run derived and its verification subagent reproduced. **This run makes it three independent derivations in agreement**, which is enough to stop re-deriving them and treat the numbers as settled.
+These **totals** are the same values the 2026-09-20 run derived and its verification subagent reproduced, making three independent derivations in agreement. The totals can be treated as settled.
+
+**The attribution inside them cannot, and this run caught the 09-20 log repeating a wrong split.** Every prior statement has said *"seven of the eight overlaps are Ch2↔Ch3 and the eighth is Ch1↔Ch2."* Measured key by key, it is **six and two**:
+
+| Key | Chapters |
+| --- | --- |
+| `clement1996ocean` | Ch2, Ch3 |
+| `he2026volcaniccomparison` | Ch2, Ch3 |
+| `robock2000volcanic` | Ch2, Ch3 |
+| `tiger2023tropical` | Ch2, Ch3 |
+| `tripp2026galapagos` | Ch2, Ch3 |
+| `walter2023coralhydro2k` | Ch2, Ch3 |
+| **`konecky2020iso2k`** | **Ch1, Ch2** |
+| **`oppo2026indopacific`** | **Ch1, Ch2** |
+
+**6 Ch2↔Ch3 · 2 Ch1↔Ch2.** The substantive point survives — the overlaps sit where shared volcano–ENSO and proxy-network literature belongs — but the count was wrong and was carried forward unmeasured.
+
+**This is worth more than the correction itself.** The 09-20 run reported "three independent reproductions" of this block, and all three reproduced the *totals* while none of them checked the *split* — so "independent" was true of the arithmetic and false of the attribution sitting in the same paragraph. The lesson is CLAUDE.md's fourth standing rule applied one level down: **a verification pass reproduces what it is pointed at, and agreement across passes is only as broad as the narrowest thing they all measured.** Retiring re-derivation of the totals is fine; retiring it for everything in the paragraph would have frozen this error permanently.
 
 The reporting rule stands: headline **32** for the editorial question — entries sitting unused in their own chapter's `.bib`, which is what `check_citations.sh` mirrors — and **27** for the bibliographic question, works collected and never cited anywhere. Never headline 18 or 7; 18 credits progress slides, which are not the dissertation, and 7 additionally credits `literature/literature-review.md`, which is where this pipeline deposits its own paragraphs.
 
-The duplication is harmless at render: `_quarto.yml` defines no book-level merged bibliography, so each chapter resolves its own file and the keys never collide. Seven of the eight overlaps are Ch2↔Ch3 — exactly where shared volcano–ENSO literature belongs — and the eighth is Ch1↔Ch2 on proxy-network references.
+The duplication is harmless at render: `_quarto.yml` defines no book-level merged bibliography, so each chapter resolves its own file and the keys never collide. **Six** of the eight overlaps are Ch2↔Ch3 and **two** are Ch1↔Ch2 (`konecky2020iso2k`, `oppo2026indopacific`) — measured key by key this run, correcting the "seven and one" that prior logs carried unmeasured.
 
 **One substantive divergence is still outstanding, five days on.** `robock2000volcanic` is not the same entry in both files: Ch2 has `Robock, Alan`, issue `2`, DOI `10.1029/1998RG000054`; Ch3 has `Robock, A.` and neither. Both render, differently, so one reference prints in two forms in the two chapters most likely to be read as a pair. Ch2's is complete — copying it over Ch3's is a one-minute fix, and it has been on the board since 2026-09-20.
 
